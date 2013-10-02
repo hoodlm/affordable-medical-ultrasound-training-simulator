@@ -6,14 +6,22 @@ public class SimpleMovement : MonoBehaviour {
 	public float translateSpeed = 2.0f;
 	public float rotationSpeed = 1.0f;
 	
+	private GameObject skin;
+	private CachedTransform cachedTransform;
+	
 	// Use this for initialization
 	void Start () {
-	
+		skin = GameObject.FindGameObjectWithTag("Skin");
+		cachedTransform = new CachedTransform();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		CheckMovementControls();
+		if (cachedTransform.isDirty()) {
+			transform.position = ClosestPointOnSkin();
+			cachedTransform = new CachedTransform(transform);
+		}
 	}
 	
 	private void CheckMovementControls() {
@@ -70,5 +78,16 @@ public class SimpleMovement : MonoBehaviour {
 	
 	private void Rotate(Vector3 rotationAxis) {
 		transform.RotateAround(rotationAxis, rotationSpeed * Time.deltaTime);
+	}
+	
+		private Vector3 ClosestPointOnSkin() {
+		// 2f is a magic number so we start far enough back
+		Vector3 origin = transform.position - transform.forward * 2f;
+		Ray ray = new Ray(origin, transform.forward);
+		
+		RaycastHit hit;
+		skin.collider.Raycast(ray, out hit, 10f);
+		
+		return hit.point;
 	}
 }

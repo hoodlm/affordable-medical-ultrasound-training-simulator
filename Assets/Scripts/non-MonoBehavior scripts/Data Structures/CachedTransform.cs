@@ -24,7 +24,7 @@ public class CachedTransform {
 			return true;
 		} else {
 			return (!transform.rotation.Equals(cachedRotation)
-				 || !transform.position.Equals(cachedPosition));
+				 || (!transform.position.Equals(cachedPosition)));
 		}
 	}
 }

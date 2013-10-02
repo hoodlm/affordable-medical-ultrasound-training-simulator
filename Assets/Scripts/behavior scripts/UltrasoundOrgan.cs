@@ -22,6 +22,6 @@ public class UltrasoundOrgan : MonoBehaviour {
 	public float attenuation = 0.01f;
 	
 	void Start() {
-		
+		this.renderer.material.color = color;
 	}
 }

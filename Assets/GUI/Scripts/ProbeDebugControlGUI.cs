@@ -67,7 +67,7 @@ public class ProbeDebugControlGUI : MonoBehaviour {
 		Rect MaxDistanceLabelRect = new Rect(leftMargin, topMargin + 4*GUISpacing, labelWidth, labelHeight);
 		GUI.Label(MaxDistanceLabelRect, "Maximum Distance: "+maxDistanceValue);
 		Rect MaxDistanceSliderRect = new Rect(leftMargin, topMargin + 5*GUISpacing, labelWidth, labelHeight);
-		config.SetMaxDistance(GUI.HorizontalSlider(MaxDistanceSliderRect, maxDistanceValue, float.Epsilon, 20));
+		config.SetMaxDistance(GUI.HorizontalSlider(MaxDistanceSliderRect, maxDistanceValue, float.Epsilon, 5f));
 		
 		Rect ArcSizeLabelRect = new Rect(leftMargin, topMargin + 6*GUISpacing, labelWidth, labelHeight);
 		GUI.Label(ArcSizeLabelRect, "Arc Size: "+arcSize+" degrees");

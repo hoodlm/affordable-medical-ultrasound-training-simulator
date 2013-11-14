@@ -28,7 +28,7 @@ public static class UltrasoundPhysics {
 		foreach (Collider collider in organs) {
 			if (UltrasoundCollisionUtils.IsContained(pulse.GetTarget(), collider)) {
 				UltrasoundOrgan organ = GetOrganFromCollider(collider);
-				if (organ.enabled) {
+				if (null != organ && organ.enabled) {
 					UltrasoundPoint result = new UltrasoundPoint();
 					result.SetOrgan(organ);
 					result.SetIntensity(CalculateIntensityAtPoint(organ, pulse.GetIntensity()));

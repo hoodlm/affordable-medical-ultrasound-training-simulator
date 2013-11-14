@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Quick script to hide genitals. The cover object can be toggled with CTRL-ALT-X.
+/// </summary>
 public class HideGenitals : MonoBehaviour {
 	
 	public bool censoring = true;

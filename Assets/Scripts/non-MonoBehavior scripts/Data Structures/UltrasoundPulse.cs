@@ -70,4 +70,26 @@ public class UltrasoundPulse {
 	public float GetLength() {
 		return Vector3.Distance(this.target, this.origin);
 	}
+	
+	public override bool Equals(System.Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        UltrasoundPulse p = obj as UltrasoundPulse;
+        if ((System.Object)p == null) {
+            return false;
+        }
+
+        return (
+			this.GetOrigin().Equals(p.GetOrigin()) &&
+			this.GetTarget().Equals(p.GetTarget()));
+    }
+	
+	public override int GetHashCode() {
+		int hashcode = 17;
+		hashcode = hashcode * 23 + origin.GetHashCode();
+		hashcode = hashcode * 23 + target.GetHashCode();
+		return hashcode;
+    }
 }

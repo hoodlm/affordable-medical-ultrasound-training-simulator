@@ -13,7 +13,7 @@ public class CachedTransform {
 	
 	public CachedTransform(Transform t) {
 		if (null != t) {
-			this.transform = t; // Deep copy
+			this.transform = t; // This is a shallow copy!
 			cachedRotation = new Quaternion(t.rotation.x, t.rotation.y, t.rotation.z, t.rotation.w);
 			cachedPosition = new Vector3(t.position.x, t.position.y, t.position.z);
 		}
@@ -26,5 +26,13 @@ public class CachedTransform {
 			return (!transform.rotation.Equals(cachedRotation)
 				 || (!transform.position.Equals(cachedPosition)));
 		}
+	}
+	
+	/// <summary>
+	/// Perform a deep copy of the cached position and rotation into an object's transform.
+	/// </summary>
+	public void copyIntoTransform(Transform t) {
+		t.rotation = cachedRotation;
+		t.position = cachedPosition;
 	}
 }

@@ -52,6 +52,11 @@ public class Display : MonoBehaviour {
 			DrawToDisplay(probe.Scan());
 		}
 		forceDrawNextFrame = false;
+		
+		if (Input.GetKeyDown(KeyCode.G)) {
+			colorMode = !colorMode;
+			forceDrawNextFrame = true;
+		}
 	}
 	
 	/// <summary>

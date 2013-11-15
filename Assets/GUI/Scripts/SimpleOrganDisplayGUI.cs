@@ -12,12 +12,6 @@ public class SimpleOrganDisplayGUI : MonoBehaviour {
 	// Bones
 	// Intestine, Lungs, Liver
 	
-//	private float[] organRevealLevels = 
-//	{ "Skin", "Bones", "Lungs", "Heart", "Blood Vessels", "Brain", "Genitals", "Liver",
-//	  "Intestine", "Stomach", "Digestive Organs", "Kidneys", "Urinary System", "Sensory Organs", "Endocrine System",
-//	  "Lymphoid System"};
-//	private bool[] visible;
-	
 	// Use this for initialization
 	void Start () {
 	

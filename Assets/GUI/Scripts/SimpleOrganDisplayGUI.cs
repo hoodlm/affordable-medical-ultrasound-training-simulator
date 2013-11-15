@@ -33,7 +33,7 @@ public class SimpleOrganDisplayGUI : MonoBehaviour {
     }
 	
 	void DetailSlider(int windowID) {
-		detailLevel = GUI.HorizontalSlider(new Rect(10, 37, windowRect.width - 10, 20), detailLevel, 0f, 10f);
+		detailLevel = GUI.HorizontalSlider(new Rect(10, 37, windowRect.width - 20, 20), detailLevel, 0f, 10f);
 		
 		if (detailLevel >= 9.95f) {
 			SetVisibility("Skin", true);

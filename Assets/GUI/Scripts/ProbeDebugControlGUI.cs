@@ -33,6 +33,9 @@ public class ProbeDebugControlGUI : MonoBehaviour {
 		cachedConfig = new CachedProbeConfig(config);
 		
 		labelWidth = windowRect.width - 2 * leftMargin;
+		
+		// position window
+		windowRect.x = Screen.width - windowRect.width - leftMargin;
 	}
 	
 	// Update is called once per frame

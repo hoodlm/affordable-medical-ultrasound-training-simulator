@@ -65,7 +65,13 @@ public class Probe : MonoBehaviour {
 			
 			Vector3 target = TransformPointFromPlane(localPoint, this.transform);
 			UltrasoundPulse pulse = new UltrasoundPulse(origin, target, pulseIntensity);
-			UltrasoundPoint resultPoint = UltrasoundPhysics.SendPulse(pulse);
+			UltrasoundPoint resultPoint;
+			// If the pulse will have an intensity of 0, we don't need to send it.
+			if (pulse.GetIntensity() > 0.0f) {
+				resultPoint = UltrasoundPhysics.SendPulse(pulse);
+			} else {
+				resultPoint = UltrasoundPoint.EmptyPoint(pulse.GetTarget());
+			}
 			resultPoint.SetProjectedPosition(localPoint);
 			resultPoint.ApplyNoise(config.GetNoiseLevel());
 			

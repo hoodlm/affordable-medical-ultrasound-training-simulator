@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -88,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">UltrasoundPoint Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Inherits IComparable.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -107,6 +110,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9643a8dfb7b251ce1080f65386efe4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7861a75a003c032e2e1ee467d92eb6d3"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a7861a75a003c032e2e1ee467d92eb6d3">GetHashCode</a> ()</td></tr>
 <tr class="separator:a7861a75a003c032e2e1ee467d92eb6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c7e87ca4ddfcd56d9f412ffc639be1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a9c7e87ca4ddfcd56d9f412ffc639be1f">CompareTo</a> (object obj)</td></tr>
+<tr class="separator:a9c7e87ca4ddfcd56d9f412ffc639be1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A single point in space. </p>
@@ -146,6 +151,30 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9c7e87ca4ddfcd56d9f412ffc639be1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UltrasoundPoint.CompareTo </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Comparison is solely calculated based on distance in the projection plane.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Another Ultrasound point to compare to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A factor proportional in distance between the origin of the two UltrasoundPoints. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a9643a8dfb7b251ce1080f65386efe4ce"></a>
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +311,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 5 2014 02:11:40 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 5 2014 12:29:02 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

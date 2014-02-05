@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using System;
 
 /** 
  *  A single point in space.
  */
-public class UltrasoundPoint {
+public class UltrasoundPoint : IComparable {
 	private readonly Vector3 worldSpaceLocation;
     private readonly Vector2 projectedLocation;
     private float brightness;
@@ -18,6 +19,7 @@ public class UltrasoundPoint {
         this.worldSpaceLocation = worldSpaceLocation;
         this.projectedLocation = projectedLocation;
         brightness = 0f;
+        
     }
     
     /**
@@ -101,5 +103,30 @@ public class UltrasoundPoint {
         hash = prime * hash + this.worldSpaceLocation.GetHashCode();
         
         return hash;
+    }
+
+    /**
+     *  Comparison is solely calculated based on distance in the projection plane.
+     *
+     *  @param obj Another Ultrasound point to compare to.
+     *  @return A factor proportional in distance between the origin of the two UltrasoundPoints.
+     */
+    public int CompareTo (object obj)
+    {
+        if (this.Equals(obj)) {
+            return 0;
+        }
+        
+        if (!(obj is UltrasoundPoint)) {
+            throw new ArgumentException("Can only compare UltrasoundPoints to other UltrasoundPoints!");
+        }
+        
+        UltrasoundPoint other = (UltrasoundPoint)obj;
+        float difference = this.GetProjectedLocation().magnitude - other.GetProjectedLocation().magnitude;
+        
+        /* CompareTo must return an integer. If we just rounded difference directly, we would lose too much
+         * precision. Therefore, we multiply it by a large scalar before casting to an integer.
+         */
+        return (int)(10000f * difference);
     }
 }

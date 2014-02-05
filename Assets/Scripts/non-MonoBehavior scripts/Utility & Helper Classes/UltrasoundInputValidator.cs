@@ -10,7 +10,7 @@ public static class UltrasoundInputValidator {
      * Verify that an object is non-null.
      * 
      * @param o The allegedly-null object to test.
-     * @throw ArgumentNotNullException
+     * @throw ArgumentNullException
      * @return the object, if it is not null
      */
     public static object CheckNotNull(object o) {
@@ -26,7 +26,7 @@ public static class UltrasoundInputValidator {
      * 
      * @param o The allegedly-null object to test.
      * @param errorString A custom error string to include in the exception.
-     * @throw ArgumentNotNullException
+     * @throw ArgumentNullException
      * @return the object, if it is not null
      */
     public static object CheckNotNull(object o, string errorString) {

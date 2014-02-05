@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['checknotnull',['CheckNotNull',['../class_ultrasound_input_validator.html#a558e86a765c1bbb137ee9ad370779aac',1,'UltrasoundInputValidator.CheckNotNull(object o)'],['../class_ultrasound_input_validator.html#a774cdc1b24d48e660b01bba365d4dcfe',1,'UltrasoundInputValidator.CheckNotNull(object o, string errorString)']]]
+  ['addscanline',['AddScanline',['../class_ultrasound_scan_data.html#ab3bda0fa0d60d9b9e269e66dc2719d7c',1,'UltrasoundScanData']]],
+  ['addscanlines',['AddScanlines',['../class_ultrasound_scan_data.html#af36f29a527b9a8d763424cf0c27889a5',1,'UltrasoundScanData']]],
+  ['addultrasoundpoint',['AddUltrasoundPoint',['../class_ultrasound_scanline.html#a1db1148f2c593d8037f2c3920d0c0353',1,'UltrasoundScanline']]],
+  ['addultrasoundpoints',['AddUltrasoundPoints',['../class_ultrasound_scanline.html#a6a8185b2604be432b5248c5a81916007',1,'UltrasoundScanline']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['setbrightness',['SetBrightness',['../class_ultrasound_point.html#ad606b7703ce7712048686ac13c5a04a9',1,'UltrasoundPoint']]]
+  ['iscontained',['IsContained',['../class_ultrasound_collision_utils.html#aa5f110afd1217d9a6a96194d4d71f9d4',1,'UltrasoundCollisionUtils']]]
 ];

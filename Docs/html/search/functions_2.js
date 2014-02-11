@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['equals',['Equals',['../class_ultrasound_point.html#a9643a8dfb7b251ce1080f65386efe4ce',1,'UltrasoundPoint']]]
+  ['compareto',['CompareTo',['../class_ultrasound_point.html#a9c7e87ca4ddfcd56d9f412ffc639be1f',1,'UltrasoundPoint']]]
 ];

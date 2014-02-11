@@ -1,9 +1,9 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 
 /**
- * Generates a test image for checking displayBehavior.
+ * A fake ITextureSource class to generate a test texture.
  */
-public class TestImage : ITextureSource {
+public class TestTextureSource : ITextureSource {
 
 	private Color[] bars = {Color.white, Color.yellow,
 							Color.cyan, Color.green, 

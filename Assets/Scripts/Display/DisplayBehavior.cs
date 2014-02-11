@@ -19,7 +19,7 @@ public class DisplayBehavior : MonoBehaviour {
     void Start () {
         texture = new Texture2D(640, 480, TextureFormat.RGB24, false);
         this.renderer.material.mainTexture = texture;
-        textureSource = new TestImage();
+        textureSource = new TextureSource(new TestImageSource());
     }
 
     void Update () {

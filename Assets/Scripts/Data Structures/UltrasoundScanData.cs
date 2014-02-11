@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 /** 
  *  All the information collected by an UltrasoundProbe in a single frame.
  */
-public class UltrasoundScanData {
+public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
 
     private IList<UltrasoundScanline> scanlines;
     
@@ -45,5 +46,22 @@ public class UltrasoundScanData {
     public ReadOnlyCollection<UltrasoundScanline> GetScanlines() {
         return new ReadOnlyCollection<UltrasoundScanline>(scanlines);
     }
-	
+
+    /**
+     *  An iterator over all the points in this scanline.
+     */
+    public IEnumerator<UltrasoundScanline> GetEnumerator() {
+        foreach (UltrasoundScanline scanline in scanlines) {
+            yield return scanline;
+        }
+    }
+
+    /*    *
+     *  An iterator over all the points in this scanline.
+     */
+    IEnumerator IEnumerable.GetEnumerator() {
+        foreach (UltrasoundScanline scanline in scanlines) {
+            yield return scanline;
+        }
+    }
 }

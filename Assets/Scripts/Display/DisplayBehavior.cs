@@ -17,9 +17,9 @@ public class DisplayBehavior : MonoBehaviour {
     private Texture2D texture;
 
     void Start () {
-        texture = new Texture2D(640, 480, TextureFormat.RGB24, false);
+        texture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGB24, false);
         this.renderer.material.mainTexture = texture;
-        textureSource = new TextureSource(new TestImageSource());
+        textureSource = new TextureSource(new ProbeOutputImageDecoder(new TestProbeOutput()));
     }
 
     void Update () {

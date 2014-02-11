@@ -2,7 +2,8 @@
 using System.Collections;
 
 /**
- *  A simple texture source that renders a texture from a bitmap (UnityEngine.Color array)
+ *  A basic ITextureSource implimentation that renders a texture from a bitmap (UnityEngine.Color array)
+ *  with no post-processing effects.
  */
 public class TextureSource : ITextureSource {
 

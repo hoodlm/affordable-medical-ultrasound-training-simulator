@@ -1,6 +1,7 @@
 var searchData=
 [
   ['getbrightness',['GetBrightness',['../class_ultrasound_point.html#a61c880e880f61998614e58ba03a65b77',1,'UltrasoundPoint']]],
+  ['getenumerator',['GetEnumerator',['../class_ultrasound_scan_data.html#aac65f8461712aecf1cfeb6b1bdeb747b',1,'UltrasoundScanData.GetEnumerator()'],['../class_ultrasound_scanline.html#a0d3f00a343ae9cf47a78544667350f60',1,'UltrasoundScanline.GetEnumerator()']]],
   ['gethashcode',['GetHashCode',['../class_ultrasound_point.html#a7861a75a003c032e2e1ee467d92eb6d3',1,'UltrasoundPoint']]],
   ['getmaxscandistance',['GetMaxScanDistance',['../class_ultrasound_probe_configuration.html#a01888a69c26e31be4c456663df730cd6',1,'UltrasoundProbeConfiguration']]],
   ['getminscandistance',['GetMinScanDistance',['../class_ultrasound_probe_configuration.html#a9d95972a8ece7150f0da97ff431bf1ec',1,'UltrasoundProbeConfiguration']]],

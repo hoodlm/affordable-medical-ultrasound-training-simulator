@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 /** 
  *  A scanline wraps a list of UltrasoundPoint%s along the same trajectory in space.
  */
-public class UltrasoundScanline {
+public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
 
 	private IList<UltrasoundPoint> points;
     
@@ -44,5 +45,23 @@ public class UltrasoundScanline {
      */
     public ReadOnlyCollection<UltrasoundPoint> GetPoints() {
         return new ReadOnlyCollection<UltrasoundPoint>(points);
+    }
+
+    /**
+     *  An iterator over all the points in this scanline.
+     */
+    public IEnumerator<UltrasoundPoint> GetEnumerator() {
+        foreach (UltrasoundPoint point in points) {
+            yield return point;
+        }
+    }
+
+    /**
+     *  An iterator over all the points in this scanline.
+     */
+    IEnumerator IEnumerable.GetEnumerator() {
+        foreach (UltrasoundPoint point in points) {
+            yield return point;
+        }
     }
 }

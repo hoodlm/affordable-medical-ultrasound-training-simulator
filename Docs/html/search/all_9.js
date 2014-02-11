@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['testimagesource',['TestImageSource',['../class_test_image_source.html',1,'']]],
-  ['testtexturesource',['TestTextureSource',['../class_test_texture_source.html',1,'']]],
-  ['textureheight',['textureHeight',['../class_display_behavior.html#a04bf737b5aae9978d2d9b87a9982f8cf',1,'DisplayBehavior']]],
-  ['texturesource',['TextureSource',['../class_texture_source.html',1,'TextureSource'],['../class_texture_source.html#ae7a7f7456997564074a95ecf8aef4168',1,'TextureSource.TextureSource()']]],
-  ['texturewidth',['textureWidth',['../class_display_behavior.html#a9f9a163856caf59cca977225eb7ea5ff',1,'DisplayBehavior']]],
-  ['tostring',['ToString',['../class_ultrasound_point.html#a8179704789f1527e9c3b8e465ca74bf6',1,'UltrasoundPoint']]]
+  ['scan',['Scan',['../interface_i_probe_output.html#a07e7d31f39847a5b59114543fdcb4f6d',1,'IProbeOutput.Scan()'],['../class_test_probe_output.html#ad296fbb2ad5ec9b33fb66bf2f9ad1404',1,'TestProbeOutput.Scan()']]],
+  ['setbrightness',['SetBrightness',['../class_ultrasound_point.html#ad606b7703ce7712048686ac13c5a04a9',1,'UltrasoundPoint']]],
+  ['setmaxscandistance',['SetMaxScanDistance',['../class_ultrasound_probe_configuration.html#a519e8efe9d1754718afe015a1af15871',1,'UltrasoundProbeConfiguration']]],
+  ['setminscandistance',['SetMinScanDistance',['../class_ultrasound_probe_configuration.html#a9ee69ebaa8113e309399193a22d9a33e',1,'UltrasoundProbeConfiguration']]],
+  ['settransform',['SetTransform',['../class_ultrasound_probe_configuration.html#aab2012cc93c3159c1aadf430f5442aa3',1,'UltrasoundProbeConfiguration']]]
 ];

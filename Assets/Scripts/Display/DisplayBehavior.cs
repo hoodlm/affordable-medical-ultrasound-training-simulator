@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 /**
@@ -12,7 +12,7 @@ public class DisplayBehavior : MonoBehaviour {
 	 * A set of different modes for the display.
 	 * - FakeTexture: Uses TestTextureSource to render a ColorBar graphic to the display.
 	 * - FakeImage: A standard TextureSource is initialized with TestImageSource, which renders a tri-color flag graphic to the display.
-	 * - FakeProbeOutput: A standard TextureSource and ProbeOutputImageDecoder are fed output from a TestProbeOutput. The result should be a noisy white-on-black triangle graphic.
+	 * - FakeProbeOutput: A standard TextureSource and BModeOutputImageDecoder are fed output from a TestProbeOutput. The result should be a noisy white-on-black triangle graphic.
 	 */
 	public enum DisplayModes {FakeTexture, FakeImage, FakeProbeOutput};
 	
@@ -36,7 +36,7 @@ public class DisplayBehavior : MonoBehaviour {
 			textureSource = new TextureSource(new TestImageSource());
 			break;
 		case (DisplayModes.FakeProbeOutput):
-			textureSource = new TextureSource(new ProbeOutputImageDecoder(new TestProbeOutput()));
+			textureSource = new TextureSource(new BModeOutputImageDecoder(new TestProbeOutput()));
 			break;
 		}
         texture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGB24, false);

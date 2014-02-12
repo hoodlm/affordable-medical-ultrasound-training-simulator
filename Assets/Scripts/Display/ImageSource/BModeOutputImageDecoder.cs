@@ -4,7 +4,7 @@ using System.Collections;
 /**
  *  An IImageSource that generates image data from an UltrasoundProbe%'s IProbeOutput.
  */
-public class ProbeOutputImageDecoder : IImageSource {
+public class BModeOutputImageDecoder : IImageSource {
 
     private IProbeOutput probeOutput;
     private readonly static Color drawColor = Color.white;
@@ -13,7 +13,7 @@ public class ProbeOutputImageDecoder : IImageSource {
      *  Instantiate a new ProbeOutputImageDecoder
      *  @param output The source of probedata from which to generate image data.
      */
-    public ProbeOutputImageDecoder(IProbeOutput output) {
+    public BModeOutputImageDecoder(IProbeOutput output) {
         probeOutput = output;
     }
 

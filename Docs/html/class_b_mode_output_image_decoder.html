@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Affordable Medical Ultrasound Training Simulator: TextureSource Class Reference</title>
+<title>Affordable Medical Ultrasound Training Simulator: BModeOutputImageDecoder Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,48 +83,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_texture_source-members.html">List of all members</a>  </div>
+<a href="class_b_mode_output_image_decoder-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">TextureSource Class Reference</div>  </div>
+<div class="title">BModeOutputImageDecoder Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for TextureSource:</div>
+Inheritance diagram for BModeOutputImageDecoder:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_texture_source.png" usemap="#TextureSource_map" alt=""/>
-  <map id="TextureSource_map" name="TextureSource_map">
-<area href="interface_i_texture_source.html" alt="ITextureSource" shape="rect" coords="0,0,98,24"/>
+  <img src="class_b_mode_output_image_decoder.png" usemap="#BModeOutputImageDecoder_map" alt=""/>
+  <map id="BModeOutputImageDecoder_map" name="BModeOutputImageDecoder_map">
+<area href="interface_i_image_source.html" alt="IImageSource" shape="rect" coords="0,0,171,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae7a7f7456997564074a95ecf8aef4168"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture_source.html#ae7a7f7456997564074a95ecf8aef4168">TextureSource</a> (<a class="el" href="interface_i_image_source.html">IImageSource</a> imageSource)</td></tr>
-<tr class="separator:ae7a7f7456997564074a95ecf8aef4168"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33ce847d5b1b89d4fa15172ed44715aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture_source.html#a33ce847d5b1b89d4fa15172ed44715aa">RenderNextFrameToTexture</a> (ref Texture2D texture)</td></tr>
-<tr class="separator:a33ce847d5b1b89d4fa15172ed44715aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa61cacf10f915bd4d4f29833e3a8261e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_mode_output_image_decoder.html#aa61cacf10f915bd4d4f29833e3a8261e">BModeOutputImageDecoder</a> (<a class="el" href="interface_i_probe_output.html">IProbeOutput</a> output)</td></tr>
+<tr class="separator:aa61cacf10f915bd4d4f29833e3a8261e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a647e9ac5b303ce1f5564a70eab943d26"><td class="memItemLeft" align="right" valign="top">Color[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_mode_output_image_decoder.html#a647e9ac5b303ce1f5564a70eab943d26">BitmapWithDimensions</a> (int width, int height)</td></tr>
+<tr class="separator:a647e9ac5b303ce1f5564a70eab943d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A basic <a class="el" href="interface_i_texture_source.html">ITextureSource</a> implimentation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. </p>
+<div class="textblock"><p>An <a class="el" href="interface_i_image_source.html">IImageSource</a> that generates image data from an UltrasoundProbe's <a class="el" href="interface_i_probe_output.html">IProbeOutput</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae7a7f7456997564074a95ecf8aef4168"></a>
+<a class="anchor" id="aa61cacf10f915bd4d4f29833e3a8261e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TextureSource.TextureSource </td>
+          <td class="memname">BModeOutputImageDecoder.BModeOutputImageDecoder </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="interface_i_image_source.html">IImageSource</a>&#160;</td>
-          <td class="paramname"><em>imageSource</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="interface_i_probe_output.html">IProbeOutput</a>&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Instantiate a new <a class="el" href="class_texture_source.html">TextureSource</a>. </p>
+<p>Instantiate a new ProbeOutputImageDecoder </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">imageSource</td><td>The class providing a bitmap every frame. </td></tr>
+    <tr><td class="paramname">output</td><td>The source of probedata from which to generate image data. </td></tr>
   </table>
   </dd>
 </dl>
@@ -132,33 +132,45 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a33ce847d5b1b89d4fa15172ed44715aa"></a>
+<a class="anchor" id="a647e9ac5b303ce1f5564a70eab943d26"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void TextureSource.RenderNextFrameToTexture </td>
+          <td class="memname">Color [] BModeOutputImageDecoder.BitmapWithDimensions </td>
           <td>(</td>
-          <td class="paramtype">ref Texture2D&#160;</td>
-          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Draw the next frame to a texture. </p>
+<p>Generate the next frame. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texture</td><td>The texture onto which the frame will be drawn. </td></tr>
+    <tr><td class="paramname">width</td><td>The requested width in pixels of the image. </td></tr>
+    <tr><td class="paramname">height</td><td>The requested height in pixels of the image. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>A color array containing the pixels of the image. </dd></dl>
 
-<p>Implements <a class="el" href="interface_i_texture_source.html#a584774d4fd099de0f1bf55e7339e7833">ITextureSource</a>.</p>
+<p>Implements <a class="el" href="interface_i_image_source.html#aa998b226e82604b80db61ab4ec474ce7">IImageSource</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>TextureSource.cs</li>
+<li>BModeOutputImageDecoder.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

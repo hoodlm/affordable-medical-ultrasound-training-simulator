@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 /**
@@ -12,7 +12,7 @@ public class TestProbeOutput : IProbeOutput {
     private static float MAX_Y = 9f;
     private static float STEPSIZE = 0.1f;
 
-    public UltrasoundScanData Scan () {
+    public UltrasoundScanData SendScanData () {
 		UltrasoundProbeConfiguration config = new UltrasoundProbeConfiguration();
 		config.SetMinScanDistance(MIN_Y);
 		config.SetMaxScanDistance(MAX_Y);

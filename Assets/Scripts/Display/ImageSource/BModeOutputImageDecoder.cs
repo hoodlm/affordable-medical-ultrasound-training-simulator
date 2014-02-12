@@ -19,7 +19,7 @@ public class BModeOutputImageDecoder : IImageSource {
 
     public Color[] BitmapWithDimensions (int width, int height) {
         Color[] buffer = new Color[width * height];
-        UltrasoundScanData data = probeOutput.Scan ();
+        UltrasoundScanData data = probeOutput.SendScanData ();
         foreach (UltrasoundScanline scanline in data) {
             foreach (UltrasoundPoint point in scanline) {
                 int index = MapScanningPlaneToPixelCoordinate (height, 

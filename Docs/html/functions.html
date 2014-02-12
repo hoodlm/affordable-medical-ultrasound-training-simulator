@@ -70,6 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -77,6 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
@@ -92,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -136,6 +138,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>displayMode
+: <a class="el" href="class_display_behavior.html#a4ca62c1b7d9a341fd334744ca882c59d">DisplayBehavior</a>
+</li>
+<li>DisplayModes
+: <a class="el" href="class_display_behavior.html#ac8f6aedcaab1d94a92f12fd1939296a0">DisplayBehavior</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>Equals()
 : <a class="el" href="class_ultrasound_point.html#a9643a8dfb7b251ce1080f65386efe4ce">UltrasoundPoint</a>
@@ -163,14 +175,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>GetPoints()
 : <a class="el" href="class_ultrasound_scanline.html#a0c74d32ac8b42923a0c419fc5be119f5">UltrasoundScanline</a>
 </li>
+<li>GetPosition()
+: <a class="el" href="class_ultrasound_probe_configuration.html#aebf67bdffe9abb24ee6ef3a1ed3bf93f">UltrasoundProbeConfiguration</a>
+</li>
+<li>GetProbeConfig()
+: <a class="el" href="class_ultrasound_scan_data.html#a0d5f97c781a72e5bccf99254f87934e6">UltrasoundScanData</a>
+</li>
 <li>GetProjectedLocation()
 : <a class="el" href="class_ultrasound_point.html#a9dd924c1f5287e52df8ea0166b4cbdc1">UltrasoundPoint</a>
 </li>
+<li>GetRotation()
+: <a class="el" href="class_ultrasound_probe_configuration.html#ac8c92c7d85019ce0c881b39f558617e3">UltrasoundProbeConfiguration</a>
+</li>
 <li>GetScanlines()
 : <a class="el" href="class_ultrasound_scan_data.html#a446b7bdf9361a0d30f2484225aff1ab1">UltrasoundScanData</a>
-</li>
-<li>GetTransform()
-: <a class="el" href="class_ultrasound_probe_configuration.html#a477320ff79337164987fd8ad99d752b2">UltrasoundProbeConfiguration</a>
 </li>
 <li>GetWorldSpaceLocation()
 : <a class="el" href="class_ultrasound_point.html#a757538bf9bb569b6188c0a39986e0c5b">UltrasoundPoint</a>
@@ -179,6 +197,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>position
+: <a class="el" href="struct_position_and_rotation.html#a40711d57aa472ed41ea3f80ba2123f02">PositionAndRotation</a>
+</li>
 <li>ProbeOutputImageDecoder()
 : <a class="el" href="class_probe_output_image_decoder.html#ad4b5424e2fa08ca983045e8213169777">ProbeOutputImageDecoder</a>
 </li>
@@ -190,6 +211,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="interface_i_texture_source.html#a584774d4fd099de0f1bf55e7339e7833">ITextureSource</a>
 , <a class="el" href="class_test_texture_source.html#a92f2bea9204ab45989798f190089d1f9">TestTextureSource</a>
 , <a class="el" href="class_texture_source.html#a33ce847d5b1b89d4fa15172ed44715aa">TextureSource</a>
+</li>
+<li>rotation
+: <a class="el" href="struct_position_and_rotation.html#af3e2a9ae7b6ee0bb5fe68a47116d0a01">PositionAndRotation</a>
 </li>
 </ul>
 
@@ -208,8 +232,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SetMinScanDistance()
 : <a class="el" href="class_ultrasound_probe_configuration.html#a9ee69ebaa8113e309399193a22d9a33e">UltrasoundProbeConfiguration</a>
 </li>
-<li>SetTransform()
-: <a class="el" href="class_ultrasound_probe_configuration.html#aab2012cc93c3159c1aadf430f5442aa3">UltrasoundProbeConfiguration</a>
+<li>SetPosition()
+: <a class="el" href="class_ultrasound_probe_configuration.html#a76d845c3648d2bfa5ef5bfb4c8e5eb22">UltrasoundProbeConfiguration</a>
+</li>
+<li>SetRotation()
+: <a class="el" href="class_ultrasound_probe_configuration.html#a830e08acfc1aaefce2b0f705565b9dd1">UltrasoundProbeConfiguration</a>
 </li>
 </ul>
 
@@ -235,10 +262,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_ultrasound_point.html#a9ca38917c6f8f252df7a09dcab27f81c">UltrasoundPoint</a>
 </li>
 <li>UltrasoundProbeConfiguration()
-: <a class="el" href="class_ultrasound_probe_configuration.html#aa0ec7b78707212dc8a9e2b5d7fd6e80a">UltrasoundProbeConfiguration</a>
+: <a class="el" href="class_ultrasound_probe_configuration.html#a8d241a92f36a7edbc3194de51c6670f6">UltrasoundProbeConfiguration</a>
 </li>
 <li>UltrasoundScanData()
-: <a class="el" href="class_ultrasound_scan_data.html#a23d84998bb6bab44cc03db7cb52cb194">UltrasoundScanData</a>
+: <a class="el" href="class_ultrasound_scan_data.html#a0e7794ea47fac7f2401573721684f49e">UltrasoundScanData</a>
 </li>
 <li>UltrasoundScanline()
 : <a class="el" href="class_ultrasound_scanline.html#aaf49bd0c367a08444fa692fb9b7218d6">UltrasoundScanline</a>
@@ -247,7 +274,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 11 2014 02:46:26 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 11 2014 21:55:05 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

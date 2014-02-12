@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,8 +99,8 @@ Inheritance diagram for UltrasoundScanData:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a23d84998bb6bab44cc03db7cb52cb194"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scan_data.html#a23d84998bb6bab44cc03db7cb52cb194">UltrasoundScanData</a> ()</td></tr>
-<tr class="separator:a23d84998bb6bab44cc03db7cb52cb194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e7794ea47fac7f2401573721684f49e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scan_data.html#a0e7794ea47fac7f2401573721684f49e">UltrasoundScanData</a> (<a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> config)</td></tr>
+<tr class="separator:a0e7794ea47fac7f2401573721684f49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36f29a527b9a8d763424cf0c27889a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scan_data.html#af36f29a527b9a8d763424cf0c27889a5">AddScanlines</a> (ICollection&lt; <a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a> &gt; scanlines)</td></tr>
 <tr class="separator:af36f29a527b9a8d763424cf0c27889a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3bda0fa0d60d9b9e269e66dc2719d7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scan_data.html#ab3bda0fa0d60d9b9e269e66dc2719d7c">AddScanline</a> (<a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a> s)</td></tr>
@@ -108,25 +108,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a446b7bdf9361a0d30f2484225aff1ab1"><td class="memItemLeft" align="right" valign="top">ReadOnlyCollection<br class="typebreak"/>
 &lt; <a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scan_data.html#a446b7bdf9361a0d30f2484225aff1ab1">GetScanlines</a> ()</td></tr>
 <tr class="separator:a446b7bdf9361a0d30f2484225aff1ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5f97c781a72e5bccf99254f87934e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scan_data.html#a0d5f97c781a72e5bccf99254f87934e6">GetProbeConfig</a> ()</td></tr>
+<tr class="separator:a0d5f97c781a72e5bccf99254f87934e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac65f8461712aecf1cfeb6b1bdeb747b"><td class="memItemLeft" align="right" valign="top">IEnumerator&lt; <a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scan_data.html#aac65f8461712aecf1cfeb6b1bdeb747b">GetEnumerator</a> ()</td></tr>
 <tr class="separator:aac65f8461712aecf1cfeb6b1bdeb747b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>All the information collected by an UltrasoundProbe in a single frame. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a23d84998bb6bab44cc03db7cb52cb194"></a>
+<a class="anchor" id="a0e7794ea47fac7f2401573721684f49e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">UltrasoundScanData.UltrasoundScanData </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a>&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Instantiate a new instance of <a class="el" href="class_ultrasound_scan_data.html">UltrasoundScanData</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>The configuration settings associated with the probe object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -205,6 +214,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a0d5f97c781a72e5bccf99254f87934e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> UltrasoundScanData.GetProbeConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns a (deep) copy of the configuration of the probe that generated this <a class="el" href="class_ultrasound_scan_data.html">UltrasoundScanData</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> object describing the configuration of the probe. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a446b7bdf9361a0d30f2484225aff1ab1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -227,7 +253,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 11 2014 02:46:26 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 11 2014 21:55:05 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

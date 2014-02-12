@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['textureheight',['textureHeight',['../class_display_behavior.html#a04bf737b5aae9978d2d9b87a9982f8cf',1,'DisplayBehavior']]],
-  ['texturewidth',['textureWidth',['../class_display_behavior.html#a9f9a163856caf59cca977225eb7ea5ff',1,'DisplayBehavior']]]
+  ['displaymode',['displayMode',['../class_display_behavior.html#a4ca62c1b7d9a341fd334744ca882c59d',1,'DisplayBehavior']]]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Affordable Medical Ultrasound Training Simulator: TestProbeOutput Class Reference</title>
+<title>Affordable Medical Ultrasound Training Simulator: PositionAndRotation Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,51 +82,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_test_probe_output-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="struct_position_and_rotation-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">TestProbeOutput Class Reference</div>  </div>
+<div class="title">PositionAndRotation Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for TestProbeOutput:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_test_probe_output.png" usemap="#TestProbeOutput_map" alt=""/>
-  <map id="TestProbeOutput_map" name="TestProbeOutput_map">
-<area href="interface_i_probe_output.html" alt="IProbeOutput" shape="rect" coords="0,0,106,24"/>
-</map>
- </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ad296fbb2ad5ec9b33fb66bf2f9ad1404"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ultrasound_scan_data.html">UltrasoundScanData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_test_probe_output.html#ad296fbb2ad5ec9b33fb66bf2f9ad1404">Scan</a> ()</td></tr>
-<tr class="separator:ad296fbb2ad5ec9b33fb66bf2f9ad1404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a40711d57aa472ed41ea3f80ba2123f02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40711d57aa472ed41ea3f80ba2123f02"></a>
+Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_position_and_rotation.html#a40711d57aa472ed41ea3f80ba2123f02">position</a></td></tr>
+<tr class="memdesc:a40711d57aa472ed41ea3f80ba2123f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position in world space of a probe. <br/></td></tr>
+<tr class="separator:a40711d57aa472ed41ea3f80ba2123f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3e2a9ae7b6ee0bb5fe68a47116d0a01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3e2a9ae7b6ee0bb5fe68a47116d0a01"></a>
+Quaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_position_and_rotation.html#af3e2a9ae7b6ee0bb5fe68a47116d0a01">rotation</a></td></tr>
+<tr class="memdesc:af3e2a9ae7b6ee0bb5fe68a47116d0a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Quaternion representation of the rotation in world space of the probe. <br/></td></tr>
+<tr class="separator:af3e2a9ae7b6ee0bb5fe68a47116d0a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A fake <a class="el" href="interface_i_probe_output.html">IProbeOutput</a> class to generate test probe data. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ad296fbb2ad5ec9b33fb66bf2f9ad1404"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_ultrasound_scan_data.html">UltrasoundScanData</a> TestProbeOutput.Scan </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Instruct the probe to scan this frame. </p>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="class_ultrasound_scan_data.html">UltrasoundScanData</a> object, containing data about the scan. </dd></dl>
-
-<p>Implements <a class="el" href="interface_i_probe_output.html#a07e7d31f39847a5b59114543fdcb4f6d">IProbeOutput</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>TestProbeOutput.cs</li>
+<div class="textblock"><p>Struct for convenience to store position and rotation info from a GameObject's transform. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>UltrasoundProbeConfiguration.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -6,9 +6,7 @@ using System.Collections;
  */
 public class TestImageSource : IImageSource {
 
-    private Color[] bars = {Color.white, Color.yellow,
-        Color.cyan, Color.green, 
-        Color.magenta, Color.red, Color.blue};
+    private Color[] bars = {Color.green, Color.white, Color.red};
 
     public Color[] BitmapWithDimensions (int width, int height) {
         Color[] pixels = new Color[width * height];

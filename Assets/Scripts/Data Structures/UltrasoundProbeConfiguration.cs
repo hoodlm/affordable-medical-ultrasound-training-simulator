@@ -1,5 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
+
+/**
+ *	Struct for convenience to store position and rotation info from a GameObject's transform.
+ */
+public struct PositionAndRotation {
+	/// The position in world space of a probe.
+	public Vector3 position;
+
+	/// The Quaternion representation of the rotation in world space of the probe.
+	public Quaternion rotation;
+}
 
 /** 
  *  Holds the configuration of the current probe: that is, all the "settings" (master brightness, scanning
@@ -7,9 +17,20 @@ using System.Collections;
  */
 public class UltrasoundProbeConfiguration {
 
-    private Transform probeTransform;
+	private PositionAndRotation positionAndRotation;
     private float maxDistance;
     private float minDistance;
+
+	/** 
+     *  Instantiate a new UltrasoundProbeConfiguration with default values.
+     *  Initial min scanning distance is float.Epsilon (1.40E-45), max scanning distance is 10.\
+     */
+	public UltrasoundProbeConfiguration () {
+		this.SetPosition(Vector3.zero);
+		this.SetRotation(Quaternion.AngleAxis(0f, Vector3.forward));
+		this.SetMinScanDistance(float.Epsilon);
+		this.SetMaxScanDistance(10f);
+	}
 
     /** 
      *  Copy constructor to instantiate a new UltrasoundProbeConfiguration from another.
@@ -19,7 +40,8 @@ public class UltrasoundProbeConfiguration {
      */
     public UltrasoundProbeConfiguration (UltrasoundProbeConfiguration config) {
         UltrasoundInputValidator.CheckNotNull(config);
-        this.SetTransform(config.GetTransform());
+		this.SetPosition(config.GetPosition());
+		this.SetRotation(config.GetRotation());
         this.SetMaxScanDistance(config.GetMaxScanDistance());
         this.SetMinScanDistance(config.GetMinScanDistance());
     }
@@ -31,34 +53,51 @@ public class UltrasoundProbeConfiguration {
      *  @throw ArgumentNullException
      */
     public UltrasoundProbeConfiguration (Transform probeTransform) {
-        this.SetTransform(probeTransform);
+		UltrasoundInputValidator.CheckNotNull(probeTransform);
+		this.SetRotation(probeTransform.rotation);
+		this.SetPosition(probeTransform.position);
         this.SetMinScanDistance(float.Epsilon);
         this.SetMaxScanDistance(10f);
     }
-    
-    /** 
-     *  Sets the probe transform (position and orientation).
-     *  @param t The UnityEngine.Transform of the probe GameObject.
-     *  @throw ArgumentNullException
-     */
-    public void SetTransform (Transform t) {
-        UltrasoundInputValidator.CheckNotNull(t);
-        this.probeTransform = t;
-    }
 
-    /** 
-     *  Get the probe transform (position and orientation).
+	/** 
+     *  Sets the probe rotation.
+     *  @param rotation The rotation of the probe GameObject in world space.
      */
-    public Transform GetTransform() {
-        return probeTransform;
-    }
+	public void SetRotation (Quaternion rotation) {
+		this.positionAndRotation.rotation = rotation;
+	}
+
+	/** 
+     *  Gets the probe rotation.
+     *  @return The rotation of the probe GameObject in world space.
+     */
+	public Quaternion GetRotation () {
+		return this.positionAndRotation.rotation;
+	}
+	
+	/** 
+     *  Sets the probe position.
+     *  @param position The position of the probe GameObject in world space.
+     */
+	public void SetPosition (Vector3 position) {
+		this.positionAndRotation.position = position;
+	}
+
+	/** 
+     *  Gets the probe position.
+     *  @return The position of the probe GameObject in world space.
+     */
+	public Vector3 GetPosition () {
+		return this.positionAndRotation.position;
+	}
     
     /** 
      *  Sets the minimum scanning distance of the probe.
      *  @param min Clamped within the (exclusive) interval 0 to Positive Infinity.
      */
     public void SetMinScanDistance(float min) {
-        maxDistance = Mathf.Clamp(min, float.Epsilon, float.MaxValue);
+        minDistance = Mathf.Clamp(min, float.Epsilon, float.MaxValue);
     }
     
     /** 
@@ -66,7 +105,7 @@ public class UltrasoundProbeConfiguration {
      *  @return a float value in the (exclusive) interval 0 to Positive Infinity.
      */
     public float GetMinScanDistance() {
-        return maxDistance;
+        return minDistance;
     }
     
     /** 
@@ -74,7 +113,7 @@ public class UltrasoundProbeConfiguration {
      *  @param max Clamped within the (exclusive) interval 0 to Positive Infinity.
      */
     public void SetMaxScanDistance(float max) {
-        minDistance = Mathf.Clamp(max, float.Epsilon, float.MaxValue);
+        maxDistance = Mathf.Clamp(max, float.Epsilon, float.MaxValue);
     }
     
     /** 
@@ -82,6 +121,6 @@ public class UltrasoundProbeConfiguration {
      *  @return a float value in the (exclusive) interval 0 to Positive Infinity.
      */
     public float GetMaxScanDistance() {
-        return minDistance;
+        return maxDistance;
     }
 }

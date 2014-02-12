@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,14 +91,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a8d241a92f36a7edbc3194de51c6670f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a8d241a92f36a7edbc3194de51c6670f6">UltrasoundProbeConfiguration</a> ()</td></tr>
+<tr class="separator:a8d241a92f36a7edbc3194de51c6670f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0ec7b78707212dc8a9e2b5d7fd6e80a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#aa0ec7b78707212dc8a9e2b5d7fd6e80a">UltrasoundProbeConfiguration</a> (<a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> config)</td></tr>
 <tr class="separator:aa0ec7b78707212dc8a9e2b5d7fd6e80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8e6f088d27e2a6e0e2bd1d425f1f38e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#aa8e6f088d27e2a6e0e2bd1d425f1f38e">UltrasoundProbeConfiguration</a> (Transform probeTransform)</td></tr>
 <tr class="separator:aa8e6f088d27e2a6e0e2bd1d425f1f38e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab2012cc93c3159c1aadf430f5442aa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#aab2012cc93c3159c1aadf430f5442aa3">SetTransform</a> (Transform t)</td></tr>
-<tr class="separator:aab2012cc93c3159c1aadf430f5442aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a477320ff79337164987fd8ad99d752b2"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a477320ff79337164987fd8ad99d752b2">GetTransform</a> ()</td></tr>
-<tr class="separator:a477320ff79337164987fd8ad99d752b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a830e08acfc1aaefce2b0f705565b9dd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a830e08acfc1aaefce2b0f705565b9dd1">SetRotation</a> (Quaternion rotation)</td></tr>
+<tr class="separator:a830e08acfc1aaefce2b0f705565b9dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c92c7d85019ce0c881b39f558617e3"><td class="memItemLeft" align="right" valign="top">Quaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#ac8c92c7d85019ce0c881b39f558617e3">GetRotation</a> ()</td></tr>
+<tr class="separator:ac8c92c7d85019ce0c881b39f558617e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d845c3648d2bfa5ef5bfb4c8e5eb22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a76d845c3648d2bfa5ef5bfb4c8e5eb22">SetPosition</a> (Vector3 position)</td></tr>
+<tr class="separator:a76d845c3648d2bfa5ef5bfb4c8e5eb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebf67bdffe9abb24ee6ef3a1ed3bf93f"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#aebf67bdffe9abb24ee6ef3a1ed3bf93f">GetPosition</a> ()</td></tr>
+<tr class="separator:aebf67bdffe9abb24ee6ef3a1ed3bf93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee69ebaa8113e309399193a22d9a33e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a9ee69ebaa8113e309399193a22d9a33e">SetMinScanDistance</a> (float min)</td></tr>
 <tr class="separator:a9ee69ebaa8113e309399193a22d9a33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d95972a8ece7150f0da97ff431bf1ec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a9d95972a8ece7150f0da97ff431bf1ec">GetMinScanDistance</a> ()</td></tr>
@@ -111,6 +117,22 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the configuration of the current probe: that is, all the "settings" (master brightness, scanning depth, etc.) as well as the current position and orientation of the probe GameObject. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8d241a92f36a7edbc3194de51c6670f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UltrasoundProbeConfiguration.UltrasoundProbeConfiguration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Instantiate a new <a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> with default values. Initial min scanning distance is float.Epsilon (1.40E-45), max scanning distance is 10.\ </p>
+
+</div>
+</div>
 <a class="anchor" id="aa0ec7b78707212dc8a9e2b5d7fd6e80a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -204,19 +226,37 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a477320ff79337164987fd8ad99d752b2"></a>
+<a class="anchor" id="aebf67bdffe9abb24ee6ef3a1ed3bf93f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Transform UltrasoundProbeConfiguration.GetTransform </td>
+          <td class="memname">Vector3 UltrasoundProbeConfiguration.GetPosition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get the probe transform (position and orientation). </p>
+<p>Gets the probe position. </p>
+<dl class="section return"><dt>Returns</dt><dd>The position of the probe GameObject in world space. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac8c92c7d85019ce0c881b39f558617e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Quaternion UltrasoundProbeConfiguration.GetRotation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the probe rotation. </p>
+<dl class="section return"><dt>Returns</dt><dd>The rotation of the probe GameObject in world space. </dd></dl>
 
 </div>
 </div>
@@ -266,29 +306,46 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aab2012cc93c3159c1aadf430f5442aa3"></a>
+<a class="anchor" id="a76d845c3648d2bfa5ef5bfb4c8e5eb22"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void UltrasoundProbeConfiguration.SetTransform </td>
+          <td class="memname">void UltrasoundProbeConfiguration.SetPosition </td>
           <td>(</td>
-          <td class="paramtype">Transform&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
+          <td class="paramtype">Vector3&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the probe transform (position and orientation). </p>
+<p>Sets the probe position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t</td><td>The UnityEngine.Transform of the probe GameObject. </td></tr>
+    <tr><td class="paramname">position</td><td>The position of the probe GameObject in world space. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentNullException</td><td></td></tr>
+
+</div>
+</div>
+<a class="anchor" id="a830e08acfc1aaefce2b0f705565b9dd1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UltrasoundProbeConfiguration.SetRotation </td>
+          <td>(</td>
+          <td class="paramtype">Quaternion&#160;</td>
+          <td class="paramname"><em>rotation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the probe rotation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rotation</td><td>The rotation of the probe GameObject in world space. </td></tr>
   </table>
   </dd>
 </dl>
@@ -301,7 +358,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 11 2014 02:46:26 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 11 2014 21:55:05 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -10,7 +10,8 @@ var indexSectionsWithContent =
   0: "abcdegiprstu",
   1: "diptu",
   2: "abcegprstu",
-  3: "t"
+  3: "dprt",
+  4: "d"
 };
 
 var indexSectionNames =
@@ -18,7 +19,8 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "functions",
-  3: "variables"
+  3: "variables",
+  4: "enums"
 };
 
 function convertToId(search)

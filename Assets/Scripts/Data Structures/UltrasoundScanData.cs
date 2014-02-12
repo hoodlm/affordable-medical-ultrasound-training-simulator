@@ -8,11 +8,14 @@ using System.Collections.ObjectModel;
 public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
 
     private IList<UltrasoundScanline> scanlines;
+	private readonly UltrasoundProbeConfiguration probeConfig;
     
     /** 
      *  Instantiate a new instance of UltrasoundScanData.
+     * 	@param config The configuration settings associated with the probe object.
      */
-    public UltrasoundScanData() {
+    public UltrasoundScanData(UltrasoundProbeConfiguration config) {
+		this.probeConfig = config;
         scanlines = new List<UltrasoundScanline>();
     }
     
@@ -46,6 +49,14 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
     public ReadOnlyCollection<UltrasoundScanline> GetScanlines() {
         return new ReadOnlyCollection<UltrasoundScanline>(scanlines);
     }
+
+	/**
+	 * 	Returns a (deep) copy of the configuration of the probe that generated this UltrasoundScanData.
+	 * 	@return The UltrasoundProbeConfiguration object describing the configuration of the probe.
+	 */
+	public UltrasoundProbeConfiguration GetProbeConfig() {
+		return new UltrasoundProbeConfiguration(probeConfig);
+	}
 
     /**
      *  An iterator over all the points in this scanline.

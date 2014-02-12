@@ -7,7 +7,7 @@ using System.Collections;
 public class ProbeOutputImageDecoder : IImageSource {
 
     private IProbeOutput probeOutput;
-    private static Color drawColor = Color.white;
+    private readonly static Color drawColor = Color.white;
 
     /**
      *  Instantiate a new ProbeOutputImageDecoder
@@ -24,7 +24,8 @@ public class ProbeOutputImageDecoder : IImageSource {
             foreach (UltrasoundPoint point in scanline) {
                 int index = MapScanningPlaneToPixelCoordinate (height, 
                                                                 width, 
-                                                                point.GetProjectedLocation ());
+                                                                point.GetProjectedLocation (),
+				                                                data.GetProbeConfig());
                 DrawPoint (point, index, ref buffer, width * height);
             }
         }
@@ -56,10 +57,13 @@ public class ProbeOutputImageDecoder : IImageSource {
      *  @param vector2 The point in the scanning plane to be mapped.
      *  @return The corresponding index in the image at which to render the point.
      */
-    private int MapScanningPlaneToPixelCoordinate(int imageHeight, int imageWidth, Vector2 vector2) {
+    private int MapScanningPlaneToPixelCoordinate(int imageHeight, 
+	                                              int imageWidth, 
+	                                              Vector2 vector2,
+	                                              UltrasoundProbeConfiguration probeConfig) {
 
-        //float pixelsPerWorldUnit = Mathf.Min(displayWidth, displayHeight) / probeConfig.GetMaxDistance();
-        float pixelsPerWorldUnit = Mathf.Min (imageWidth, imageHeight) / 10;
+        float pixelsPerWorldUnit = Mathf.Min(imageWidth, imageHeight) / probeConfig.GetMaxScanDistance();
+        //float pixelsPerWorldUnit = Mathf.Min (imageWidth, imageHeight) / 10;
         int xCenter = imageWidth / 2;
 
         int newX = (int)(xCenter - pixelsPerWorldUnit * vector2.x);

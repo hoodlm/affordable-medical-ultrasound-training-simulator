@@ -22,6 +22,7 @@ public class HorayProbe {
 	 *	@param output An IProbeOutput to pass information to.
 	 */
 	public HorayProbe(GameObject probe, IProbeOutput output) {
+#if UNITY_EDITOR
 		UltrasoundDebug.Assert(null != probe, 
 		                       "Null probe GameObject passed to HorayProbe constructor.",
 		                       this);
@@ -34,6 +35,7 @@ public class HorayProbe {
 				"does not have the required HorayBehavior script.";
 			Debug.LogError(str);
 		}
+#endif
 		this.probeGameObject = probe;
 		this.output = output;
 		this.culler = new HorayOrganCuller();
@@ -44,9 +46,11 @@ public class HorayProbe {
 	 * 	@param data The object into which to put the scan data.
 	 */
 	public void PopulateData(ref UltrasoundScanData data) {
+#if UNITY_EDITOR
 		UltrasoundDebug.Assert(null != data, 
 		                       "Null data object passed to HorayProbe's PopulateData method.",
 		                       this);
+#endif
 		EstablishScanningPlane(ref data);
 		IList<GameObject> culledOrganList = culler.HitableOrgans(data.GetProbeConfig());
 	}
@@ -64,9 +68,11 @@ public class HorayProbe {
 		float nearZ = config.GetMinScanDistance();
 		float farZ	= config.GetMaxScanDistance();
 
+#if UNITY_EDITOR
 		UltrasoundDebug.Assert(farZ > nearZ, 
 		                       "Max distance should be greater than min distance!",
 		                       this);
+#endif
 
 		// Currently hard-coded -- these should be in the probe config eventually.
 		const int POINTS_PER_SCANLINE	= 40;

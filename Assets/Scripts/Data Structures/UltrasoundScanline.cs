@@ -23,9 +23,11 @@ public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
      *  @throw ArgumentNullException
      */
     public void AddUltrasoundPoints (ICollection<UltrasoundPoint> points) {
+#if UNITY_EDITOR
         UltrasoundDebug.Assert(null != points, 
 		                       "A null collection of points was added to a Scanline",
 		                       this);
+#endif
         foreach (UltrasoundPoint p in points) {
             AddUltrasoundPoint(p);
         }
@@ -38,9 +40,11 @@ public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
      *  @throw ArgumentNullException
      */
     public void AddUltrasoundPoint (UltrasoundPoint p) {
+#if UNITY_EDITOR
         UltrasoundDebug.Assert(null != p, 
 		                       "A null UltrasoundPoint was added to a Scanline",
 		                       this);
+#endif
         points.Add(p);
     }
     

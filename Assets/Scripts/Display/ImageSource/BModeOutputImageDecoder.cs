@@ -14,6 +14,7 @@ public class BModeOutputImageDecoder : IImageSource {
      *  @param output The source of probedata from which to generate image data.
      */
     public BModeOutputImageDecoder(IProbeOutput output) {
+		UltrasoundDebug.Assert(null != output, "Null probe output used in constructor", this);
         probeOutput = output;
     }
 
@@ -41,6 +42,11 @@ public class BModeOutputImageDecoder : IImageSource {
      *  @param buffer An array of UnityEngine.Color representing the result image. 
      */
     private void DrawPoint(UltrasoundPoint point, int index, ref Color[] buffer, int bufferSize) {
+#if UNITY_EDITOR
+		UltrasoundDebug.Assert(index < bufferSize && index >= 0,
+		                       string.Format("{0} should be in the interval[0, {1})", index, bufferSize),
+		                       this);
+#endif
         if (index >= bufferSize || index < 0) {
             return;
         }
@@ -63,7 +69,6 @@ public class BModeOutputImageDecoder : IImageSource {
 	                                              UltrasoundProbeConfiguration probeConfig) {
 
         float pixelsPerWorldUnit = Mathf.Min(imageWidth, imageHeight) / probeConfig.GetMaxScanDistance();
-        //float pixelsPerWorldUnit = Mathf.Min (imageWidth, imageHeight) / 10;
         int xCenter = imageWidth / 2;
 
         int newX = (int)(xCenter - pixelsPerWorldUnit * vector2.x);

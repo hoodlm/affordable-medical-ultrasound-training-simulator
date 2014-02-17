@@ -23,6 +23,9 @@ public class HorayOrganCuller {
 				allOrgansInScene.Add(gameObject);
 			}
 		}
+		UltrasoundDebug.Assert(allOrgansInScene.Count > 0, 
+		                       "No valid HORAY organs were found.",
+		                       this);
 	}
 
 	/**

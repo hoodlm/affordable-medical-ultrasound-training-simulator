@@ -21,6 +21,7 @@ public class HorayProbeOutput : IProbeOutput {
 	 *	@throw ArgumentException If the probe object does not have the correct components.
 	 */
 	public HorayProbeOutput(GameObject gameObject) {
+
 		UltrasoundDebug.Assert(null != gameObject, 
 		                       "Null GameObject passed to HorayProbeOutput constructor.",
 		                       this);

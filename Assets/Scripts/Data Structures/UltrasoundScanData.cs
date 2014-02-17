@@ -15,6 +15,9 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
      * 	@param config The configuration settings associated with the probe object.
      */
     public UltrasoundScanData(UltrasoundProbeConfiguration config) {
+#if UNITY_EDITOR
+		UltrasoundDebug.Assert(null != config, "Null config used in constructor", this);
+#endif
 		this.probeConfig = config;
         scanlines = new List<UltrasoundScanline>();
     }
@@ -26,9 +29,11 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
      *  @throw ArgumentNullException
      */
     public void AddScanlines (ICollection<UltrasoundScanline> scanlines) {
+#if UNITY_EDITOR
         UltrasoundDebug.Assert(null != scanlines, 
 		                       "A null collection of scanlines was added to this UltrasoundScanData",
 		                       this);
+#endif
         foreach (UltrasoundScanline s in scanlines) {
             AddScanline(s);
         }
@@ -41,9 +46,11 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
      *  @throw ArgumentNullException
      */
     public void AddScanline (UltrasoundScanline s) {
+#if UNITY_EDITOR
         UltrasoundDebug.Assert(null != s, 
 		                       "A null scanline was added to this UltrasoundScanData",
 		                       this);
+#endif
         scanlines.Add(s);
     }
     

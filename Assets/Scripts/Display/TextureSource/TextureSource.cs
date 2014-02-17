@@ -14,6 +14,7 @@ public class TextureSource : ITextureSource {
      * @param imageSource The class providing a bitmap every frame.
      */
     public TextureSource(IImageSource imageSource) {
+		UltrasoundDebug.Assert(null != imageSource, "Null ImageSource used in constructor", this);
         this.imageSource = imageSource;
     }
 

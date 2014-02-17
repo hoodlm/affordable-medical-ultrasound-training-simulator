@@ -16,6 +16,11 @@ public class UltrasoundPoint : IComparable {
      */
     public UltrasoundPoint (Vector3 worldSpaceLocation, Vector2 projectedLocation)
     {
+#if UNITY_EDITOR
+		UltrasoundDebug.Assert(projectedLocation.y > 0f, 
+		                       "y coordinate of projectedLocation should be positive.",
+		                       this);
+#endif
         this.worldSpaceLocation = worldSpaceLocation;
         this.projectedLocation = projectedLocation;
         brightness = 0f;

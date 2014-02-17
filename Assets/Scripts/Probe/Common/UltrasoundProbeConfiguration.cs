@@ -100,12 +100,14 @@ public class UltrasoundProbeConfiguration {
      *  @param min Clamped within the (exclusive) interval 0 to Positive Infinity.
      */
     public void SetMinScanDistance(float min) {
-        minDistance = Mathf.Clamp(min, float.Epsilon, float.MaxValue);
+		minDistance = Mathf.Clamp(min, float.Epsilon, float.MaxValue);
+#if UNITY_EDITOR
 		UltrasoundDebug.Assert(maxDistance > minDistance, 
 		                       string.Format("SetMinScanDistance:" +
 		                       				 "Max distance ({0}) should be greater than min distance ({1})!", 
 		              						  maxDistance, minDistance),
 		                       this);
+#endif
     }
     
     /** 
@@ -122,11 +124,13 @@ public class UltrasoundProbeConfiguration {
      */
     public void SetMaxScanDistance(float max) {
         maxDistance = Mathf.Clamp(max, float.Epsilon, float.MaxValue);
+#if UNITY_EDITOR
 		UltrasoundDebug.Assert(maxDistance > minDistance, 
 		                       string.Format("SetMaxScanDistance:" +
 		                       				 "Max distance ({0}) should be greater than min distance ({1})!", 
 		              						 maxDistance, minDistance),
 		                       this);
+#endif
     }
     
     /** 

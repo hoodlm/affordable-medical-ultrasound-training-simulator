@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['maxdistance',['MaxDistance',['../class_horay_behavior.html#aeb2a374fa4c6e2e06c320a79881aed6c',1,'HorayBehavior']]],
-  ['mindistance',['MinDistance',['../class_horay_behavior.html#a4f5caa99e71e71bb8316960948f29385',1,'HorayBehavior']]]
+  ['datasource',['dataSource',['../class_horay_behavior.html#a86da676127f5fc435bd3447f06b4a36b',1,'HorayBehavior']]],
+  ['displaymode',['displayMode',['../class_display_behavior.html#a4ca62c1b7d9a341fd334744ca882c59d',1,'DisplayBehavior']]]
 ];

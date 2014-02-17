@@ -23,7 +23,7 @@ public class UltrasoundPoint : IComparable {
 #endif
         this.worldSpaceLocation = worldSpaceLocation;
         this.projectedLocation = projectedLocation;
-        brightness = 0f;
+        brightness = 0.1f;
     }
     
     /**

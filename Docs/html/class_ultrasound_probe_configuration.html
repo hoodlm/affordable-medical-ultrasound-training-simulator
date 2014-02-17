@@ -113,6 +113,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a519e8efe9d1754718afe015a1af15871"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01888a69c26e31be4c456663df730cd6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a01888a69c26e31be4c456663df730cd6">GetMaxScanDistance</a> ()</td></tr>
 <tr class="separator:a01888a69c26e31be4c456663df730cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f949c5e2e249bd3d1a4f98153bd3c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#ae0f949c5e2e249bd3d1a4f98153bd3c8">SetArcSizeInDegrees</a> (float degrees)</td></tr>
+<tr class="separator:ae0f949c5e2e249bd3d1a4f98153bd3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b2c4ea16b1439d0edf3e6204039eaf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a02b2c4ea16b1439d0edf3e6204039eaf">GetArcSizeInDegrees</a> ()</td></tr>
+<tr class="separator:a02b2c4ea16b1439d0edf3e6204039eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5cd4391ed4ae2026cfb462001d14d75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#aa5cd4391ed4ae2026cfb462001d14d75">SetNumberOfScanlines</a> (int count)</td></tr>
+<tr class="separator:aa5cd4391ed4ae2026cfb462001d14d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8902dbbb3a422478611fe1ccdc65ab84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a8902dbbb3a422478611fe1ccdc65ab84">GetNumberOfScanlines</a> ()</td></tr>
+<tr class="separator:a8902dbbb3a422478611fe1ccdc65ab84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16876d0dd9118f6b10999449c50e4034"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#a16876d0dd9118f6b10999449c50e4034">SetPointsPerScanline</a> (int count)</td></tr>
+<tr class="separator:a16876d0dd9118f6b10999449c50e4034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb2431b99dfa9243300d6336fc3012dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_probe_configuration.html#abb2431b99dfa9243300d6336fc3012dd">GetPointsPerScanline</a> ()</td></tr>
+<tr class="separator:abb2431b99dfa9243300d6336fc3012dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the configuration of the current probe: that is, all the "settings" (master brightness, scanning depth, etc.) as well as the current position and orientation of the probe GameObject. </p>
@@ -129,7 +141,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Instantiate a new <a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> with default values. Initial min scanning distance is float.Epsilon (1.40E-45), max scanning distance is 10.\ </p>
+<p>Instantiate a new <a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> with default values. minDistance: float.Epsilon (1.40E-45) maxDistance: 10.0 arcSizeInDegrees: 75 numberOfScanlines: 40 pointsPerScanline: 40 </p>
 
 </div>
 </div>
@@ -175,16 +187,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Instantiate a new <a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> with a UnityEngine.Transform. Initial min scanning distance is float.Epsilon (1.40E-45), max scanning distance is 10. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Instantiate a new <a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> with a UnityEngine.Transform. Other configuration values use the defaults: </p>
+<pre class="fragment">minDistance: float.Epsilon (1.40E-45)
+maxDistance: 10.0
+arcSizeInDegrees: 75
+numberOfScanlines: 40
+pointsPerScanline: 40
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">probeTransform</td><td>The UnityEngine.Transform of the probe GameObject. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentNullException</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -192,6 +203,23 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a02b2c4ea16b1439d0edf3e6204039eaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UltrasoundProbeConfiguration.GetArcSizeInDegrees </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the size of the scanning arc (measured in degrees). </p>
+<dl class="section return"><dt>Returns</dt><dd>a float value in the interval 0 to 180. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a01888a69c26e31be4c456663df730cd6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -226,6 +254,40 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8902dbbb3a422478611fe1ccdc65ab84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UltrasoundProbeConfiguration.GetNumberOfScanlines </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the number of scanlines to scan. </p>
+<dl class="section return"><dt>Returns</dt><dd>A positive integer value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abb2431b99dfa9243300d6336fc3012dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UltrasoundProbeConfiguration.GetPointsPerScanline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the number of points per scanline. </p>
+<dl class="section return"><dt>Returns</dt><dd>A positive integer value. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="aebf67bdffe9abb24ee6ef3a1ed3bf93f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -257,6 +319,29 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Gets the probe rotation. </p>
 <dl class="section return"><dt>Returns</dt><dd>The rotation of the probe GameObject in world space. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae0f949c5e2e249bd3d1a4f98153bd3c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UltrasoundProbeConfiguration.SetArcSizeInDegrees </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>degrees</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the size of the scanning arc, measured in degrees. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">degrees</td><td>A float value between 0 and 180 (inclusive). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -300,6 +385,52 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">min</td><td>Clamped within the (exclusive) interval 0 to Positive Infinity. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa5cd4391ed4ae2026cfb462001d14d75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UltrasoundProbeConfiguration.SetNumberOfScanlines </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the number of scanlines to scan. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>A positive integer value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a16876d0dd9118f6b10999449c50e4034"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UltrasoundProbeConfiguration.SetPointsPerScanline </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the number of points to check per scanline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>A positive integer value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -358,7 +489,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 06:28:00 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 17 2014 11:26:20 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

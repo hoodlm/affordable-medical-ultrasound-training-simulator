@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['culler',['culler',['../class_horay_probe.html#ad94fcdce53d1dddb5056b316a5969835',1,'HorayProbe']]]
+  ['arcsizeindegrees',['ArcSizeInDegrees',['../class_horay_behavior.html#aa1265a5242758057306d840f87483fe4',1,'HorayBehavior']]]
 ];

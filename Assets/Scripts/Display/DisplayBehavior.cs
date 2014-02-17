@@ -13,6 +13,7 @@ public class DisplayBehavior : MonoBehaviour {
 	 * - FakeTexture: Uses TestTextureSource to render a ColorBar graphic to the display.
 	 * - FakeImage: A standard TextureSource is initialized with TestImageSource, which renders a tri-color flag graphic to the display.
 	 * - FakeProbeOutput: A standard TextureSource and BModeOutputImageDecoder are fed output from a TestProbeOutput. The result should be a noisy white-on-black triangle graphic.
+	 * - HORAY: a HOmogeneous tissue RAYcasting algorithm to generate an ultrasound image.
 	 */
 	public enum DisplayModes {HORAY, FakeTexture, FakeImage, FakeProbeOutput};
 	

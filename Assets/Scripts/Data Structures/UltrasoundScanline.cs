@@ -64,4 +64,13 @@ public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
             yield return point;
         }
     }
+
+	public override string ToString ()
+	{
+		string str = "SCANLINE";
+		foreach (UltrasoundPoint point in points) {
+			str = str + string.Format("\n{0}", point);
+		}
+		return str;
+	}
 }

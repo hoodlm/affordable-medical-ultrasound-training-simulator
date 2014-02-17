@@ -26,15 +26,14 @@ public class HorayProbeOutput : IProbeOutput {
 			throw new System.ArgumentException(str);
 		}
 		this.probeGameObject = gameObject;
+		probe = new HorayProbe(probeGameObject, this);
 	}
 
 	public UltrasoundScanData SendScanData () {
 		UltrasoundProbeConfiguration currentConfig =
 			probeGameObject.GetComponent<HorayBehavior>().GetProbeConfig();
 		UltrasoundScanData data = new UltrasoundScanData(currentConfig);
-
-
-
+		probe.PopulateData(ref data);
 		return data;
 	}
 

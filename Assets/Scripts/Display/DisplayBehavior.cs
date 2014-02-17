@@ -14,7 +14,7 @@ public class DisplayBehavior : MonoBehaviour {
 	 * - FakeImage: A standard TextureSource is initialized with TestImageSource, which renders a tri-color flag graphic to the display.
 	 * - FakeProbeOutput: A standard TextureSource and BModeOutputImageDecoder are fed output from a TestProbeOutput. The result should be a noisy white-on-black triangle graphic.
 	 */
-	public enum DisplayModes {FakeTexture, FakeImage, FakeProbeOutput};
+	public enum DisplayModes {HORAY, FakeTexture, FakeImage, FakeProbeOutput};
 	
 	/// The selected mode from DisplayModes for this display.
 	public DisplayModes displayMode;
@@ -29,6 +29,12 @@ public class DisplayBehavior : MonoBehaviour {
 
     void Start () {
 		switch (displayMode) {
+		case (DisplayModes.HORAY):
+			textureSource = new TextureSource(
+								new BModeOutputImageDecoder(
+									new HorayProbeOutput(
+										GameObject.FindGameObjectWithTag("Probe"))));
+			break;
 		case (DisplayModes.FakeTexture):
 			textureSource = new TestTextureSource();
 			break;
@@ -36,7 +42,9 @@ public class DisplayBehavior : MonoBehaviour {
 			textureSource = new TextureSource(new TestImageSource());
 			break;
 		case (DisplayModes.FakeProbeOutput):
-			textureSource = new TextureSource(new BModeOutputImageDecoder(new TestProbeOutput()));
+			textureSource = new TextureSource(
+								new BModeOutputImageDecoder(
+									new TestProbeOutput()));
 			break;
 		}
         texture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGB24, false);

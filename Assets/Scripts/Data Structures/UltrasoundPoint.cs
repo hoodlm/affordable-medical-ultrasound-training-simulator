@@ -64,7 +64,7 @@ public class UltrasoundPoint : IComparable {
     public override string ToString ()
     {
         return string.Format ("[UltrasoundPoint] 3D: {0} Proj: {1} Brightness: {2}",
-        worldSpaceLocation, projectedLocation, brightness);
+        					  worldSpaceLocation, projectedLocation, brightness);
     }
     
     /**

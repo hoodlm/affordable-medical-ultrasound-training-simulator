@@ -29,22 +29,33 @@ public class DisplayBehavior : MonoBehaviour {
 
     void Start () {
 		switch (displayMode) {
+
 		case (DisplayModes.HORAY):
-			textureSource = new TextureSource(
-								new BModeOutputImageDecoder(
-									new HorayProbeOutput(
-										GameObject.FindGameObjectWithTag("Probe"))));
+			GameObject probe = GameObject.FindGameObjectWithTag("Probe");
+			UltrasoundDebug.Assert(null != probe, "No object with Probe tag in scene.", this);
+
+			IProbeOutput horayOutput = new HorayProbeOutput(probe);
+			IImageSource bmodeImageDecoder = new BModeOutputImageDecoder(horayOutput);
+			textureSource = new TextureSource(bmodeImageDecoder);
 			break;
+
 		case (DisplayModes.FakeTexture):
 			textureSource = new TestTextureSource();
 			break;
+
 		case (DisplayModes.FakeImage):
-			textureSource = new TextureSource(new TestImageSource());
+			IImageSource fakeImageSource = new TestImageSource();
+			textureSource = new TextureSource(fakeImageSource);
 			break;
+
 		case (DisplayModes.FakeProbeOutput):
-			textureSource = new TextureSource(
-								new BModeOutputImageDecoder(
-									new TestProbeOutput()));
+			IProbeOutput fakeProbeOutput = new TestProbeOutput();
+			IImageSource aBmodeImageDecoder = new BModeOutputImageDecoder(fakeProbeOutput);
+			textureSource = new TextureSource(aBmodeImageDecoder);
+			break;
+		
+		default:
+			UltrasoundDebug.Assert(false, "Unknown display mode!", this);
 			break;
 		}
         texture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGB24, false);

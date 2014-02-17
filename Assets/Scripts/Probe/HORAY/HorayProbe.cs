@@ -22,13 +22,17 @@ public class HorayProbe {
 	 *	@param output An IProbeOutput to pass information to.
 	 */
 	public HorayProbe(GameObject probe, IProbeOutput output) {
-		UltrasoundInputValidator.CheckNotNull(probe);
-		UltrasoundInputValidator.CheckNotNull(output);
+		UltrasoundDebug.Assert(null != probe, 
+		                       "Null probe GameObject passed to HorayProbe constructor.",
+		                       this);
+		UltrasoundDebug.Assert(null != output, 
+		                       "Null IProbeOutput passed to HorayProbe constructor.",
+		                       this);
 		if (null == probe.GetComponent<HorayBehavior>()) {
 			string str = 
 				"The probe object used to instantiate this class " +
 				"does not have the required HorayBehavior script.";
-			throw new System.ArgumentException(str);
+			Debug.LogError(str);
 		}
 		this.probeGameObject = probe;
 		this.output = output;
@@ -40,7 +44,9 @@ public class HorayProbe {
 	 * 	@param data The object into which to put the scan data.
 	 */
 	public void PopulateData(ref UltrasoundScanData data) {
-		UltrasoundInputValidator.CheckNotNull(data);
+		UltrasoundDebug.Assert(null != data, 
+		                       "Null data object passed to HorayProbe's PopulateData method.",
+		                       this);
 		EstablishScanningPlane(ref data);
 		IList<GameObject> culledOrganList = culler.HitableOrgans(data.GetProbeConfig());
 	}
@@ -57,6 +63,10 @@ public class HorayProbe {
 		// nearZ and farZ represent near and far clipping "planes" (they're really arcs)
 		float nearZ = config.GetMinScanDistance();
 		float farZ	= config.GetMaxScanDistance();
+
+		UltrasoundDebug.Assert(farZ > nearZ, 
+		                       "Max distance should be greater than min distance!",
+		                       this);
 
 		// Currently hard-coded -- these should be in the probe config eventually.
 		const int POINTS_PER_SCANLINE	= 40;

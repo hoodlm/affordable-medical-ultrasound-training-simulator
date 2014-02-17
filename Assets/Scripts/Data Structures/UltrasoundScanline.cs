@@ -23,7 +23,9 @@ public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
      *  @throw ArgumentNullException
      */
     public void AddUltrasoundPoints (ICollection<UltrasoundPoint> points) {
-        UltrasoundInputValidator.CheckNotNull(points);
+        UltrasoundDebug.Assert(null != points, 
+		                       "A null collection of points was added to a Scanline",
+		                       this);
         foreach (UltrasoundPoint p in points) {
             AddUltrasoundPoint(p);
         }
@@ -36,7 +38,9 @@ public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
      *  @throw ArgumentNullException
      */
     public void AddUltrasoundPoint (UltrasoundPoint p) {
-        UltrasoundInputValidator.CheckNotNull(p);
+        UltrasoundDebug.Assert(null != p, 
+		                       "A null UltrasoundPoint was added to a Scanline",
+		                       this);
         points.Add(p);
     }
     

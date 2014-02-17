@@ -14,8 +14,8 @@ public class TestProbeOutput : IProbeOutput {
 
     public UltrasoundScanData SendScanData () {
 		UltrasoundProbeConfiguration config = new UltrasoundProbeConfiguration();
-		config.SetMinScanDistance(MIN_Y);
 		config.SetMaxScanDistance(MAX_Y);
+		config.SetMinScanDistance(MIN_Y);
         UltrasoundScanData data = new UltrasoundScanData (config);
         for (float i = MIN_X; i <= MAX_X; i += STEPSIZE) {
 

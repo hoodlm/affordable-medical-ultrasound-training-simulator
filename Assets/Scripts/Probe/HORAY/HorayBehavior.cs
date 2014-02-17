@@ -7,10 +7,10 @@ using System.Collections;
 public class HorayBehavior : MonoBehaviour {
 
 	/// The maximum scanning distance of this probe.
-	public float MaxDistance;
+	public float MaxDistance = 10;
 
 	/// The minimum scanning distance of this probe.
-	public float MinDistance;
+	public float MinDistance = 1;
 
 	/// The IProbeOutput responsible for returning this probe's data to an IImageSource.
 	protected IProbeOutput output;

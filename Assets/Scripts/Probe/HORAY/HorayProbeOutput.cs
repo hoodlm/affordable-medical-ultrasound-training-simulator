@@ -21,12 +21,15 @@ public class HorayProbeOutput : IProbeOutput {
 	 *	@throw ArgumentException If the probe object does not have the correct components.
 	 */
 	public HorayProbeOutput(GameObject gameObject) {
-		UltrasoundInputValidator.CheckNotNull(gameObject);
+		UltrasoundDebug.Assert(null != gameObject, 
+		                       "Null GameObject passed to HorayProbeOutput constructor.",
+		                       this);
+
 		if (null == gameObject.GetComponent<HorayBehavior>()) {
 			string str = 
 				"The probe object used to instantiate this output " +
 				"does not have the required HorayBehavior script.";
-			throw new System.ArgumentException(str);
+			Debug.LogError(str);
 		}
 		this.probeGameObject = gameObject;
 		probe = new HorayProbe(probeGameObject, this);

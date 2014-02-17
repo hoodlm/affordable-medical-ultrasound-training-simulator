@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -26,7 +26,9 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
      *  @throw ArgumentNullException
      */
     public void AddScanlines (ICollection<UltrasoundScanline> scanlines) {
-        UltrasoundInputValidator.CheckNotNull(scanlines);
+        UltrasoundDebug.Assert(null != scanlines, 
+		                       "A null collection of scanlines was added to this UltrasoundScanData",
+		                       this);
         foreach (UltrasoundScanline s in scanlines) {
             AddScanline(s);
         }
@@ -39,7 +41,9 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
      *  @throw ArgumentNullException
      */
     public void AddScanline (UltrasoundScanline s) {
-        UltrasoundInputValidator.CheckNotNull(s);
+        UltrasoundDebug.Assert(null != s, 
+		                       "A null scanline was added to this UltrasoundScanData",
+		                       this);
         scanlines.Add(s);
     }
     

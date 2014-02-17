@@ -100,10 +100,14 @@ Inheritance diagram for DisplayBehavior:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ac8f6aedcaab1d94a92f12fd1939296a0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_behavior.html#ac8f6aedcaab1d94a92f12fd1939296a0">DisplayModes</a> { <b>HORAY</b>, 
+<tr class="memitem:ac8f6aedcaab1d94a92f12fd1939296a0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_behavior.html#ac8f6aedcaab1d94a92f12fd1939296a0">DisplayModes</a> { <br/>
+&#160;&#160;<b>InvHORAY</b>, 
+<b>HORAY</b>, 
 <b>FakeTexture</b>, 
 <b>FakeImage</b>, 
-<b>FakeProbeOutput</b>
+<br/>
+&#160;&#160;<b>FakeProbeOutput</b>
+<br/>
  }</td></tr>
 <tr class="separator:ac8f6aedcaab1d94a92f12fd1939296a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -139,7 +143,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <li>FakeTexture: Uses <a class="el" href="class_test_texture_source.html">TestTextureSource</a> to render a ColorBar graphic to the display.</li>
 <li>FakeImage: A standard <a class="el" href="class_texture_source.html">TextureSource</a> is initialized with <a class="el" href="class_test_image_source.html">TestImageSource</a>, which renders a tri-color flag graphic to the display.</li>
 <li>FakeProbeOutput: A standard <a class="el" href="class_texture_source.html">TextureSource</a> and <a class="el" href="class_b_mode_output_image_decoder.html">BModeOutputImageDecoder</a> are fed output from a <a class="el" href="class_test_probe_output.html">TestProbeOutput</a>. The result should be a noisy white-on-black triangle graphic.</li>
-<li>HORAY: a HOmogeneous tissue RAYcasting algorithm to generate an ultrasound image. </li>
+<li>HORAY: a HOmogeneous tissue RAYcasting algorithm to generate an ultrasound image.</li>
+<li>InvHORAY: HORAY with inverted colors (black on white). </li>
 </ul>
 
 </div>
@@ -150,7 +155,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 11:26:20 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

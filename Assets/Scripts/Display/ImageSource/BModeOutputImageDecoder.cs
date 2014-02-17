@@ -6,8 +6,11 @@ using System.Collections;
  */
 public class BModeOutputImageDecoder : IImageSource {
 
-    private IProbeOutput probeOutput;
-    private readonly static Color drawColor = Color.white;
+	///	The IProbeOutput from which this BModeOutputImageDecoder receives data.
+    protected IProbeOutput probeOutput;
+
+	/// The color used for drawing the ultrasound image.
+    protected Color drawColor;
 
     /**
      *  Instantiate a new ProbeOutputImageDecoder
@@ -15,10 +18,11 @@ public class BModeOutputImageDecoder : IImageSource {
      */
     public BModeOutputImageDecoder(IProbeOutput output) {
 		UltrasoundDebug.Assert(null != output, "Null probe output used in constructor", this);
+		drawColor = Color.white;
         probeOutput = output;
     }
 
-    public Color[] BitmapWithDimensions (int width, int height) {
+    public virtual Color[] BitmapWithDimensions (int width, int height) {
         Color[] buffer = new Color[width * height];
         UltrasoundScanData data = probeOutput.SendScanData ();
         foreach (UltrasoundScanline scanline in data) {
@@ -40,14 +44,19 @@ public class BModeOutputImageDecoder : IImageSource {
      *  @param point The UltrasoundPoint data to draw.
      *  @param index The index in the buffer at which to place the pixel.
      *  @param buffer An array of UnityEngine.Color representing the result image. 
+     *  @param bufferSize The number of pixels in the buffer.
      */
-    private void DrawPoint(UltrasoundPoint point, int index, ref Color[] buffer, int bufferSize) {
+    protected virtual void DrawPoint(UltrasoundPoint point, int index, ref Color[] buffer, int bufferSize) {
 #if UNITY_EDITOR
 		UltrasoundDebug.Assert(index < bufferSize && index >= 0,
 		                       string.Format("{0} should be in the interval[0, {1})", index, bufferSize),
 		                       this);
-#endif
-        if (index >= bufferSize || index < 0) {
+		UltrasoundDebug.Assert(point.GetBrightness() >= 0f && point.GetBrightness() <= 1f,
+		                       string.Format("Pixel brightness {0} should be in the interval [0,1]",
+		              						 point.GetBrightness()),
+								this);
+		#endif
+		if (index >= bufferSize || index < 0) {
             return;
         }
 
@@ -61,9 +70,10 @@ public class BModeOutputImageDecoder : IImageSource {
      *  @param imageHeight The height of the image being rendered.
      *  @param imageWidth The width of the image being rendered.
      *  @param vector2 The point in the scanning plane to be mapped.
+     * 	@param probeConfig The UltrasoundProbeConfiguration of the probe object.
      *  @return The corresponding index in the image at which to render the point.
      */
-    private int MapScanningPlaneToPixelCoordinate(int imageHeight, 
+    protected int MapScanningPlaneToPixelCoordinate(int imageHeight, 
 	                                              int imageWidth, 
 	                                              Vector2 vector2,
 	                                              UltrasoundProbeConfiguration probeConfig) {

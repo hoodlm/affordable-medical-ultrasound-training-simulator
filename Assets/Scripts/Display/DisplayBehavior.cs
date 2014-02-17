@@ -14,8 +14,9 @@ public class DisplayBehavior : MonoBehaviour {
 	 * - FakeImage: A standard TextureSource is initialized with TestImageSource, which renders a tri-color flag graphic to the display.
 	 * - FakeProbeOutput: A standard TextureSource and BModeOutputImageDecoder are fed output from a TestProbeOutput. The result should be a noisy white-on-black triangle graphic.
 	 * - HORAY: a HOmogeneous tissue RAYcasting algorithm to generate an ultrasound image.
+	 * - InvHORAY: HORAY with inverted colors (black on white).
 	 */
-	public enum DisplayModes {HORAY, FakeTexture, FakeImage, FakeProbeOutput};
+	public enum DisplayModes {InvHORAY, HORAY, FakeTexture, FakeImage, FakeProbeOutput};
 	
 	/// The selected mode from DisplayModes for this display.
 	public DisplayModes displayMode;
@@ -32,27 +33,23 @@ public class DisplayBehavior : MonoBehaviour {
 		switch (displayMode) {
 
 		case (DisplayModes.HORAY):
-			GameObject probe = GameObject.FindGameObjectWithTag("Probe");
-			UltrasoundDebug.Assert(null != probe, "No object with Probe tag in scene.", this);
-
-			IProbeOutput horayOutput = new HorayProbeOutput(probe);
-			IImageSource bmodeImageDecoder = new BModeOutputImageDecoder(horayOutput);
-			textureSource = new TextureSource(bmodeImageDecoder);
+			textureSource = DisplayTexturePipelineFactory.BuildStandardHORAYConfig();
 			break;
 
+		case (DisplayModes.InvHORAY):
+			textureSource = DisplayTexturePipelineFactory.BuildBlackOnWhiteHORAYConfig();
+			break;
+			
 		case (DisplayModes.FakeTexture):
-			textureSource = new TestTextureSource();
+			textureSource = DisplayTexturePipelineFactory.BuildFakeTextureSource();
 			break;
 
 		case (DisplayModes.FakeImage):
-			IImageSource fakeImageSource = new TestImageSource();
-			textureSource = new TextureSource(fakeImageSource);
+			textureSource = DisplayTexturePipelineFactory.BuildWithFakeImageSource();
 			break;
 
 		case (DisplayModes.FakeProbeOutput):
-			IProbeOutput fakeProbeOutput = new TestProbeOutput();
-			IImageSource aBmodeImageDecoder = new BModeOutputImageDecoder(fakeProbeOutput);
-			textureSource = new TextureSource(aBmodeImageDecoder);
+			textureSource = DisplayTexturePipelineFactory.BuildWithFakeBModeProbeOutput();
 			break;
 		
 		default:
@@ -67,4 +64,69 @@ public class DisplayBehavior : MonoBehaviour {
     void Update () {
         textureSource.RenderNextFrameToTexture(ref texture);
     }
+}
+
+/**
+ * 	Factory class for setting up the Display rendering pipeline.
+ * 	Generally, the rendering pipeline is something like this:
+ * 
+ * 		probe -> IProbeOutput -> IImageSource -> ITextureSource -> Display
+ */
+public sealed class DisplayTexturePipelineFactory
+{
+	/**
+	 *	Sets up a standard HORAY configuration:
+	 *
+	 *		probe -> HorayProbeOutput -> BModeOutputImageDecoder -> TextureSource
+	 */
+	public static ITextureSource BuildStandardHORAYConfig() {
+		GameObject probe = GameObject.FindGameObjectWithTag("Probe");
+		UltrasoundDebug.Assert(null != probe, "No object with Probe tag in scene.", new DisplayTexturePipelineFactory());
+		
+		IProbeOutput horayOutput = new HorayProbeOutput(probe);
+		IImageSource bmodeImageDecoder = new BModeOutputImageDecoder(horayOutput);
+		return new TextureSource(bmodeImageDecoder);
+	}
+
+	/**
+	 *	Sets up a HORAY configuration with inverted colors:
+	 *
+	 *		probe -> HorayProbeOutput -> BlackOnWhiteBModeOutputImageDecoder -> TextureSource
+	 */
+	public static ITextureSource BuildBlackOnWhiteHORAYConfig() {
+		GameObject probe = GameObject.FindGameObjectWithTag("Probe");
+		UltrasoundDebug.Assert(null != probe, "No object with Probe tag in scene.", new DisplayTexturePipelineFactory());
+		
+		IProbeOutput horayOutput = new HorayProbeOutput(probe);
+		IImageSource bmodeImageDecoder = new BlackOnWhiteBModeOutputImageDecoder(horayOutput);
+		return new TextureSource(bmodeImageDecoder);
+	}
+
+	/**
+	 *	Set up a fake ITextureSource that renders a static Color Bar texture.
+	 */
+	public static ITextureSource BuildFakeTextureSource() {
+		return new TestTextureSource();
+	}
+
+	/**
+	 *	Set up a test IImageSource that provides a tri-color flag bitmap:
+	 *
+	 *		TestImageSource -> TextureSource
+	 */
+	public static ITextureSource BuildWithFakeImageSource() {
+		IImageSource fakeImageSource = new TestImageSource();
+		return new TextureSource(fakeImageSource);
+	}
+
+	/**
+	 *	Simulate the output of a BMode probe.
+	 *
+	 *		TestProbeOutput -> BModeOutputImageDecoder -> TextureSource
+	 */
+	public static ITextureSource BuildWithFakeBModeProbeOutput() {
+		IProbeOutput fakeProbeOutput = new TestProbeOutput();
+		IImageSource imageSource = new BModeOutputImageDecoder(fakeProbeOutput);
+		return new TextureSource(imageSource);
+	} 
 }

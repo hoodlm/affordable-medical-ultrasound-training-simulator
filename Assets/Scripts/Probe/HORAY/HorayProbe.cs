@@ -53,10 +53,32 @@ public class HorayProbe {
 #endif
 		EstablishScanningPlane(ref data);
 		IList<GameObject> culledOrganList = culler.HitableOrgans(data.GetProbeConfig());
+		ScanPointsForOrgans(ref data, culledOrganList);
 	}
 
 	/**
-	 * 	Populate the data object with empty UltrasoundPoint%s representing the points
+	 *	"Shades" all points in an UltrasoundScanData by checking their position against a
+	 *	list of GameObjects that could conceiveably contain those points.
+	 */
+	private void ScanPointsForOrgans(ref UltrasoundScanData data, IList<GameObject> organList)
+	{
+		foreach (UltrasoundScanline scanline in data) {
+			foreach (UltrasoundPoint point in scanline) {
+				foreach (GameObject gameObject in organList) {
+					Vector3 target = point.GetWorldSpaceLocation();
+					Collider collider = gameObject.collider;
+					bool hit = UltrasoundCollisionUtils.IsContained(target, collider);
+
+					if (hit) {
+						point.SetBrightness(1f);
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * 	Set up the data object with empty UltrasoundPoint%s representing the points
 	 * 	that need to be scanned.
 	 * 
 	 * 	This is analagous to setting up the view frustum in traditional 3D graphics.
@@ -75,8 +97,8 @@ public class HorayProbe {
 #endif
 
 		// Currently hard-coded -- these should be in the probe config eventually.
-		const int POINTS_PER_SCANLINE	= 40;
-		const int SCANLINES				= 40;
+		const int POINTS_PER_SCANLINE	= 50;
+		const int SCANLINES				= 50;
 		const float ARC_SIZE_IN_DEGREES	= 75;
 
 		for (int i = 0; i < SCANLINES; ++i) {
@@ -88,12 +110,30 @@ public class HorayProbe {
 			for (int j = 0; j < POINTS_PER_SCANLINE; ++j) {
 				float d = nearZ + j * (farZ - nearZ) / (POINTS_PER_SCANLINE - 1);
 				Vector2 positionOnPlane = d * trajectory;
-				UltrasoundPoint point = new UltrasoundPoint(Vector3.zero, positionOnPlane);
-				point.SetBrightness(1f);
+				Vector3 positionInWorldSpace = WorldSpaceFromProjectedPosition(positionOnPlane, config);
+				UltrasoundPoint point = new UltrasoundPoint(positionInWorldSpace, positionOnPlane);
 				scanline.AddUltrasoundPoint(point);
 			}
 
 			data.AddScanline(scanline);
 		}
+	}
+
+	/**
+	 *	Helper method to calculate a Vector3 (WorldSpace) from a Projected Position in local space.
+	 *	@param positionInPlace A Vector2 representing a point in the scanning plane.
+	 *	@param config The UltrasoundProbeConfiguration object, used for rotation and translation.
+	 *	@return A 3D point in world space.
+	 */
+	private Vector3 WorldSpaceFromProjectedPosition(Vector2 positionInPlane, 
+	                                                UltrasoundProbeConfiguration config)
+	{
+		Vector3 positionInWorldSpace = new Vector3(positionInPlane.x, 0, positionInPlane.y);
+
+		// Apply rotation, using Quaternion's overloaded * operator.
+		positionInWorldSpace = config.GetRotation() * positionInWorldSpace;
+
+		positionInWorldSpace += config.GetPosition();
+		return positionInWorldSpace;
 	}
 }

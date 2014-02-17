@@ -9,12 +9,15 @@ using System.Collections;
  */
 public class HorayProbeOutput : IProbeOutput {
 
+	/// The GameObject representing the physical location of the probe.
 	protected readonly GameObject probeGameObject;
+
+	/// The instance of HorayProbe that houses all of the scanning logic and produces UltrasoundScanData.
 	protected readonly HorayProbe probe;
 
 	/**
 	 * 	Instantiate a new HorayProbeOutput.
-	 *	@param probe The probe from which data will be transmitted.
+	 *	@param gameObject The probe from which data will be transmitted.
 	 *	@throw ArgumentException If the probe object does not have the correct components.
 	 */
 	public HorayProbeOutput(GameObject gameObject) {

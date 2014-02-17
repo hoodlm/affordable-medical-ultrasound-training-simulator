@@ -7,8 +7,13 @@ using System.Collections.Generic;
  */
 public class HorayProbe {
 
+	/// Used to determine which GameObjects can possibly appear in the image.
 	protected readonly HorayOrganCuller culler;
+
+	/// The GameObject representing the physical location of the probe.
 	protected readonly GameObject probeGameObject;
+
+	/// The IProbeOutput providing data to an IImageSource.
 	protected readonly IProbeOutput output;
 
 	/**

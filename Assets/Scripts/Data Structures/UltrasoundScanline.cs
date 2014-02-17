@@ -65,6 +65,7 @@ public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
         }
     }
 
+	/// Returns a string that represents the current UltrasoundScanline.
 	public override string ToString ()
 	{
 		string str = "SCANLINE";

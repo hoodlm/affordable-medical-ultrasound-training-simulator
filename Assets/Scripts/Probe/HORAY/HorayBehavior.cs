@@ -6,10 +6,16 @@ using System.Collections;
  */
 public class HorayBehavior : MonoBehaviour {
 
+	/// The maximum scanning distance of this probe.
 	public float MaxDistance;
+
+	/// The minimum scanning distance of this probe.
 	public float MinDistance;
 
+	/// The IProbeOutput responsible for returning this probe's data to an IImageSource.
 	protected IProbeOutput output;
+
+	/// The instance of HorayProbe that houses all of the scanning logic and produces UltrasoundScanData.
 	protected HorayProbe dataSource;
 
 	// Use this for initialization

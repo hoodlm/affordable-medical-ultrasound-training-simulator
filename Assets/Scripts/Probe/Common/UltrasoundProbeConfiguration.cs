@@ -20,16 +20,26 @@ public class UltrasoundProbeConfiguration {
 	private PositionAndRotation positionAndRotation;
     private float maxDistance;
     private float minDistance;
+	private float arcSizeInDegrees;
+	private int numberOfScanlines;
+	private int pointsPerScanline;
 
 	/** 
      *  Instantiate a new UltrasoundProbeConfiguration with default values.
-     *  Initial min scanning distance is float.Epsilon (1.40E-45), max scanning distance is 10.\
+     *  	minDistance: float.Epsilon (1.40E-45)
+     * 		maxDistance: 10.0
+     * 		arcSizeInDegrees: 75
+     * 		numberOfScanlines: 40
+     * 		pointsPerScanline: 40
      */
 	public UltrasoundProbeConfiguration () {
 		this.SetPosition(Vector3.zero);
 		this.SetRotation(Quaternion.AngleAxis(0f, Vector3.forward));
 		this.minDistance = float.Epsilon;
 		this.maxDistance = 10f;
+		this.arcSizeInDegrees = 75;
+		this.numberOfScanlines = 40;
+		this.pointsPerScanline = 40;
 	}
 
     /** 
@@ -44,13 +54,23 @@ public class UltrasoundProbeConfiguration {
 		                       this);
 		this.SetPosition(config.GetPosition());
 		this.SetRotation(config.GetRotation());
-        this.maxDistance = (config.GetMaxScanDistance());
-        this.minDistance = (config.GetMinScanDistance());
+        this.maxDistance = 			config.GetMaxScanDistance();
+        this.minDistance = 			config.GetMinScanDistance();
+		this.arcSizeInDegrees = 	config.GetArcSizeInDegrees();
+		this.pointsPerScanline =	config.GetPointsPerScanline();
+		this.numberOfScanlines =	config.GetNumberOfScanlines();
     }
     
     /** 
      *  Instantiate a new UltrasoundProbeConfiguration with a UnityEngine.Transform.
-     *  Initial min scanning distance is float.Epsilon (1.40E-45), max scanning distance is 10.
+     * 	Other configuration values use the defaults:
+     * 
+     *  	minDistance: float.Epsilon (1.40E-45)
+     * 		maxDistance: 10.0
+     * 		arcSizeInDegrees: 75
+     * 		numberOfScanlines: 40
+     * 		pointsPerScanline: 40
+     * 
      *  @param probeTransform The UnityEngine.Transform of the probe GameObject.
      */
     public UltrasoundProbeConfiguration (Transform probeTransform) {
@@ -59,8 +79,11 @@ public class UltrasoundProbeConfiguration {
 		                       this);
 		this.SetRotation(probeTransform.rotation);
 		this.SetPosition(probeTransform.position);
-        minDistance = float.Epsilon;
-        maxDistance = 10f;
+		this.minDistance = float.Epsilon;
+		this.maxDistance = 10f;
+		this.arcSizeInDegrees = 75;
+		this.numberOfScanlines = 40;
+		this.pointsPerScanline = 40;
     }
 
 	/** 
@@ -140,4 +163,67 @@ public class UltrasoundProbeConfiguration {
     public float GetMaxScanDistance() {
         return maxDistance;
     }
+
+	/**
+	 * 	Sets the size of the scanning arc, measured in degrees.
+	 * 	@param degrees A float value between 0 and 180 (inclusive).
+	 */
+	public void SetArcSizeInDegrees(float degrees) {
+#if UNITY_EDITOR
+		UltrasoundDebug.Assert(degrees >= 0f && degrees <= 180f,
+		                       string.Format("Tried to set degrees to {0}", degrees),
+		                       this, false);
+#endif
+		arcSizeInDegrees = Mathf.Clamp(degrees, 0f, 180f);
+	}
+
+	/**
+	 *	Get the size of the scanning arc (measured in degrees).
+	 *	@return a float value in the interval 0 to 180.
+	 */
+	public float GetArcSizeInDegrees() {
+		return arcSizeInDegrees;
+	}
+
+	/**
+	 * 	Set the number of scanlines to scan.
+	 * 	@param count A positive integer value.
+	 */
+	public void SetNumberOfScanlines(int count) {
+#if UNITY_EDITOR
+		UltrasoundDebug.Assert(count > 0,
+		                       string.Format ("Tried to set scanline count to {0}", count),
+		                       this, false);
+#endif
+		numberOfScanlines = Mathf.Clamp(count, 0, int.MaxValue);
+	}
+
+	/**
+	 * 	Get the number of scanlines to scan.
+	 * 	@return A positive integer value.
+	 */
+	public int GetNumberOfScanlines() {
+		return numberOfScanlines;
+	}
+
+	/**
+	 * 	Sets the number of points to check per scanline.
+	 * 	@param count A positive integer value.
+	 */
+	public void SetPointsPerScanline(int count) {
+#if UNITY_EDITOR
+		UltrasoundDebug.Assert(count > 0,
+		                       string.Format("Tried to set points per scanline to {0}", count),
+		                       this, false);
+#endif
+		pointsPerScanline = count;
+	}
+
+	/**
+	 * 	Get the number of points per scanline.
+	 * 	@return A positive integer value.
+	 */
+	public int GetPointsPerScanline() {
+		return pointsPerScanline;
+	}
 }

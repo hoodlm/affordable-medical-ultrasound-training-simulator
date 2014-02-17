@@ -57,8 +57,12 @@ public class HorayProbe {
 	}
 
 	/**
-	 *	"Shades" all points in an UltrasoundScanData by checking their position against a
-	 *	list of GameObjects that could conceiveably contain those points.
+	 *	Checks all points in an UltrasoundScanData point array against a list of possible organs
+	 *	that can be contained in those points. The points are then appropriately shaded based
+	 *	on the material properties of those organs.
+	 *
+	 *	@param data An UltrasoundScanData populated with empty UltrasoundPoint objects.
+	 *	@param organList A list of GameObjects to check against.
 	 */
 	private void ScanPointsForOrgans(ref UltrasoundScanData data, IList<GameObject> organList)
 	{
@@ -87,28 +91,21 @@ public class HorayProbe {
 		UltrasoundProbeConfiguration config = data.GetProbeConfig();
 
 		// nearZ and farZ represent near and far clipping "planes" (they're really arcs)
-		float nearZ = config.GetMinScanDistance();
-		float farZ	= config.GetMaxScanDistance();
+		float nearZ 			= config.GetMinScanDistance();
+		float farZ				= config.GetMaxScanDistance();
 
-#if UNITY_EDITOR
-		UltrasoundDebug.Assert(farZ > nearZ, 
-		                       "Max distance should be greater than min distance!",
-		                       this);
-#endif
+		float arcSizeDegrees 	= config.GetArcSizeInDegrees();
+		int scanlines 			= config.GetNumberOfScanlines();
+		int pointsPerScanline 	= config.GetPointsPerScanline();
 
-		// Currently hard-coded -- these should be in the probe config eventually.
-		const int POINTS_PER_SCANLINE	= 50;
-		const int SCANLINES				= 50;
-		const float ARC_SIZE_IN_DEGREES	= 75;
-
-		for (int i = 0; i < SCANLINES; ++i) {
+		for (int i = 0; i < scanlines; ++i) {
 			UltrasoundScanline scanline = new UltrasoundScanline();
-			float angleInDegrees = -(ARC_SIZE_IN_DEGREES / 2) + i * ARC_SIZE_IN_DEGREES / (SCANLINES - 1);
+			float angleInDegrees = -(arcSizeDegrees / 2) + i * arcSizeDegrees / (scanlines - 1);
 			float angleInRadians = Mathf.Deg2Rad * angleInDegrees;
 			Vector2 trajectory = new Vector2(Mathf.Sin(angleInRadians), Mathf.Cos(angleInRadians));
 
-			for (int j = 0; j < POINTS_PER_SCANLINE; ++j) {
-				float d = nearZ + j * (farZ - nearZ) / (POINTS_PER_SCANLINE - 1);
+			for (int j = 0; j < pointsPerScanline; ++j) {
+				float d = nearZ + j * (farZ - nearZ) / (pointsPerScanline - 1);
 				Vector2 positionOnPlane = d * trajectory;
 				Vector3 positionInWorldSpace = WorldSpaceFromProjectedPosition(positionOnPlane, config);
 				UltrasoundPoint point = new UltrasoundPoint(positionInWorldSpace, positionOnPlane);

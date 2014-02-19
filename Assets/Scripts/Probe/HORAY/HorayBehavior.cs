@@ -75,6 +75,9 @@ public class HorayBehavior : MonoBehaviour {
 		UltrasoundProbeConfiguration config = new UltrasoundProbeConfiguration(this.transform);
 		config.SetMaxScanDistance(this.MaxDistance);
 		config.SetMinScanDistance(this.MinDistance);
+		config.SetArcSizeInDegrees(this.ArcSizeInDegrees);
+		config.SetNumberOfScanlines(this.NumberOfScanlines);
+		config.SetPointsPerScanline(this.PointsPerScanline);
 		return config;
 	}
 }

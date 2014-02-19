@@ -19,7 +19,7 @@ public class TestProbeOutput : IProbeOutput {
         UltrasoundScanData data = new UltrasoundScanData (config);
         for (float i = MIN_X; i <= MAX_X; i += STEPSIZE) {
 
-            UltrasoundScanline scanline = new UltrasoundScanline ();
+            UltrasoundScanline scanline = new UltrasoundScanline (config.GetPosition());
 
             for (float j = MIN_Y; j <= MAX_Y; j += STEPSIZE) {
                 UltrasoundPoint p = new UltrasoundPoint (Vector3.zero, new Vector2(i * (j / MAX_Y), j));

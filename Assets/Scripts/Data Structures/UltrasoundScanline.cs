@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -8,11 +9,13 @@ using System.Collections.ObjectModel;
 public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
 
 	private IList<UltrasoundPoint> points;
+	public readonly Vector3 origin;
     
     /** 
      *  Instantiate a new instance of UltrasoundScanline.
      */
-    public UltrasoundScanline() {
+    public UltrasoundScanline(Vector3 origin) {
+		this.origin = origin;
         points = new List<UltrasoundPoint>();
     }
     

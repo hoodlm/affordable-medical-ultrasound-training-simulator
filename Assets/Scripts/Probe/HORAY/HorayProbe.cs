@@ -52,7 +52,8 @@ public class HorayProbe {
 		                       this);
 #endif
 		EstablishScanningPlane(ref data);
-		IList<GameObject> culledOrganList = culler.HitableOrgans(data.GetProbeConfig());
+		IList<GameObject> culledOrganList = culler.HitableOrgansOnScanlines(data.GetScanlines(),
+		                                                         			data.GetProbeConfig());
 		ScanPointsForOrgans(ref data, culledOrganList);
 	}
 
@@ -99,7 +100,7 @@ public class HorayProbe {
 		int pointsPerScanline 	= config.GetPointsPerScanline();
 
 		for (int i = 0; i < scanlines; ++i) {
-			UltrasoundScanline scanline = new UltrasoundScanline();
+			UltrasoundScanline scanline = new UltrasoundScanline(config.GetPosition());
 			float angleInDegrees = -(arcSizeDegrees / 2) + i * arcSizeDegrees / (scanlines - 1);
 			float angleInRadians = Mathf.Deg2Rad * angleInDegrees;
 			Vector2 trajectory = new Vector2(Mathf.Sin(angleInRadians), Mathf.Cos(angleInRadians));

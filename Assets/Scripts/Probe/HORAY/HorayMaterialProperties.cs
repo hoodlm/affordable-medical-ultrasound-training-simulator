@@ -36,8 +36,8 @@ public class HorayMaterialProperties : MonoBehaviour {
 
 		switch (organType) {
 		case OrganPresets.Bone:
-			echogenicity = 0.6f;
-			attenuation = 10.0f;
+			echogenicity = 2.0f;
+			attenuation = 20.0f;
 			color = new Color(0.80f, 0.68f, 0.40f);
 			break;
 		

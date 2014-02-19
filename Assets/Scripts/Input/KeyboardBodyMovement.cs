@@ -31,9 +31,9 @@ public class KeyboardBodyMovement : MonoBehaviour {
 	void KeyboardRotation () {
 		Vector3 rotationAxis = Vector3.zero;
 		
-		if (Input.GetKey(KeyCode.W)) {
+		if (Input.GetKey(KeyCode.LeftArrow)) {
 			rotationAxis += Vector3.up;
-		} else if (Input.GetKey(KeyCode.S)) {
+		} else if (Input.GetKey(KeyCode.RightArrow)) {
 			rotationAxis += Vector3.down;
 		}
 		

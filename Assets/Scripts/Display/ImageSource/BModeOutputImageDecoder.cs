@@ -61,7 +61,8 @@ public class BModeOutputImageDecoder : IImageSource {
         }
 
         Color pointColor = drawColor;
-        pointColor *= point.GetBrightness();
+		// minimum pixel brightness of 0.1f
+        pointColor *= Mathf.Max(0.1f, point.GetBrightness());
         buffer[index] = pointColor;
     }
 

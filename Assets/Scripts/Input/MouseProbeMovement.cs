@@ -60,13 +60,6 @@ public class MouseProbeMovement : MonoBehaviour {
 
 			Vector3 mouseVector = new Vector3(mouseY, -mouseX, 0f).normalized;
 			this.transform.Rotate(mouseVector, magnitude, Space.World);
-
-//			Vector3 xRotationAxis = -transform.forward;
-//			this.transform.Rotate(xRotationAxis, scaledMouseX, Space.World);
-//		
-//
-//			Vector3 yRotationAxis = transform.right;
-//			this.transform.Rotate(yRotationAxis, scaledMouseY, Space.World);
 		} else if (dragMode && !Input.GetButton("Fire1")) {
 			dragMode = false;
 		}

@@ -143,7 +143,8 @@ public class HorayOrganCuller {
 #endif
 		Vector3 terminalPoint = points[points.Count - 1].GetWorldSpaceLocation();
 		Ray ray = new Ray(scanline.origin, terminalPoint - scanline.origin);
-		RaycastHit[] hits = Physics.RaycastAll(ray);
+		float raycastDistance = (terminalPoint - scanline.origin).magnitude;
+		RaycastHit[] hits = Physics.RaycastAll(ray, raycastDistance);
 		IList<GameObject> validOrgans = new List<GameObject>();
 		foreach(RaycastHit hit in hits) {
 			if (allOrgansInScene.Contains(hit.collider.gameObject)) {

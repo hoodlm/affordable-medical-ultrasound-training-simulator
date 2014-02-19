@@ -68,6 +68,10 @@ public class HorayProbe {
 	private void ScanPointsForOrgans(ref UltrasoundScanData data, IList<GameObject> organList)
 	{
 		foreach (UltrasoundScanline scanline in data) {
+
+			// Reset the intensity when starting each scanline
+			float pulseIntensity = data.GetProbeConfig().GetGain();
+
 			foreach (UltrasoundPoint point in scanline) {
 				foreach (GameObject gameObject in organList) {
 					Vector3 target = point.GetWorldSpaceLocation();
@@ -75,7 +79,12 @@ public class HorayProbe {
 					bool hit = UltrasoundCollisionUtils.IsContained(target, collider);
 
 					if (hit) {
-						point.SetBrightness(1f);
+						HorayMaterialProperties organProperties = gameObject.GetComponent<HorayMaterialProperties>();
+						float pointIntensity = IntensityAtPoint(pulseIntensity, organProperties);
+						point.SetBrightness(pointIntensity);
+						pulseIntensity = PulseIntensityAfterPoint(pulseIntensity, 
+						                                          organProperties, 
+						                                          data.GetProbeConfig());
 					}
 				}
 			}
@@ -115,6 +124,42 @@ public class HorayProbe {
 
 			data.AddScanline(scanline);
 		}
+	}
+
+	/**
+	 * 	Calculate the intensity for a point, given the intensity of the simulated pulse
+	 * 	and the tissue property at that point.
+	 * 
+	 * 	@param pulseIntensity The current intensity of the simulated pulse emitted by the probe.
+	 * 	@param organProperties The properties of the tissue at the point.
+	 * 	@return A brightness value in the closed interval [0, 1].
+	 */
+	private float IntensityAtPoint(float pulseIntensity, 
+	                               HorayMaterialProperties organProperties)
+	{
+		float intensity = (pulseIntensity * organProperties.echogenicity) - 0.02f * organProperties.attenuation;
+		return Mathf.Clamp(intensity, 0f, 1f);
+	}
+
+	/**
+	 * 	Since the pulse will lose energy after interacting with tissue at a point, we will
+	 * 	need to recalculate the pulse intensity after processing each UltrasoundPoint.
+	 * 
+	 * 	@param previousPulseIntensity The intensity of the pulse that hit this point.
+	 * 	@param previousOrgan The properties of the organ at this point.
+	 * 	@param config The probe configuration. (Used for normalizing energy loss for higher res display)
+	 * 
+	 * 	@return The new intensity to use for the next UltrasoundPoint.
+	 */
+	private float PulseIntensityAfterPoint(float previousPulseIntensity, 
+	                                       HorayMaterialProperties previousOrgan,
+	                                       UltrasoundProbeConfiguration config) 
+	{
+		// When calculating energy lost, we need to normalize for the number of points in the display.
+		float resolutionCoefficient = config.GetPointsPerScanline();
+		float energyLost = (previousOrgan.echogenicity + previousOrgan.attenuation) / resolutionCoefficient;
+		float newIntensity = previousPulseIntensity - energyLost;
+		return newIntensity;
 	}
 
 	/**

@@ -7,9 +7,23 @@ using System.Collections;
  */
 public class HorayMaterialProperties : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+	/// <summary>
+	/// A display color for this organ.
+	/// </summary>
+	public Color color = Color.white;
 	
+	/// <summary>
+	/// The degree to which this organ reflects sound.
+	/// </summary>
+	public float echogenicity = 1.0f;
+	
+	/// <summary>
+	/// The degree to which this organ absorbs sound.
+	/// </summary>
+	public float attenuation = 0.01f;
+	
+	void Start() {
+		this.renderer.material.color = color;
 	}
 	
 	// Update is called once per frame

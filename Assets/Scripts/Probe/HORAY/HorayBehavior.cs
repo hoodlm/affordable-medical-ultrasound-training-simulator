@@ -2,7 +2,8 @@
 using System.Collections;
 
 /**
- *	The MonoBehaviour script to attach to the actual GameObject representing an Ultrasound Probe.
+ *	The MonoBehaviour script to attach to the GameObject representing an Ultrasound Probe.
+ *	Used to set various configuration properties through the inspector.
  */
 public class HorayBehavior : MonoBehaviour {
 
@@ -11,6 +12,9 @@ public class HorayBehavior : MonoBehaviour {
 
 	/// The minimum scanning distance of this probe.
 	public float MinDistance = 1;
+
+	/// The "brightness" of the pulses sent by the probe.
+	public float Intensity = 1.0f;
 
 	/// The size of the scanning arc for the probe.
 	public float ArcSizeInDegrees = 75;

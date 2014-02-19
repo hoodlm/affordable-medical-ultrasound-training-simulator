@@ -21,6 +21,7 @@ public class UltrasoundProbeConfiguration {
     private float maxDistance;
     private float minDistance;
 	private float arcSizeInDegrees;
+	private float gain;
 	private int numberOfScanlines;
 	private int pointsPerScanline;
 
@@ -31,6 +32,7 @@ public class UltrasoundProbeConfiguration {
      * 		arcSizeInDegrees: 75
      * 		numberOfScanlines: 40
      * 		pointsPerScanline: 40
+     * 		gain: 1.0
      */
 	public UltrasoundProbeConfiguration () {
 		this.SetPosition(Vector3.zero);
@@ -40,6 +42,7 @@ public class UltrasoundProbeConfiguration {
 		this.arcSizeInDegrees = 75;
 		this.numberOfScanlines = 40;
 		this.pointsPerScanline = 40;
+		this.gain = 1.0f;
 	}
 
     /** 
@@ -54,22 +57,25 @@ public class UltrasoundProbeConfiguration {
 		                       this);
 		this.SetPosition(config.GetPosition());
 		this.SetRotation(config.GetRotation());
-        this.maxDistance = 			config.GetMaxScanDistance();
-        this.minDistance = 			config.GetMinScanDistance();
-		this.arcSizeInDegrees = 	config.GetArcSizeInDegrees();
-		this.pointsPerScanline =	config.GetPointsPerScanline();
-		this.numberOfScanlines =	config.GetNumberOfScanlines();
+
+        this.maxDistance 			= config.GetMaxScanDistance();
+        this.minDistance 			= config.GetMinScanDistance();
+		this.arcSizeInDegrees 		= config.GetArcSizeInDegrees();
+		this.pointsPerScanline 		= config.GetPointsPerScanline();
+		this.numberOfScanlines 		= config.GetNumberOfScanlines();
+		this.gain					= config.GetGain();
     }
     
     /** 
      *  Instantiate a new UltrasoundProbeConfiguration with a UnityEngine.Transform.
      * 	Other configuration values use the defaults:
      * 
-     *  	minDistance: float.Epsilon (1.40E-45)
-     * 		maxDistance: 10.0
-     * 		arcSizeInDegrees: 75
-     * 		numberOfScanlines: 40
-     * 		pointsPerScanline: 40
+     *  - minDistance: float.Epsilon (1.40E-45)
+     * 	- maxDistance: 10.0
+     * 	- arcSizeInDegrees: 75
+     * 	- numberOfScanlines: 40
+     * 	- pointsPerScanline: 40
+     * 	- gain: 1.0f
      * 
      *  @param probeTransform The UnityEngine.Transform of the probe GameObject.
      */
@@ -79,11 +85,13 @@ public class UltrasoundProbeConfiguration {
 		                       this);
 		this.SetRotation(probeTransform.rotation);
 		this.SetPosition(probeTransform.position);
-		this.minDistance = float.Epsilon;
-		this.maxDistance = 10f;
-		this.arcSizeInDegrees = 75;
-		this.numberOfScanlines = 40;
-		this.pointsPerScanline = 40;
+
+		this.minDistance 		= float.Epsilon;
+		this.maxDistance 		= 10f;
+		this.arcSizeInDegrees 	= 75;
+		this.numberOfScanlines 	= 40;
+		this.pointsPerScanline 	= 40;
+		this.gain				= 1.0f;
     }
 
 	/** 
@@ -225,5 +233,28 @@ public class UltrasoundProbeConfiguration {
 	 */
 	public int GetPointsPerScanline() {
 		return pointsPerScanline;
+	}
+
+	/**
+	 * 	Set the gain of this probe.
+	 * 
+	 * 	@param gain A non-negative float value.
+	 */
+	public void SetGain(float gain) {
+#if UNITY_EDITOR
+		UltrasoundDebug.Assert (gain > 0f,
+		                        string.Format("Tried to set gain to {0}", gain),
+		                        this);
+#endif
+		this.gain = gain;
+	}
+
+	/**
+	 * 	Get the gain for this probe.
+	 * 
+	 * 	@return A non-negative float value.
+	 */
+	public float GetGain() {
+		return this.gain;
 	}
 }

@@ -7,6 +7,12 @@ using System.Collections;
  */
 public class HorayMaterialProperties : MonoBehaviour {
 
+	/// Sets of tissues with pre-defined parameters.
+	public enum OrganPresets {Custom, Bone}
+
+	/// Set the type of this organ. If it is set to custom, the parameters should be specified in the inspector.
+	public OrganPresets organType;
+
 	/// <summary>
 	/// A display color for this organ.
 	/// </summary>
@@ -23,6 +29,18 @@ public class HorayMaterialProperties : MonoBehaviour {
 	public float attenuation = 0.01f;
 	
 	void Start() {
+		switch (organType) {
+		case OrganPresets.Bone:
+			echogenicity = 0.6f;
+			attenuation = 2.0f;
+			color = new Color(0.80f, 0.68f, 0.40f);
+			break;
+		
+		default:
+			// Use values from inspector.
+			break;
+		}
+
 		this.renderer.material.color = color;
 	}
 	

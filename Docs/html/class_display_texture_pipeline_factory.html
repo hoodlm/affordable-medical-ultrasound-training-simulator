@@ -88,22 +88,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">DisplayTexturePipelineFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Factory class for setting up the Display rendering pipeline.  
+ <a href="class_display_texture_pipeline_factory.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a21705aab4502070e4aa8f3f6846ce38c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_texture_pipeline_factory.html#a21705aab4502070e4aa8f3f6846ce38c">BuildStandardHORAYConfig</a> ()</td></tr>
+<tr class="memdesc:a21705aab4502070e4aa8f3f6846ce38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up a standard HORAY configuration:  <a href="#a21705aab4502070e4aa8f3f6846ce38c">More...</a><br/></td></tr>
 <tr class="separator:a21705aab4502070e4aa8f3f6846ce38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0558768039d1aa865259450b8b2346a8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_texture_pipeline_factory.html#a0558768039d1aa865259450b8b2346a8">BuildBlackOnWhiteHORAYConfig</a> ()</td></tr>
+<tr class="memdesc:a0558768039d1aa865259450b8b2346a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up a HORAY configuration with inverted colors:  <a href="#a0558768039d1aa865259450b8b2346a8">More...</a><br/></td></tr>
 <tr class="separator:a0558768039d1aa865259450b8b2346a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6190774550f316f74614fce60cd6345e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_texture_pipeline_factory.html#a6190774550f316f74614fce60cd6345e">BuildFakeTextureSource</a> ()</td></tr>
+<tr class="memitem:a6190774550f316f74614fce60cd6345e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6190774550f316f74614fce60cd6345e"></a>
+static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_texture_pipeline_factory.html#a6190774550f316f74614fce60cd6345e">BuildFakeTextureSource</a> ()</td></tr>
+<tr class="memdesc:a6190774550f316f74614fce60cd6345e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up a fake <a class="el" href="interface_i_texture_source.html" title="An interface describing a class that renders to a display Texture2D. ">ITextureSource</a> that renders a static Color Bar texture. <br/></td></tr>
 <tr class="separator:a6190774550f316f74614fce60cd6345e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2cd6fc99aa1bf775d694f22f6c1f669"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_texture_pipeline_factory.html#ae2cd6fc99aa1bf775d694f22f6c1f669">BuildWithFakeImageSource</a> ()</td></tr>
+<tr class="memdesc:ae2cd6fc99aa1bf775d694f22f6c1f669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up a test <a class="el" href="interface_i_image_source.html" title="Interface describing a class that can provide a bitmap every frame. ">IImageSource</a> that provides a tri-color flag bitmap:  <a href="#ae2cd6fc99aa1bf775d694f22f6c1f669">More...</a><br/></td></tr>
 <tr class="separator:ae2cd6fc99aa1bf775d694f22f6c1f669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fdaf29a1c7a1caa3c80c776007a459e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_texture_pipeline_factory.html#a9fdaf29a1c7a1caa3c80c776007a459e">BuildWithFakeBModeProbeOutput</a> ()</td></tr>
+<tr class="memdesc:a9fdaf29a1c7a1caa3c80c776007a459e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate the output of a BMode probe.  <a href="#a9fdaf29a1c7a1caa3c80c776007a459e">More...</a><br/></td></tr>
 <tr class="separator:a9fdaf29a1c7a1caa3c80c776007a459e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Factory class for setting up the Display rendering pipeline. Generally, the rendering pipeline is something like this: </p>
+<div class="textblock"><p>Factory class for setting up the Display rendering pipeline. </p>
+<p>Generally, the rendering pipeline is something like this: </p>
 <pre class="fragment">probe -&gt; IProbeOutput -&gt; IImageSource -&gt; ITextureSource -&gt; Display</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a0558768039d1aa865259450b8b2346a8"></a>
 <div class="memitem">
@@ -125,31 +135,9 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Sets up a HORAY configuration with inverted colors: </p>
-<pre class="fragment">probe -&gt; HorayProbeOutput -&gt; BlackOnWhiteBModeOutputImageDecoder -&gt; TextureSource</pre> 
-</div>
-</div>
-<a class="anchor" id="a6190774550f316f74614fce60cd6345e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="interface_i_texture_source.html">ITextureSource</a> DisplayTexturePipelineFactory.BuildFakeTextureSource </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Set up a fake <a class="el" href="interface_i_texture_source.html">ITextureSource</a> that renders a static Color Bar texture. </p>
+<p>probe -&gt; <a class="el" href="class_horay_probe_output.html" title="HOmogeneous RAYcasting ultrasound model. ">HorayProbeOutput</a> -&gt; <a class="el" href="class_black_on_white_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ...">BlackOnWhiteBModeOutputImageDecoder</a> -&gt; <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> </p>
 
 </div>
 </div>
@@ -173,8 +161,10 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Sets up a standard HORAY configuration: </p>
-<pre class="fragment">probe -&gt; HorayProbeOutput -&gt; BModeOutputImageDecoder -&gt; TextureSource</pre> 
+<p>probe -&gt; <a class="el" href="class_horay_probe_output.html" title="HOmogeneous RAYcasting ultrasound model. ">HorayProbeOutput</a> -&gt; <a class="el" href="class_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ...">BModeOutputImageDecoder</a> -&gt; <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> </p>
+
 </div>
 </div>
 <a class="anchor" id="a9fdaf29a1c7a1caa3c80c776007a459e"></a>
@@ -197,8 +187,10 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Simulate the output of a BMode probe. </p>
-<pre class="fragment">TestProbeOutput -&gt; BModeOutputImageDecoder -&gt; TextureSource</pre> 
+<p><a class="el" href="class_test_probe_output.html" title="A fake IProbeOutput class to generate test probe data. ">TestProbeOutput</a> -&gt; <a class="el" href="class_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ...">BModeOutputImageDecoder</a> -&gt; <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> </p>
+
 </div>
 </div>
 <a class="anchor" id="ae2cd6fc99aa1bf775d694f22f6c1f669"></a>
@@ -221,8 +213,10 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set up a test <a class="el" href="interface_i_image_source.html">IImageSource</a> that provides a tri-color flag bitmap: </p>
-<pre class="fragment">TestImageSource -&gt; TextureSource</pre> 
+
+<p>Set up a test <a class="el" href="interface_i_image_source.html" title="Interface describing a class that can provide a bitmap every frame. ">IImageSource</a> that provides a tri-color flag bitmap: </p>
+<p><a class="el" href="class_test_image_source.html" title="A fake IImageSource class to generate a test bitmap. ">TestImageSource</a> -&gt; <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -231,7 +225,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:44 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

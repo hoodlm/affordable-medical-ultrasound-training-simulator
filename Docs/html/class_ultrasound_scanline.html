@@ -83,11 +83,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_ultrasound_scanline-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UltrasoundScanline Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A scanline wraps a list of <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>s along the same trajectory in space.  
+ <a href="class_ultrasound_scanline.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for UltrasoundScanline:</div>
 <div class="dyncontent">
@@ -99,42 +105,54 @@ Inheritance diagram for UltrasoundScanline:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaf49bd0c367a08444fa692fb9b7218d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#aaf49bd0c367a08444fa692fb9b7218d6">UltrasoundScanline</a> ()</td></tr>
-<tr class="separator:aaf49bd0c367a08444fa692fb9b7218d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a8185b2604be432b5248c5a81916007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#a6a8185b2604be432b5248c5a81916007">AddUltrasoundPoints</a> (ICollection&lt; <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> &gt; points)</td></tr>
+<tr class="memitem:a545d3389e64ff318d2986acd9365cd3f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a545d3389e64ff318d2986acd9365cd3f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#a545d3389e64ff318d2986acd9365cd3f">UltrasoundScanline</a> (Vector3 <a class="el" href="class_ultrasound_scanline.html#a04d263535e9952523f116c3d2b246633">origin</a>)</td></tr>
+<tr class="memdesc:a545d3389e64ff318d2986acd9365cd3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate a new instance of <a class="el" href="class_ultrasound_scanline.html" title="A scanline wraps a list of UltrasoundPoints along the same trajectory in space. ">UltrasoundScanline</a>. <br/></td></tr>
+<tr class="separator:a545d3389e64ff318d2986acd9365cd3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a8185b2604be432b5248c5a81916007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#a6a8185b2604be432b5248c5a81916007">AddUltrasoundPoints</a> (ICollection&lt; <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> &gt; <a class="el" href="class_ultrasound_scanline.html#a47fac2f7c76b8a033fdee14c86e42da6">points</a>)</td></tr>
+<tr class="memdesc:a6a8185b2604be432b5248c5a81916007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a collection of <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>s to this scanline.  <a href="#a6a8185b2604be432b5248c5a81916007">More...</a><br/></td></tr>
 <tr class="separator:a6a8185b2604be432b5248c5a81916007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1db1148f2c593d8037f2c3920d0c0353"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#a1db1148f2c593d8037f2c3920d0c0353">AddUltrasoundPoint</a> (<a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> p)</td></tr>
+<tr class="memdesc:a1db1148f2c593d8037f2c3920d0c0353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a> to this scanline.  <a href="#a1db1148f2c593d8037f2c3920d0c0353">More...</a><br/></td></tr>
 <tr class="separator:a1db1148f2c593d8037f2c3920d0c0353"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c74d32ac8b42923a0c419fc5be119f5"><td class="memItemLeft" align="right" valign="top">ReadOnlyCollection<br class="typebreak"/>
+<tr class="memitem:a0c74d32ac8b42923a0c419fc5be119f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c74d32ac8b42923a0c419fc5be119f5"></a>
+ReadOnlyCollection<br class="typebreak"/>
 &lt; <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#a0c74d32ac8b42923a0c419fc5be119f5">GetPoints</a> ()</td></tr>
+<tr class="memdesc:a0c74d32ac8b42923a0c419fc5be119f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a read-only collection of the points in this scanline. <br/></td></tr>
 <tr class="separator:a0c74d32ac8b42923a0c419fc5be119f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d3f00a343ae9cf47a78544667350f60"><td class="memItemLeft" align="right" valign="top">IEnumerator&lt; <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#a0d3f00a343ae9cf47a78544667350f60">GetEnumerator</a> ()</td></tr>
+<tr class="memitem:a0d3f00a343ae9cf47a78544667350f60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d3f00a343ae9cf47a78544667350f60"></a>
+IEnumerator&lt; <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#a0d3f00a343ae9cf47a78544667350f60">GetEnumerator</a> ()</td></tr>
+<tr class="memdesc:a0d3f00a343ae9cf47a78544667350f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator over all the points in this scanline. <br/></td></tr>
 <tr class="separator:a0d3f00a343ae9cf47a78544667350f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab98770a9d07469a36817b1e89b4de912"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab98770a9d07469a36817b1e89b4de912"></a>
 override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#ab98770a9d07469a36817b1e89b4de912">ToString</a> ()</td></tr>
-<tr class="memdesc:ab98770a9d07469a36817b1e89b4de912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string that represents the current <a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a>. <br/></td></tr>
+<tr class="memdesc:ab98770a9d07469a36817b1e89b4de912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string that represents the current <a class="el" href="class_ultrasound_scanline.html" title="A scanline wraps a list of UltrasoundPoints along the same trajectory in space. ">UltrasoundScanline</a>. <br/></td></tr>
 <tr class="separator:ab98770a9d07469a36817b1e89b4de912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a04d263535e9952523f116c3d2b246633"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04d263535e9952523f116c3d2b246633"></a>
+readonly Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#a04d263535e9952523f116c3d2b246633">origin</a></td></tr>
+<tr class="memdesc:a04d263535e9952523f116c3d2b246633"><td class="mdescLeft">&#160;</td><td class="mdescRight">The origin of this scanline (usually the location of the probe) <br/></td></tr>
+<tr class="separator:a04d263535e9952523f116c3d2b246633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abe6595c0700489b5916acacc72d53cd5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe6595c0700489b5916acacc72d53cd5"></a>
+IEnumerator IEnumerable.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#abe6595c0700489b5916acacc72d53cd5">GetEnumerator</a> ()</td></tr>
+<tr class="memdesc:abe6595c0700489b5916acacc72d53cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator over all the <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>s in this <a class="el" href="class_ultrasound_scanline.html" title="A scanline wraps a list of UltrasoundPoints along the same trajectory in space. ">UltrasoundScanline</a>. <br/></td></tr>
+<tr class="separator:abe6595c0700489b5916acacc72d53cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a47fac2f7c76b8a033fdee14c86e42da6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47fac2f7c76b8a033fdee14c86e42da6"></a>
+IList&lt; <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_scanline.html#a47fac2f7c76b8a033fdee14c86e42da6">points</a></td></tr>
+<tr class="memdesc:a47fac2f7c76b8a033fdee14c86e42da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of points sampled on this scanline. <br/></td></tr>
+<tr class="separator:a47fac2f7c76b8a033fdee14c86e42da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A scanline wraps a list of <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a>s along the same trajectory in space. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aaf49bd0c367a08444fa692fb9b7218d6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">UltrasoundScanline.UltrasoundScanline </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Instantiate a new instance of <a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a>. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<div class="textblock"><p>A scanline wraps a list of <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>s along the same trajectory in space. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a1db1148f2c593d8037f2c3920d0c0353"></a>
 <div class="memitem">
 <div class="memproto">
@@ -148,10 +166,11 @@ override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Add an <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> to this scanline.</p>
+
+<p>Add an <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a> to this scanline. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p</td><td>The <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> to add. </td></tr>
+    <tr><td class="paramname">p</td><td>The <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a> to add. </td></tr>
   </table>
   </dd>
 </dl>
@@ -177,10 +196,11 @@ override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Add a collection of <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a>s to this scanline.</p>
+
+<p>Add a collection of <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>s to this scanline. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">points</td><td>The <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a>s to add. </td></tr>
+    <tr><td class="paramname">points</td><td>The <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>s to add. </td></tr>
   </table>
   </dd>
 </dl>
@@ -193,45 +213,13 @@ override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 </div>
 </div>
-<a class="anchor" id="a0d3f00a343ae9cf47a78544667350f60"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IEnumerator&lt;<a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a>&gt; UltrasoundScanline.GetEnumerator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>An iterator over all the points in this scanline. </p>
-
-</div>
-</div>
-<a class="anchor" id="a0c74d32ac8b42923a0c419fc5be119f5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ReadOnlyCollection&lt;<a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a>&gt; UltrasoundScanline.GetPoints </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Return a read-only collection of the points in this scanline. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>UltrasoundScanline.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:45 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -84,11 +84,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_display_behavior-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DisplayBehavior Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Handles the behavior of a display GameObject.  
+ <a href="class_display_behavior.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DisplayBehavior:</div>
 <div class="dyncontent">
@@ -109,6 +114,7 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>FakeProbeOutput</b>
 <br/>
  }</td></tr>
+<tr class="memdesc:ac8f6aedcaab1d94a92f12fd1939296a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A set of different modes for the display.  <a href="class_display_behavior.html#ac8f6aedcaab1d94a92f12fd1939296a0">More...</a><br/></td></tr>
 <tr class="separator:ac8f6aedcaab1d94a92f12fd1939296a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -125,9 +131,31 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_behavior.html#a04bf737b5aae9978d2d9b87a9982f8cf">textureHeight</a> = 480</td></tr>
 <tr class="memdesc:a04bf737b5aae9978d2d9b87a9982f8cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The height of the display's texture. <br/></td></tr>
 <tr class="separator:a04bf737b5aae9978d2d9b87a9982f8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0a96994d218aaa137db54ac059aa14f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_behavior.html#a0a96994d218aaa137db54ac059aa14f7">Start</a> ()</td></tr>
+<tr class="memdesc:a0a96994d218aaa137db54ac059aa14f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization when the scene is started.  <a href="#a0a96994d218aaa137db54ac059aa14f7">More...</a><br/></td></tr>
+<tr class="separator:a0a96994d218aaa137db54ac059aa14f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e2799ad42f985d5392f3df143c66650"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e2799ad42f985d5392f3df143c66650"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_behavior.html#a8e2799ad42f985d5392f3df143c66650">Update</a> ()</td></tr>
+<tr class="memdesc:a8e2799ad42f985d5392f3df143c66650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame. This is the "entry point" into the ultrasound rendering procedure. <br/></td></tr>
+<tr class="separator:a8e2799ad42f985d5392f3df143c66650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a598cfd36f29c32e9869399502cabbc26"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a598cfd36f29c32e9869399502cabbc26"></a>
+<a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_behavior.html#a598cfd36f29c32e9869399502cabbc26">textureSource</a></td></tr>
+<tr class="memdesc:a598cfd36f29c32e9869399502cabbc26"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class responsible for dynamically generating the texture that is drawn to this display object. <br/></td></tr>
+<tr class="separator:a598cfd36f29c32e9869399502cabbc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18eb39a6fa2233914d9a6763773c6e4d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18eb39a6fa2233914d9a6763773c6e4d"></a>
+Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_behavior.html#a18eb39a6fa2233914d9a6763773c6e4d">texture</a></td></tr>
+<tr class="memdesc:a18eb39a6fa2233914d9a6763773c6e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual texture applied to the display's model. This texture is dynamically generated, not static. <br/></td></tr>
+<tr class="separator:a18eb39a6fa2233914d9a6763773c6e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles the behavior of a display GameObject. </p>
+<p>The behavior is primarily configured by setting the displayMode in the inspector. See documentation below on <a class="el" href="class_display_behavior.html#ac8f6aedcaab1d94a92f12fd1939296a0" title="A set of different modes for the display. ">DisplayBehavior.DisplayModes</a> for specific information on what each mode does. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="ac8f6aedcaab1d94a92f12fd1939296a0"></a>
 <div class="memitem">
@@ -138,14 +166,42 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A set of different modes for the display.</p>
+
+<p>A set of different modes for the display. </p>
 <ul>
-<li>FakeTexture: Uses <a class="el" href="class_test_texture_source.html">TestTextureSource</a> to render a ColorBar graphic to the display.</li>
-<li>FakeImage: A standard <a class="el" href="class_texture_source.html">TextureSource</a> is initialized with <a class="el" href="class_test_image_source.html">TestImageSource</a>, which renders a tri-color flag graphic to the display.</li>
-<li>FakeProbeOutput: A standard <a class="el" href="class_texture_source.html">TextureSource</a> and <a class="el" href="class_b_mode_output_image_decoder.html">BModeOutputImageDecoder</a> are fed output from a <a class="el" href="class_test_probe_output.html">TestProbeOutput</a>. The result should be a noisy white-on-black triangle graphic.</li>
+<li>FakeTexture: Uses <a class="el" href="class_test_texture_source.html" title="A fake ITextureSource class to generate a test texture. ">TestTextureSource</a> to render a ColorBar graphic to the display.</li>
+<li>FakeImage: A standard <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> is initialized with <a class="el" href="class_test_image_source.html" title="A fake IImageSource class to generate a test bitmap. ">TestImageSource</a>, which renders a tri-color flag graphic to the display.</li>
+<li>FakeProbeOutput: A standard <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> and <a class="el" href="class_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ...">BModeOutputImageDecoder</a> are fed output from a <a class="el" href="class_test_probe_output.html" title="A fake IProbeOutput class to generate test probe data. ">TestProbeOutput</a>. The result should be a noisy white-on-black triangle graphic.</li>
 <li>HORAY: a HOmogeneous tissue RAYcasting algorithm to generate an ultrasound image.</li>
 <li>InvHORAY: HORAY with inverted colors (black on white). </li>
 </ul>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0a96994d218aaa137db54ac059aa14f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplayBehavior.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialization when the scene is started. </p>
+<p>This sets up the source of dynamic texture generation for the display. Based on the current choice of DisplayModes, the <a class="el" href="class_display_texture_pipeline_factory.html" title="Factory class for setting up the Display rendering pipeline. ">DisplayTexturePipelineFactory</a> will provide the appropriate <a class="el" href="interface_i_texture_source.html" title="An interface describing a class that renders to a display Texture2D. ">ITextureSource</a>. </p>
 
 </div>
 </div>
@@ -155,7 +211,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:44 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

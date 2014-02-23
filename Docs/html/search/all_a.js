@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['output',['output',['../class_horay_behavior.html#ab23fdae8f935565e8a88d3ceb463b395',1,'HorayBehavior.output()'],['../class_horay_probe.html#aaf4d9d4842722a479db49d7d6be03384',1,'HorayProbe.output()']]]
+  ['numberofscanlines',['numberOfScanlines',['../class_ultrasound_probe_configuration.html#a6ab5abee976c1f1226eed849ea154992',1,'UltrasoundProbeConfiguration.numberOfScanlines()'],['../class_horay_behavior.html#aca20897671e68973466902ccbf6a632d',1,'HorayBehavior.NumberOfScanlines()']]]
 ];

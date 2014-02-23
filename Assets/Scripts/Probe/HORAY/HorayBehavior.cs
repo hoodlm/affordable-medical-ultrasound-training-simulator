@@ -4,6 +4,9 @@ using System.Collections;
 /**
  *	The MonoBehaviour script to attach to the GameObject representing an Ultrasound Probe.
  *	Used to set various configuration properties through the inspector.
+ *
+ *	This script does not actually perform any of the ultrasound rendering logic. The primary entry point into the
+ *	HORAY scan is in the HorayProbeOutput script.
  */
 public class HorayBehavior : MonoBehaviour {
 
@@ -31,10 +34,11 @@ public class HorayBehavior : MonoBehaviour {
 	/// The instance of HorayProbe that houses all of the scanning logic and produces UltrasoundScanData.
 	protected HorayProbe dataSource;
 
-	// Use this for initialization
+	/// Use this for initialization
 	void Start () {
-		// Some input validation
+
 #if UNITY_EDITOR
+		// Some input validation
 		UltrasoundDebug.Assert(NumberOfScanlines > 0, 
 		                       "Number of scanlines should be a positive integer",
 		                       this, true);
@@ -57,11 +61,6 @@ public class HorayBehavior : MonoBehaviour {
 
 		output = new HorayProbeOutput(this.gameObject);
 		dataSource = new HorayProbe(this.gameObject, output);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 	/**

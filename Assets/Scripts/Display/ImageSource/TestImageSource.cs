@@ -6,6 +6,7 @@ using System.Collections;
  */
 public class TestImageSource : IImageSource {
 
+	/// The colors used to generate this test image.
     private Color[] bars = {Color.green, Color.white, Color.red};
 
     public Color[] BitmapWithDimensions (int width, int height) {

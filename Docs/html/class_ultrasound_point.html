@@ -83,11 +83,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_ultrasound_point-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UltrasoundPoint Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A single point in space.  
+ <a href="class_ultrasound_point.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for UltrasoundPoint:</div>
 <div class="dyncontent">
@@ -99,27 +103,53 @@ Inheritance diagram for UltrasoundPoint:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9ca38917c6f8f252df7a09dcab27f81c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a9ca38917c6f8f252df7a09dcab27f81c">UltrasoundPoint</a> (Vector3 worldSpaceLocation, Vector2 projectedLocation)</td></tr>
+<tr class="memitem:a9ca38917c6f8f252df7a09dcab27f81c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a9ca38917c6f8f252df7a09dcab27f81c">UltrasoundPoint</a> (Vector3 <a class="el" href="class_ultrasound_point.html#aeb11a4ea5190ceaf5f40ea537d6e7e59">worldSpaceLocation</a>, Vector2 <a class="el" href="class_ultrasound_point.html#a8b67d4afd461e23d5ec2c9547609e61e">projectedLocation</a>)</td></tr>
+<tr class="memdesc:a9ca38917c6f8f252df7a09dcab27f81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>.  <a href="#a9ca38917c6f8f252df7a09dcab27f81c">More...</a><br/></td></tr>
 <tr class="separator:a9ca38917c6f8f252df7a09dcab27f81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a757538bf9bb569b6188c0a39986e0c5b"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a757538bf9bb569b6188c0a39986e0c5b">GetWorldSpaceLocation</a> ()</td></tr>
+<tr class="memdesc:a757538bf9bb569b6188c0a39986e0c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the 3D position of this <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>.  <a href="#a757538bf9bb569b6188c0a39986e0c5b">More...</a><br/></td></tr>
 <tr class="separator:a757538bf9bb569b6188c0a39986e0c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dd924c1f5287e52df8ea0166b4cbdc1"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a9dd924c1f5287e52df8ea0166b4cbdc1">GetProjectedLocation</a> ()</td></tr>
+<tr class="memdesc:a9dd924c1f5287e52df8ea0166b4cbdc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the 2D projected position of this <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a> within the scanning plane.  <a href="#a9dd924c1f5287e52df8ea0166b4cbdc1">More...</a><br/></td></tr>
 <tr class="separator:a9dd924c1f5287e52df8ea0166b4cbdc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61c880e880f61998614e58ba03a65b77"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a61c880e880f61998614e58ba03a65b77">GetBrightness</a> ()</td></tr>
+<tr class="memdesc:a61c880e880f61998614e58ba03a65b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the brightness (echogenicity) of this point.  <a href="#a61c880e880f61998614e58ba03a65b77">More...</a><br/></td></tr>
 <tr class="separator:a61c880e880f61998614e58ba03a65b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad606b7703ce7712048686ac13c5a04a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#ad606b7703ce7712048686ac13c5a04a9">SetBrightness</a> (float brightness)</td></tr>
+<tr class="memitem:ad606b7703ce7712048686ac13c5a04a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#ad606b7703ce7712048686ac13c5a04a9">SetBrightness</a> (float <a class="el" href="class_ultrasound_point.html#aed246490fbbe2449c4b95f16bae5c18c">brightness</a>)</td></tr>
+<tr class="memdesc:ad606b7703ce7712048686ac13c5a04a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the brightness (echogenicity) of this point.  <a href="#ad606b7703ce7712048686ac13c5a04a9">More...</a><br/></td></tr>
 <tr class="separator:ad606b7703ce7712048686ac13c5a04a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8179704789f1527e9c3b8e465ca74bf6"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a8179704789f1527e9c3b8e465ca74bf6">ToString</a> ()</td></tr>
+<tr class="memitem:a8179704789f1527e9c3b8e465ca74bf6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8179704789f1527e9c3b8e465ca74bf6"></a>
+override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a8179704789f1527e9c3b8e465ca74bf6">ToString</a> ()</td></tr>
+<tr class="memdesc:a8179704789f1527e9c3b8e465ca74bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">String representation of an <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>. <br/></td></tr>
 <tr class="separator:a8179704789f1527e9c3b8e465ca74bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9643a8dfb7b251ce1080f65386efe4ce"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a9643a8dfb7b251ce1080f65386efe4ce">Equals</a> (object obj)</td></tr>
+<tr class="memdesc:a9643a8dfb7b251ce1080f65386efe4ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">UltrasoundPoints are considered equal if they have the same ProjectedLocation and WorldSpaceLocation.  <a href="#a9643a8dfb7b251ce1080f65386efe4ce">More...</a><br/></td></tr>
 <tr class="separator:a9643a8dfb7b251ce1080f65386efe4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7861a75a003c032e2e1ee467d92eb6d3"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a7861a75a003c032e2e1ee467d92eb6d3">GetHashCode</a> ()</td></tr>
+<tr class="memdesc:a7861a75a003c032e2e1ee467d92eb6d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">UltrasoundPoints' hashcodes are generated from ProjectedLocation and WorldSpaceLocation.  <a href="#a7861a75a003c032e2e1ee467d92eb6d3">More...</a><br/></td></tr>
 <tr class="separator:a7861a75a003c032e2e1ee467d92eb6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c7e87ca4ddfcd56d9f412ffc639be1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a9c7e87ca4ddfcd56d9f412ffc639be1f">CompareTo</a> (object obj)</td></tr>
+<tr class="memdesc:a9c7e87ca4ddfcd56d9f412ffc639be1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison is solely calculated based on distance in the projection plane.  <a href="#a9c7e87ca4ddfcd56d9f412ffc639be1f">More...</a><br/></td></tr>
 <tr class="separator:a9c7e87ca4ddfcd56d9f412ffc639be1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aeb11a4ea5190ceaf5f40ea537d6e7e59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb11a4ea5190ceaf5f40ea537d6e7e59"></a>
+readonly Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#aeb11a4ea5190ceaf5f40ea537d6e7e59">worldSpaceLocation</a></td></tr>
+<tr class="memdesc:aeb11a4ea5190ceaf5f40ea537d6e7e59"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position of the point in world coordinates. <br/></td></tr>
+<tr class="separator:aeb11a4ea5190ceaf5f40ea537d6e7e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b67d4afd461e23d5ec2c9547609e61e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b67d4afd461e23d5ec2c9547609e61e"></a>
+readonly Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#a8b67d4afd461e23d5ec2c9547609e61e">projectedLocation</a></td></tr>
+<tr class="memdesc:a8b67d4afd461e23d5ec2c9547609e61e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position of the point, projected in the scanning plane. <br/></td></tr>
+<tr class="separator:a8b67d4afd461e23d5ec2c9547609e61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed246490fbbe2449c4b95f16bae5c18c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed246490fbbe2449c4b95f16bae5c18c"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_point.html#aed246490fbbe2449c4b95f16bae5c18c">brightness</a></td></tr>
+<tr class="memdesc:aed246490fbbe2449c4b95f16bae5c18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The brightness of this point, in the inclusive interval [0, 1]. <br/></td></tr>
+<tr class="separator:aed246490fbbe2449c4b95f16bae5c18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A single point in space. </p>
+<p><a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>s are Comparable, and can be sorted based on their distance from the scanning location. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9ca38917c6f8f252df7a09dcab27f81c"></a>
 <div class="memitem">
@@ -144,7 +174,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create a new <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a>. </p>
+
+<p>Create a new <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">worldSpaceLocation</td><td>The location of the point in 3D world space. </td></tr>
@@ -169,7 +200,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Comparison is solely calculated based on distance in the projection plane.</p>
+
+<p>Comparison is solely calculated based on distance in the projection plane. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>Another Ultrasound point to compare to. </td></tr>
@@ -193,10 +225,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>UltrasoundPoints are considered equal if they have the same ProjectedLocation and WorldSpaceLocation. Brightness is not included in the equality comparison.</p>
+
+<p>UltrasoundPoints are considered equal if they have the same ProjectedLocation and WorldSpaceLocation. </p>
+<p>Brightness is not included in the equality comparison.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>The object to compare to this <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a>. </td></tr>
+    <tr><td class="paramname">obj</td><td>The object to compare to this <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -215,6 +249,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Get the brightness (echogenicity) of this point. </p>
 <dl class="section return"><dt>Returns</dt><dd>Brightness between 0 and 1, inclusive. </dd></dl>
 
@@ -232,7 +267,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>UltrasoundPoints' hashcodes are generated from ProjectedLocation and WorldSpaceLocation. Brightness is not included in the hashcode generation.</p>
+
+<p>UltrasoundPoints' hashcodes are generated from ProjectedLocation and WorldSpaceLocation. </p>
+<p>Brightness is not included in the hashcode generation.</p>
 <dl class="section return"><dt>Returns</dt><dd>A hash. </dd></dl>
 
 </div>
@@ -249,7 +286,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get the 2D projected position of this <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a> within the scanning plane. </p>
+
+<p>Get the 2D projected position of this <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a> within the scanning plane. </p>
 <dl class="section return"><dt>Returns</dt><dd>Within the scanning plane, the 2D position of the point. </dd></dl>
 
 </div>
@@ -266,7 +304,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return the 3D position of this <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a>. </p>
+
+<p>Return the 3D position of this <a class="el" href="class_ultrasound_point.html" title="A single point in space. ">UltrasoundPoint</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>worldSpaceLocation The location of the point in 3D world space. </dd></dl>
 
 </div>
@@ -284,6 +323,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Change the brightness (echogenicity) of this point. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -294,29 +334,13 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8179704789f1527e9c3b8e465ca74bf6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">override string UltrasoundPoint.ToString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>String representation of an <a class="el" href="class_ultrasound_point.html">UltrasoundPoint</a>. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>UltrasoundPoint.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:45 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

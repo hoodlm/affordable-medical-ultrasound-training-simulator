@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 /**
  *	Class responsible for detecting which organs can possibly be hit by raycasts.
+ *	This function is roughly analagous to "culling" in a traditional 3D renderings pipeline.
+ *	
+ *	There may be a short (2-5 frame) delay before new objects are recognized as potentially visible.
  */
 public class HorayOrganCuller {
 	
@@ -23,13 +26,15 @@ public class HorayOrganCuller {
 	 */
 	private IDictionary<GameObject, float> reverseMapLookup;
 
-	/// The number of scanlines to check per frame
+	/// The number of scanlines to check per frame. This may be increased on faster machines so that newly
+	/// visible organs are recognized more quickly.
 	private int SCANLINES_PER_FRAME = 5;
 
-	/// How long to wait to remove an organ.
+	/// How long to wait to remove an organ. If the probe is configured for a large number of scanlines
+	/// then this time may need to be increased.
 	private float EXPIRATION_TIME_IN_SECONDS = 5f;
 
-	/// The last scanline checked during the last frame.
+	/// The last scanline checked during the previous frame.
 	private int scanlineIndex;
 
 	/**
@@ -56,6 +61,7 @@ public class HorayOrganCuller {
 
 	/**
 	 *	Based on a probe configuration, determine which organs can possibly appear in the image.
+	 *	@param scanlines The list of scanlines to be checked.
 	 *	@param config The current UltrasoundProbeConfiguration
 	 *	@return A culled list of GameObjects to test for collisions.
 	 */
@@ -67,23 +73,36 @@ public class HorayOrganCuller {
 		return new List<GameObject>(currentVisibleOrgans.Values);
 	}
 
+	/**
+	 *	Checks a list of scanlines for visible objects. If an object on the scanlines is hit by
+	 *	a raycast, it is marked as visible (added to the currentVisibleOrgans and reverseMapLookup dictionaries).
+	 *
+	 *	Visible objects are given an expiration time (EXPIRATION_TIME_IN_SECONDS after the present).
+	 *	If an object that is already known to be visible is detected, its expiration time is reset.
+	 *
+	 *	This method only checks a few scanlines each frame (as defined in the SCANLINES_PER_FRAME constant).
+	 *	We attempt to check scanlines that are spread apart, rather than checking sequentially, so that new 
+	 *	objects are detected more quickly. For example, if there are 10 scanlines in total, it is more helpful
+	 *	to check scanlines (0, 3, 6, 9) in a single frame than to check (0, 1, 2, 3).
+	 *
+	 *	@param scanlines The set of all scanlines sent out by this probe.
+	 */
 	private void CheckScanlines(IList<UltrasoundScanline> scanlines) {
 		int scanlineCount = scanlines.Count;
+#if UNITY_EDITOR
+		UltrasoundDebug.Assert(scanlineCount > 0, "Zero scanlines passed to culler!", this);
+#endif
 
 		// Rather than checking scanlines sequentially, we try to check them somewhat uniformly so
 		// that new objects are more likely to be noticed within a few frames. Therefore, we generate
-		// a number smaller than scanlineCount that is NOT a divisor of scanlineCount.
+		// a number smaller than scanlineCount, but one that is NOT a divisor of scanlineCount.
 		int scanlineStepSize = (scanlineCount / (SCANLINES_PER_FRAME + 1));
 		while (scanlineCount % scanlineStepSize == 0) {
 			scanlineStepSize++;
 		}
 
-#if UNITY_EDITOR
-		UltrasoundDebug.Assert(scanlineCount > 0, "Zero scanlines passed to culler!", this);
-#endif
 		for (int i = 0; i < SCANLINES_PER_FRAME; ++i) {
 			scanlineIndex = (scanlineIndex + scanlineStepSize) % scanlineCount;
-//			Debug.Log (scanlineIndex);
 
 			IList<GameObject> organsToAdd = (ValidOrgansOnScanline(scanlines[scanlineIndex]));
 			foreach (GameObject organ in organsToAdd) {
@@ -93,7 +112,7 @@ public class HorayOrganCuller {
 				                       this);
 #endif
 				if (!reverseMapLookup.ContainsKey(organ)) {
-					// Store in a temp variable since Time.time may change between the two assignments below.
+					// Store in a temp variable since Time.time may change between assignments below.
 					float keyTime = Time.time;
 
 					/* On faster machines, two raycasts may be completed before Time.time has been measureably
@@ -106,8 +125,9 @@ public class HorayOrganCuller {
 
 					currentVisibleOrgans.Add(keyTime, organ);
 					reverseMapLookup.Add(organ, keyTime);
-//					Debug.Log(string.Format("Added organ {0}", organ.name));
-				} else {
+				}
+
+				else {
 					float oldTime = float.NegativeInfinity;
 					reverseMapLookup.TryGetValue(organ, out oldTime);
 #if UNITY_EDITOR
@@ -129,13 +149,14 @@ public class HorayOrganCuller {
 
 					currentVisibleOrgans.Add(newTime, organ);
 					reverseMapLookup.Add(organ, newTime);
-//					Debug.Log(string.Format("Changed organ {0} time from {1} to {2}", 
-//					                        organ.name, oldTime, newTime));
 				}
 			}
 		}
 	}
 
+	/// Checks an individual scanline for valid organs.
+	/// @param scanline The UltrasoundScanline being tested
+	/// @return A list of organs that are on the scanline.
 	private IList<GameObject> ValidOrgansOnScanline(UltrasoundScanline scanline) {
 		IList<UltrasoundPoint> points = scanline.GetPoints();
 #if UNITY_EDITOR
@@ -161,10 +182,8 @@ public class HorayOrganCuller {
 	 */
 	private void RemoveExpiredObjects()
 	{
-//		Debug.Log(string.Format("{0} organs visible before removal.", currentVisibleOrgans.Count));
-
 		/* We store the keys and organs to remove in temporary lists. This is to avoid bugs associated
-		 * with editing the items in a Dictionary while iterating over them in a foreach loop.
+		 * with editing the items in a Dictionary while iterating over it in a foreach loop.
 		 */
 		IList<float> keysToRemove = new List<float>();
 		IList<GameObject> organsToRemove = new List<GameObject>();
@@ -181,11 +200,9 @@ public class HorayOrganCuller {
 #endif
 				keysToRemove.Add(timeLastSeen);
 				organsToRemove.Add(organToRemove);
-//				Debug.Log(string.Format("{0} marked for removal; last seen {1} seconds ago.", 
-//				                        organToRemove.name, timeElapsed));
 			} else {
-				// The SortedDictionary implementation will store the oldest objects first.
-				// As soon as we reach an object that isn't expired, we're done.
+				// Remember that the SortedDictionary implementation will store the oldest objects first.
+				// As soon as we reach an object that isn't expired, we know that all the rest won't be expired either.
 				break;
 			}
 		}
@@ -200,7 +217,6 @@ public class HorayOrganCuller {
 			reverseMapLookup.Remove(organsToRemove[i]);
 		}
 
-//		Debug.Log(string.Format("{0} organs visible after removal.", currentVisibleOrgans.Count));
 #if UNITY_EDITOR
 		UltrasoundDebug.Assert (currentVisibleOrgans.Count == reverseMapLookup.Count,
 		                        string.Format("currentVisibleOrgans.Count = {0}, reverseMapLookup.Count = {1}",

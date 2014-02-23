@@ -8,7 +8,10 @@ using System.Collections.ObjectModel;
  */
 public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
 
+	/// A list of points sampled on this scanline
 	private IList<UltrasoundPoint> points;
+
+	/// The origin of this scanline (usually the location of the probe)
 	public readonly Vector3 origin;
     
     /** 
@@ -68,7 +71,7 @@ public class UltrasoundScanline : IEnumerable<UltrasoundPoint>{
     }
 
     /**
-     *  An iterator over all the points in this scanline.
+     *  An iterator over all the UltrasoundPoint%s in this UltrasoundScanline.
      */
     IEnumerator IEnumerable.GetEnumerator() {
         foreach (UltrasoundPoint point in points) {

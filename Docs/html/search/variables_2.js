@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['datasource',['dataSource',['../class_horay_behavior.html#a86da676127f5fc435bd3447f06b4a36b',1,'HorayBehavior']]],
-  ['displaymode',['displayMode',['../class_display_behavior.html#a4ca62c1b7d9a341fd334744ca882c59d',1,'DisplayBehavior']]],
-  ['drawcolor',['drawColor',['../class_b_mode_output_image_decoder.html#a713f0e4011ad77b6e0279f5a4a67844e',1,'BModeOutputImageDecoder']]]
+  ['color',['color',['../class_horay_material_properties.html#ac3ada492de4ef654144628b03a871ad1',1,'HorayMaterialProperties']]],
+  ['culler',['culler',['../class_horay_probe.html#ad94fcdce53d1dddb5056b316a5969835',1,'HorayProbe']]],
+  ['currentvisibleorgans',['currentVisibleOrgans',['../class_horay_organ_culler.html#a9996f14f3a34ef9c07f55236ebe8d293',1,'HorayOrganCuller']]]
 ];

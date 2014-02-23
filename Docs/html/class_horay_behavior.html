@@ -85,11 +85,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_horay_behavior-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">HorayBehavior Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The MonoBehaviour script to attach to the GameObject representing an Ultrasound Probe.  
+ <a href="class_horay_behavior.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HorayBehavior:</div>
 <div class="dyncontent">
@@ -104,6 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afbfb2130a4dbe736380f7b0268f7f711"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_i_probe_output.html">IProbeOutput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_behavior.html#afbfb2130a4dbe736380f7b0268f7f711">GetOutput</a> ()</td></tr>
 <tr class="separator:afbfb2130a4dbe736380f7b0268f7f711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8773ec8ae86787f0d46f087efd0f4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_behavior.html#a8e8773ec8ae86787f0d46f087efd0f4f">GetProbeConfig</a> ()</td></tr>
+<tr class="memdesc:a8e8773ec8ae86787f0d46f087efd0f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current probe configuration.  <a href="#a8e8773ec8ae86787f0d46f087efd0f4f">More...</a><br/></td></tr>
 <tr class="separator:a8e8773ec8ae86787f0d46f087efd0f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -116,6 +121,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_behavior.html#a4f5caa99e71e71bb8316960948f29385">MinDistance</a> = 1</td></tr>
 <tr class="memdesc:a4f5caa99e71e71bb8316960948f29385"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum scanning distance of this probe. <br/></td></tr>
 <tr class="separator:a4f5caa99e71e71bb8316960948f29385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a977d10b6c96ba4b358f46708b8caf699"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a977d10b6c96ba4b358f46708b8caf699"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_behavior.html#a977d10b6c96ba4b358f46708b8caf699">Intensity</a> = 1.0f</td></tr>
+<tr class="memdesc:a977d10b6c96ba4b358f46708b8caf699"><td class="mdescLeft">&#160;</td><td class="mdescRight">The "brightness" of the pulses sent by the probe. <br/></td></tr>
+<tr class="separator:a977d10b6c96ba4b358f46708b8caf699"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1265a5242758057306d840f87483fe4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1265a5242758057306d840f87483fe4"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_behavior.html#aa1265a5242758057306d840f87483fe4">ArcSizeInDegrees</a> = 75</td></tr>
 <tr class="memdesc:aa1265a5242758057306d840f87483fe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the scanning arc for the probe. <br/></td></tr>
@@ -133,15 +142,24 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ab23fdae8f935565e8a88d3ceb463b395"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab23fdae8f935565e8a88d3ceb463b395"></a>
 <a class="el" href="interface_i_probe_output.html">IProbeOutput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_behavior.html#ab23fdae8f935565e8a88d3ceb463b395">output</a></td></tr>
-<tr class="memdesc:ab23fdae8f935565e8a88d3ceb463b395"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="interface_i_probe_output.html">IProbeOutput</a> responsible for returning this probe's data to an <a class="el" href="interface_i_image_source.html">IImageSource</a>. <br/></td></tr>
+<tr class="memdesc:ab23fdae8f935565e8a88d3ceb463b395"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="interface_i_probe_output.html" title="An interface to simulate the output of an UltrasoundProbe. ">IProbeOutput</a> responsible for returning this probe's data to an <a class="el" href="interface_i_image_source.html" title="Interface describing a class that can provide a bitmap every frame. ">IImageSource</a>. <br/></td></tr>
 <tr class="separator:ab23fdae8f935565e8a88d3ceb463b395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86da676127f5fc435bd3447f06b4a36b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86da676127f5fc435bd3447f06b4a36b"></a>
 <a class="el" href="class_horay_probe.html">HorayProbe</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_behavior.html#a86da676127f5fc435bd3447f06b4a36b">dataSource</a></td></tr>
-<tr class="memdesc:a86da676127f5fc435bd3447f06b4a36b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instance of <a class="el" href="class_horay_probe.html">HorayProbe</a> that houses all of the scanning logic and produces <a class="el" href="class_ultrasound_scan_data.html">UltrasoundScanData</a>. <br/></td></tr>
+<tr class="memdesc:a86da676127f5fc435bd3447f06b4a36b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instance of <a class="el" href="class_horay_probe.html" title="Simulate the functionality of an Ultrasound probe using HORAY: HOmogenious RAYcasting. ">HorayProbe</a> that houses all of the scanning logic and produces <a class="el" href="class_ultrasound_scan_data.html" title="All the information collected by an UltrasoundProbe in a single frame. ">UltrasoundScanData</a>. <br/></td></tr>
 <tr class="separator:a86da676127f5fc435bd3447f06b4a36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a2d39573339ac7fb450d9fb638dbd4938"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d39573339ac7fb450d9fb638dbd4938"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_behavior.html#a2d39573339ac7fb450d9fb638dbd4938">Start</a> ()</td></tr>
+<tr class="memdesc:a2d39573339ac7fb450d9fb638dbd4938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this for initialization. <br/></td></tr>
+<tr class="separator:a2d39573339ac7fb450d9fb638dbd4938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The MonoBehaviour script to attach to the actual GameObject representing an Ultrasound Probe. </p>
+<div class="textblock"><p>The MonoBehaviour script to attach to the GameObject representing an Ultrasound Probe. </p>
+<p>Used to set various configuration properties through the inspector.</p>
+<p>This script does not actually perform any of the ultrasound rendering logic. The primary entry point into the HORAY scan is in the <a class="el" href="class_horay_probe_output.html" title="HOmogeneous RAYcasting ultrasound model. ">HorayProbeOutput</a> script. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="afbfb2130a4dbe736380f7b0268f7f711"></a>
 <div class="memitem">
@@ -155,7 +173,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="interface_i_probe_output.html">IProbeOutput</a> associated with this ultrasound probe. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="interface_i_probe_output.html" title="An interface to simulate the output of an UltrasoundProbe. ">IProbeOutput</a> associated with this ultrasound probe. </dd></dl>
 
 </div>
 </div>
@@ -171,8 +189,9 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Retrieve the current probe configuration. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> of the probe GameObject. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="class_ultrasound_probe_configuration.html" title="Holds the configuration of the current probe: that is, all the &quot;settings&quot; (master brightness...">UltrasoundProbeConfiguration</a> of the probe GameObject. </dd></dl>
 
 </div>
 </div>
@@ -182,7 +201,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:44 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

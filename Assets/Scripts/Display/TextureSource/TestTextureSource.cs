@@ -5,6 +5,7 @@
  */
 public class TestTextureSource : ITextureSource {
 
+	/// The set of colors used to generate the test texture.
 	private Color[] bars = {Color.white, Color.yellow,
 							Color.cyan, Color.green, 
 							Color.magenta, Color.red, Color.blue};

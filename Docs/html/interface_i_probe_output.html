@@ -88,24 +88,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">IProbeOutput Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>An interface to simulate the output of an UltrasoundProbe.  
+ <a href="interface_i_probe_output.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for IProbeOutput:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_i_probe_output.png" usemap="#IProbeOutput_map" alt=""/>
   <map id="IProbeOutput_map" name="IProbeOutput_map">
-<area href="class_horay_probe_output.html" alt="HorayProbeOutput" shape="rect" coords="0,56,118,80"/>
-<area href="class_test_probe_output.html" alt="TestProbeOutput" shape="rect" coords="128,56,246,80"/>
+<area href="class_horay_probe_output.html" title="HOmogeneous RAYcasting ultrasound model. " alt="HorayProbeOutput" shape="rect" coords="0,56,118,80"/>
+<area href="class_test_probe_output.html" title="A fake IProbeOutput class to generate test probe data. " alt="TestProbeOutput" shape="rect" coords="128,56,246,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9cbdb20c21d5d93addca0516ce12fdd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ultrasound_scan_data.html">UltrasoundScanData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_probe_output.html#a9cbdb20c21d5d93addca0516ce12fdd5">SendScanData</a> ()</td></tr>
+<tr class="memdesc:a9cbdb20c21d5d93addca0516ce12fdd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the results of the probe scanning this frame.  <a href="#a9cbdb20c21d5d93addca0516ce12fdd5">More...</a><br/></td></tr>
 <tr class="separator:a9cbdb20c21d5d93addca0516ce12fdd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>An interface to simulate the output of an UltrasoundProbe. The output yields a single <a class="el" href="class_ultrasound_scan_data.html">UltrasoundScanData</a> object. </p>
+<div class="textblock"><p>An interface to simulate the output of an UltrasoundProbe. </p>
+<p>The output yields a single <a class="el" href="class_ultrasound_scan_data.html" title="All the information collected by an UltrasoundProbe in a single frame. ">UltrasoundScanData</a> object. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a9cbdb20c21d5d93addca0516ce12fdd5"></a>
 <div class="memitem">
@@ -119,8 +124,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Send the results of the probe scanning this frame. </p>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="class_ultrasound_scan_data.html">UltrasoundScanData</a> object, containing data about the scan. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="class_ultrasound_scan_data.html" title="All the information collected by an UltrasoundProbe in a single frame. ">UltrasoundScanData</a> object, containing data about the scan. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_horay_probe_output.html#ac344b922b9f047895200508efa95dcd7">HorayProbeOutput</a>, and <a class="el" href="class_test_probe_output.html#aacfaeb92c0637b0517c34f45a3ac86aa">TestProbeOutput</a>.</p>
 
@@ -132,7 +138,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:45 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

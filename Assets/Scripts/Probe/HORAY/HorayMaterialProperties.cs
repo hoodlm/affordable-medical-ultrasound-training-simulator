@@ -13,21 +13,17 @@ public class HorayMaterialProperties : MonoBehaviour {
 	/// Set the type of this organ. If it is set to custom, the parameters should be specified in the inspector.
 	public OrganPresets organType;
 
-	/// <summary>
 	/// A display color for this organ.
-	/// </summary>
 	public Color color = Color.white;
-	
-	/// <summary>
+
 	/// The degree to which this organ reflects sound.
-	/// </summary>
 	public float echogenicity = 1.0f;
-	
-	/// <summary>
+
 	/// The degree to which this organ absorbs sound.
-	/// </summary>
 	public float attenuation = 0.01f;
-	
+
+	/// Set up the material properties on scene load.
+	/// The properties are assigned based on the current setting of organType.
 	void Start() {
 
 		if (gameObject.collider == null) {
@@ -72,15 +68,10 @@ public class HorayMaterialProperties : MonoBehaviour {
 			break;
 
 		default:
-			// Use values from inspector.
+			// For custom objects, use values from inspector.
 			break;
 		}
 
 		this.renderer.material.color = color;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

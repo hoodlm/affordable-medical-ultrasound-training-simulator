@@ -83,28 +83,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_test_texture_source-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TestTextureSource Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A fake <a class="el" href="interface_i_texture_source.html" title="An interface describing a class that renders to a display Texture2D. ">ITextureSource</a> class to generate a test texture.  
+ <a href="class_test_texture_source.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for TestTextureSource:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_test_texture_source.png" usemap="#TestTextureSource_map" alt=""/>
   <map id="TestTextureSource_map" name="TestTextureSource_map">
-<area href="interface_i_texture_source.html" alt="ITextureSource" shape="rect" coords="0,0,118,24"/>
+<area href="interface_i_texture_source.html" title="An interface describing a class that renders to a display Texture2D. " alt="ITextureSource" shape="rect" coords="0,0,118,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a92f2bea9204ab45989798f190089d1f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_test_texture_source.html#a92f2bea9204ab45989798f190089d1f9">RenderNextFrameToTexture</a> (ref Texture2D texture)</td></tr>
+<tr class="memdesc:a92f2bea9204ab45989798f190089d1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the next frame to a texture.  <a href="#a92f2bea9204ab45989798f190089d1f9">More...</a><br/></td></tr>
 <tr class="separator:a92f2bea9204ab45989798f190089d1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1989d1ee2910a208999fb3aec1a3159e"><td class="memItemLeft" align="right" valign="top">Color[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_test_texture_source.html#a1989d1ee2910a208999fb3aec1a3159e">bars</a></td></tr>
+<tr class="memdesc:a1989d1ee2910a208999fb3aec1a3159e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The set of colors used to generate the test texture.  <a href="#a1989d1ee2910a208999fb3aec1a3159e">More...</a><br/></td></tr>
+<tr class="separator:a1989d1ee2910a208999fb3aec1a3159e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A fake <a class="el" href="interface_i_texture_source.html">ITextureSource</a> class to generate a test texture. </p>
+<div class="textblock"><p>A fake <a class="el" href="interface_i_texture_source.html" title="An interface describing a class that renders to a display Texture2D. ">ITextureSource</a> class to generate a test texture. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a92f2bea9204ab45989798f190089d1f9"></a>
 <div class="memitem">
@@ -119,6 +130,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Draw the next frame to a texture. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -131,13 +143,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a1989d1ee2910a208999fb3aec1a3159e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color [] TestTextureSource.bars</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {Color.white, Color.yellow,</div>
+<div class="line">                            Color.cyan, Color.green, </div>
+<div class="line">                            Color.magenta, Color.red, Color.blue}</div>
+</div><!-- fragment -->
+<p>The set of colors used to generate the test texture. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>TestTextureSource.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:45 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

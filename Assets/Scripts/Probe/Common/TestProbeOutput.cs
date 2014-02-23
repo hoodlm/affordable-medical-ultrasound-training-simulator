@@ -6,10 +6,15 @@ using System.Collections;
  */
 public class TestProbeOutput : IProbeOutput {
 
+	/// The left edge of the simulated scanning plane
     private static float MIN_X = -4f;
-    private static float MAX_X = 4f;
+	/// The left edge of the simulated scanning plane
+	private static float MAX_X = 4f;
+	/// The near edge of the simulated scanning plane
     private static float MIN_Y = 1f;
+	/// The far edge of the simulated scanning plane
     private static float MAX_Y = 9f;
+	/// The "sampling" frequency (distance between points along scanlines)
     private static float STEPSIZE = 0.1f;
 
     public UltrasoundScanData SendScanData () {
@@ -23,7 +28,7 @@ public class TestProbeOutput : IProbeOutput {
 
             for (float j = MIN_Y; j <= MAX_Y; j += STEPSIZE) {
                 UltrasoundPoint p = new UltrasoundPoint (Vector3.zero, new Vector2(i * (j / MAX_Y), j));
-                p.SetBrightness (Random.Range(0f, 1f));
+                p.SetBrightness (Random.Range(0f, 1f)); // Generate noise.
                 scanline.AddUltrasoundPoint (p);
             }
 

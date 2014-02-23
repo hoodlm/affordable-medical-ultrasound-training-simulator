@@ -2,11 +2,16 @@
 using System;
 
 /** 
- *  A single point in space.
+ *  A single point in space. UltrasoundPoint%s are Comparable, and can be sorted based on their distance from the
+ * 	scanning location.
  */
 public class UltrasoundPoint : IComparable {
+
+	/// The position of the point in world coordinates.
 	private readonly Vector3 worldSpaceLocation;
+	/// The position of the point, projected in the scanning plane.
     private readonly Vector2 projectedLocation;
+	/// The brightness of this point, in the inclusive interval [0, 1].
     private float brightness;
     
     /**

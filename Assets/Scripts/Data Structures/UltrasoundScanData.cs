@@ -4,10 +4,15 @@ using System.Collections.ObjectModel;
 
 /** 
  *  All the information collected by an UltrasoundProbe in a single frame.
+ * 	It can be iterated over, yielding the individual UltrasoundScanline objects that make up the data.
  */
 public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
 
+	/// The list of scanlines. This is kept semi-immutable to outside classes - members can be added, but not removed.
+	/// The only accessor for scanlines returns a readonly view of it. Individual scanlines can be modified using this
+	/// class's iterator.
     private IList<UltrasoundScanline> scanlines;
+	/// The UltrasoundProbeConfiguration used to populate the data this frame.
 	private readonly UltrasoundProbeConfiguration probeConfig;
     
     /** 
@@ -26,7 +31,6 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
      *  Add a collection of UltrasoundScanline%s to this scanline.
      *
      *  @param scanlines The UltrasoundScanline%s to add.
-     *  @throw ArgumentNullException
      */
     public void AddScanlines (ICollection<UltrasoundScanline> scanlines) {
 #if UNITY_EDITOR
@@ -40,10 +44,9 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
     }
     
     /** 
-     *  Add an UltrasoundPoint to this scanline.
+     *  Add an UltrasoundScanline to this UltrasoundScanData.
      *
-     *  @param s The UltrasoundPoint to add.
-     *  @throw ArgumentNullException
+     *  @param s The UltrasoundScanline to add.
      */
     public void AddScanline (UltrasoundScanline s) {
 #if UNITY_EDITOR
@@ -55,7 +58,9 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
     }
     
     /** 
-     *  Get read-only collection of the scanlines.
+     *  Get read-only collection of the scanlines. While the list itself canot be modified, the individual
+	 *	UltrasoundScanline objects can be modified.
+	 *  @return A list of the scanlines that comprise the UltrasoundScanData.
      */
     public ReadOnlyCollection<UltrasoundScanline> GetScanlines() {
         return new ReadOnlyCollection<UltrasoundScanline>(scanlines);
@@ -70,7 +75,7 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
 	}
 
     /**
-     *  An iterator over all the points in this scanline.
+     *  An enumerator over all the points in this scanline.
      */
     public IEnumerator<UltrasoundScanline> GetEnumerator() {
         foreach (UltrasoundScanline scanline in scanlines) {
@@ -78,8 +83,8 @@ public class UltrasoundScanData : IEnumerable<UltrasoundScanline> {
         }
     }
 
-    /*    *
-     *  An iterator over all the points in this scanline.
+    /**
+     *  An enumerator over all the points in this scanline.
      */
     IEnumerator IEnumerable.GetEnumerator() {
         foreach (UltrasoundScanline scanline in scanlines) {

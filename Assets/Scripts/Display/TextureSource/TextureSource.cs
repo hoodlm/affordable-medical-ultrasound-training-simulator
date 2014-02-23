@@ -2,16 +2,17 @@
 using System.Collections;
 
 /**
- *  A basic ITextureSource implimentation that renders a texture from a bitmap (UnityEngine.Color array)
+ *  A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array)
  *  with no post-processing effects.
  */
 public class TextureSource : ITextureSource {
 
+	/// The class providing a bitmap to render.
     private IImageSource imageSource;
 
     /**
      * Instantiate a new TextureSource.
-     * @param imageSource The class providing a bitmap every frame.
+     * @param imageSource The IImageSource providing a bitmap every frame.
      */
     public TextureSource(IImageSource imageSource) {
 		UltrasoundDebug.Assert(null != imageSource, "Null ImageSource used in constructor", this, true);

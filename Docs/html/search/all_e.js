@@ -1,10 +1,20 @@
 var searchData=
 [
-  ['testimagesource',['TestImageSource',['../class_test_image_source.html',1,'']]],
-  ['testprobeoutput',['TestProbeOutput',['../class_test_probe_output.html',1,'']]],
-  ['testtexturesource',['TestTextureSource',['../class_test_texture_source.html',1,'']]],
-  ['textureheight',['textureHeight',['../class_display_behavior.html#a04bf737b5aae9978d2d9b87a9982f8cf',1,'DisplayBehavior']]],
-  ['texturesource',['TextureSource',['../class_texture_source.html',1,'TextureSource'],['../class_texture_source.html#ae7a7f7456997564074a95ecf8aef4168',1,'TextureSource.TextureSource()']]],
-  ['texturewidth',['textureWidth',['../class_display_behavior.html#a9f9a163856caf59cca977225eb7ea5ff',1,'DisplayBehavior']]],
-  ['tostring',['ToString',['../class_ultrasound_point.html#a8179704789f1527e9c3b8e465ca74bf6',1,'UltrasoundPoint.ToString()'],['../class_ultrasound_scanline.html#ab98770a9d07469a36817b1e89b4de912',1,'UltrasoundScanline.ToString()']]]
+  ['scanlineindex',['scanlineIndex',['../class_horay_organ_culler.html#a7d0d446fe94edc3aaad8bd5ab2598eed',1,'HorayOrganCuller']]],
+  ['scanlines',['scanlines',['../class_ultrasound_scan_data.html#add536217a047499ed3dda2b78ef5b5ea',1,'UltrasoundScanData']]],
+  ['scanlines_5fper_5fframe',['SCANLINES_PER_FRAME',['../class_horay_organ_culler.html#a976ef331c92da9e9d9b0767e89d50759',1,'HorayOrganCuller']]],
+  ['scanpointsfororgans',['ScanPointsForOrgans',['../class_horay_probe.html#a7bdb12ad42961aae8fb7575514769997',1,'HorayProbe']]],
+  ['sendscandata',['SendScanData',['../interface_i_probe_output.html#a9cbdb20c21d5d93addca0516ce12fdd5',1,'IProbeOutput.SendScanData()'],['../class_test_probe_output.html#aacfaeb92c0637b0517c34f45a3ac86aa',1,'TestProbeOutput.SendScanData()'],['../class_horay_probe_output.html#ac344b922b9f047895200508efa95dcd7',1,'HorayProbeOutput.SendScanData()']]],
+  ['setarcsizeindegrees',['SetArcSizeInDegrees',['../class_ultrasound_probe_configuration.html#ae0f949c5e2e249bd3d1a4f98153bd3c8',1,'UltrasoundProbeConfiguration']]],
+  ['setbrightness',['SetBrightness',['../class_ultrasound_point.html#ad606b7703ce7712048686ac13c5a04a9',1,'UltrasoundPoint']]],
+  ['setgain',['SetGain',['../class_ultrasound_probe_configuration.html#aa6fd726873467e696cb271d6486fc5a9',1,'UltrasoundProbeConfiguration']]],
+  ['setmaxscandistance',['SetMaxScanDistance',['../class_ultrasound_probe_configuration.html#a519e8efe9d1754718afe015a1af15871',1,'UltrasoundProbeConfiguration']]],
+  ['setminscandistance',['SetMinScanDistance',['../class_ultrasound_probe_configuration.html#a9ee69ebaa8113e309399193a22d9a33e',1,'UltrasoundProbeConfiguration']]],
+  ['setnumberofscanlines',['SetNumberOfScanlines',['../class_ultrasound_probe_configuration.html#aa5cd4391ed4ae2026cfb462001d14d75',1,'UltrasoundProbeConfiguration']]],
+  ['setpointsperscanline',['SetPointsPerScanline',['../class_ultrasound_probe_configuration.html#a16876d0dd9118f6b10999449c50e4034',1,'UltrasoundProbeConfiguration']]],
+  ['setposition',['SetPosition',['../class_ultrasound_probe_configuration.html#a76d845c3648d2bfa5ef5bfb4c8e5eb22',1,'UltrasoundProbeConfiguration']]],
+  ['setrotation',['SetRotation',['../class_ultrasound_probe_configuration.html#a830e08acfc1aaefce2b0f705565b9dd1',1,'UltrasoundProbeConfiguration']]],
+  ['skin',['skin',['../class_keyboard_body_movement.html#a57fb23149886649e8a549128acc1b9bb',1,'KeyboardBodyMovement.skin()'],['../class_mouse_probe_movement.html#a9266b35ce3b452cea1c2893602ab594a',1,'MouseProbeMovement.skin()']]],
+  ['start',['Start',['../class_gui_instructions.html#a3323b600a90f1eb6d7e8734c7fb90def',1,'GuiInstructions.Start()'],['../class_display_behavior.html#a0a96994d218aaa137db54ac059aa14f7',1,'DisplayBehavior.Start()'],['../class_keyboard_body_movement.html#afd4200366e14a0fe7a0e261f7b4e6ee3',1,'KeyboardBodyMovement.Start()'],['../class_mouse_probe_movement.html#a04e41574ddbc00029d53b17b9c5771f6',1,'MouseProbeMovement.Start()'],['../class_horay_behavior.html#a2d39573339ac7fb450d9fb638dbd4938',1,'HorayBehavior.Start()'],['../class_horay_material_properties.html#a9bb9d153b6bc544eb1e34bedf77dfad3',1,'HorayMaterialProperties.Start()']]],
+  ['stepsize',['STEPSIZE',['../class_test_probe_output.html#a371a343ac8cb0c7e89bf4fd46fdfcbe6',1,'TestProbeOutput']]]
 ];

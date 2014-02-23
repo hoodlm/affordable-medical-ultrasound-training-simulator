@@ -1,13 +1,18 @@
 using UnityEngine;
 
 /** 
- *  Some custom-collision functions that are not included in the Unity library.
+ *  Some custom-collision functions that to supplement the standard UnityEngine library.
  */
 public static class UltrasoundCollisionUtils {
-	
+
+	/// Defines the directions for raycasting in the isContained method.
+	/// The directions are declared in the static initialization block for this method.
 	private static readonly Vector3[] raycastDirections;
-	
+
+	/// Initialize the UltrasoundCollisionUtils class. Populates the raycastDirections array with hard-coded values.
 	static UltrasoundCollisionUtils() {
+		// These vectors correspond to the vertices of a trigonal bipyramid.
+		// See http://en.wikipedia.org/wiki/Phosphorus_pentachloride for a visual representation.
 		raycastDirections = new Vector3[5];
 		raycastDirections[0] = new Vector3(0,1,0);
 		raycastDirections[1] = new Vector3(0,-1,-0);
@@ -31,14 +36,13 @@ public static class UltrasoundCollisionUtils {
 		}
 		
         /* There doesn't seem to be a good way in the unity libraries to check if a point is contained in an object.
-         * 
          * This is a "bed of nails" approach by checking the point from several directions.
          * 
          * If from any direction, we don't hit the collider, that point probably cannot be contained inside
          * the object.
          */
 		foreach (Vector3 direction in raycastDirections) {
-            // The -100f * direction is a magic number to make sure that we start far enough from the point.
+            // The -100f scalar used here is a magic number to make sure that we start far enough from the point.
 			Ray ray = new Ray(targetPoint - 100f * direction, direction);
 		
 			RaycastHit dummyHit = new RaycastHit();

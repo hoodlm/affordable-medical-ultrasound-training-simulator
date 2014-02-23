@@ -82,11 +82,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_horay_material_properties-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">HorayMaterialProperties Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Description of the physic properties of an Organ, for use with a <a class="el" href="class_horay_probe.html" title="Simulate the functionality of an Ultrasound probe using HORAY: HOmogenious RAYcasting. ">HorayProbe</a>.  
+ <a href="class_horay_material_properties.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HorayMaterialProperties:</div>
 <div class="dyncontent">
@@ -95,15 +101,85 @@ Inheritance diagram for HorayMaterialProperties:</div>
   <map id="HorayMaterialProperties_map" name="HorayMaterialProperties_map">
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a0e400a211805ed1f0c055c539adb6754"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_material_properties.html#a0e400a211805ed1f0c055c539adb6754">OrganPresets</a> { <br/>
+&#160;&#160;<b>Custom</b>, 
+<b>Bone</b>, 
+<b>Kidneys</b>, 
+<b>Intestines</b>, 
+<br/>
+&#160;&#160;<b>Liver</b>, 
+<b>Stomach</b>, 
+<b>Lung</b>
+<br/>
+ }</td></tr>
+<tr class="memdesc:a0e400a211805ed1f0c055c539adb6754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets of tissues with pre-defined parameters. <br/></td></tr>
+<tr class="separator:a0e400a211805ed1f0c055c539adb6754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a65bfb1b6033ac7a3686fe7d701687f3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65bfb1b6033ac7a3686fe7d701687f3b"></a>
+<a class="el" href="class_horay_material_properties.html#a0e400a211805ed1f0c055c539adb6754">OrganPresets</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_material_properties.html#a65bfb1b6033ac7a3686fe7d701687f3b">organType</a></td></tr>
+<tr class="memdesc:a65bfb1b6033ac7a3686fe7d701687f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the type of this organ. If it is set to custom, the parameters should be specified in the inspector. <br/></td></tr>
+<tr class="separator:a65bfb1b6033ac7a3686fe7d701687f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ada492de4ef654144628b03a871ad1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3ada492de4ef654144628b03a871ad1"></a>
+Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_material_properties.html#ac3ada492de4ef654144628b03a871ad1">color</a> = Color.white</td></tr>
+<tr class="memdesc:ac3ada492de4ef654144628b03a871ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A display color for this organ. <br/></td></tr>
+<tr class="separator:ac3ada492de4ef654144628b03a871ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02084d7474622c23ca76053b0501a2b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02084d7474622c23ca76053b0501a2b5"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_material_properties.html#a02084d7474622c23ca76053b0501a2b5">echogenicity</a> = 1.0f</td></tr>
+<tr class="memdesc:a02084d7474622c23ca76053b0501a2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The degree to which this organ reflects sound. <br/></td></tr>
+<tr class="separator:a02084d7474622c23ca76053b0501a2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af038cdc7d0cb22496ff7541934561a3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af038cdc7d0cb22496ff7541934561a3c"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_material_properties.html#af038cdc7d0cb22496ff7541934561a3c">attenuation</a> = 0.01f</td></tr>
+<tr class="memdesc:af038cdc7d0cb22496ff7541934561a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The degree to which this organ absorbs sound. <br/></td></tr>
+<tr class="separator:af038cdc7d0cb22496ff7541934561a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9bb9d153b6bc544eb1e34bedf77dfad3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_material_properties.html#a9bb9d153b6bc544eb1e34bedf77dfad3">Start</a> ()</td></tr>
+<tr class="memdesc:a9bb9d153b6bc544eb1e34bedf77dfad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the material properties on scene load.  <a href="#a9bb9d153b6bc544eb1e34bedf77dfad3">More...</a><br/></td></tr>
+<tr class="separator:a9bb9d153b6bc544eb1e34bedf77dfad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Description of the physic properties of an Organ, for use with a <a class="el" href="class_horay_probe.html">HorayProbe</a>. The <a class="el" href="class_horay_organ_culler.html">HorayOrganCuller</a> will not detect a GameObject as an organ unless this script is attached. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>Description of the physic properties of an Organ, for use with a <a class="el" href="class_horay_probe.html" title="Simulate the functionality of an Ultrasound probe using HORAY: HOmogenious RAYcasting. ">HorayProbe</a>. </p>
+<p>The <a class="el" href="class_horay_organ_culler.html" title="Class responsible for detecting which organs can possibly be hit by raycasts. ">HorayOrganCuller</a> will not detect a GameObject as an organ unless this script is attached. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9bb9d153b6bc544eb1e34bedf77dfad3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HorayMaterialProperties.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set up the material properties on scene load. </p>
+<p>The properties are assigned based on the current setting of organType. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>HorayMaterialProperties.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:44 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -17,12 +17,19 @@ public struct PositionAndRotation {
  */
 public class UltrasoundProbeConfiguration {
 
+	/// Current position and rotation of the probe GameObject.
 	private PositionAndRotation positionAndRotation;
+	/// Maximum distance in world units to scan
     private float maxDistance;
+	/// Minimum distance in world units to scan
     private float minDistance;
+	/// Width of the scanning arc.
 	private float arcSizeInDegrees;
+	/// The master "gain" determines the overall brightness of the probe.
 	private float gain;
+	/// Total number of scanlines emitted by the probe.
 	private int numberOfScanlines;
+	/// Number of discrete points sampled on each scanline.
 	private int pointsPerScanline;
 
 	/** 

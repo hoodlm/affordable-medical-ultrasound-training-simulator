@@ -83,60 +83,288 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_horay_organ_culler-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">HorayOrganCuller Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class responsible for detecting which organs can possibly be hit by raycasts.  
+ <a href="class_horay_organ_culler.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af44adcb926f82444ff0d6abdf20692e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#af44adcb926f82444ff0d6abdf20692e6">HorayOrganCuller</a> ()</td></tr>
+<tr class="memitem:af44adcb926f82444ff0d6abdf20692e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af44adcb926f82444ff0d6abdf20692e6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#af44adcb926f82444ff0d6abdf20692e6">HorayOrganCuller</a> ()</td></tr>
+<tr class="memdesc:af44adcb926f82444ff0d6abdf20692e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate a new <a class="el" href="class_horay_organ_culler.html" title="Class responsible for detecting which organs can possibly be hit by raycasts. ">HorayOrganCuller</a>. <br/></td></tr>
 <tr class="separator:af44adcb926f82444ff0d6abdf20692e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f06e5089acfaac5e6fd539b51344dc4"><td class="memItemLeft" align="right" valign="top">IList&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#a5f06e5089acfaac5e6fd539b51344dc4">HitableOrgans</a> (<a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> config)</td></tr>
-<tr class="separator:a5f06e5089acfaac5e6fd539b51344dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ff1da366af1adad5cc560eb55e898e"><td class="memItemLeft" align="right" valign="top">IList&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#ae7ff1da366af1adad5cc560eb55e898e">HitableOrgansOnScanlines</a> (IList&lt; <a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a> &gt; scanlines, <a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> config)</td></tr>
+<tr class="memdesc:ae7ff1da366af1adad5cc560eb55e898e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Based on a probe configuration, determine which organs can possibly appear in the image.  <a href="#ae7ff1da366af1adad5cc560eb55e898e">More...</a><br/></td></tr>
+<tr class="separator:ae7ff1da366af1adad5cc560eb55e898e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9ba5aaacf07408d3e61a0b74efaad475"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#a9ba5aaacf07408d3e61a0b74efaad475">CheckScanlines</a> (IList&lt; <a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a> &gt; scanlines)</td></tr>
+<tr class="memdesc:a9ba5aaacf07408d3e61a0b74efaad475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks a list of scanlines for visible objects.  <a href="#a9ba5aaacf07408d3e61a0b74efaad475">More...</a><br/></td></tr>
+<tr class="separator:a9ba5aaacf07408d3e61a0b74efaad475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad431ec90ff71726fef045a969fdc09cb"><td class="memItemLeft" align="right" valign="top">IList&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#ad431ec90ff71726fef045a969fdc09cb">ValidOrgansOnScanline</a> (<a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a> scanline)</td></tr>
+<tr class="memdesc:ad431ec90ff71726fef045a969fdc09cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks an individual scanline for valid organs.  <a href="#ad431ec90ff71726fef045a969fdc09cb">More...</a><br/></td></tr>
+<tr class="separator:ad431ec90ff71726fef045a969fdc09cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da07ecac56360e96d9e1c9d7f7c1e11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#a5da07ecac56360e96d9e1c9d7f7c1e11">RemoveExpiredObjects</a> ()</td></tr>
+<tr class="memdesc:a5da07ecac56360e96d9e1c9d7f7c1e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes organs that are visible, but haven't been seen recently enough.  <a href="#a5da07ecac56360e96d9e1c9d7f7c1e11">More...</a><br/></td></tr>
+<tr class="separator:a5da07ecac56360e96d9e1c9d7f7c1e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7ce880927400272bc02e69a61e6ea456"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ce880927400272bc02e69a61e6ea456"></a>
+readonly IList&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#a7ce880927400272bc02e69a61e6ea456">allOrgansInScene</a></td></tr>
+<tr class="memdesc:a7ce880927400272bc02e69a61e6ea456"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of every GameObjects in the scene with a <a class="el" href="class_horay_material_properties.html" title="Description of the physic properties of an Organ, for use with a HorayProbe. ">HorayMaterialProperties</a> component. <br/></td></tr>
+<tr class="separator:a7ce880927400272bc02e69a61e6ea456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9996f14f3a34ef9c07f55236ebe8d293"><td class="memItemLeft" align="right" valign="top">SortedDictionary&lt; float, <br class="typebreak"/>
+GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#a9996f14f3a34ef9c07f55236ebe8d293">currentVisibleOrgans</a></td></tr>
+<tr class="memdesc:a9996f14f3a34ef9c07f55236ebe8d293"><td class="mdescLeft">&#160;</td><td class="mdescRight">When organs are detected as visible, they are added to this queue.  <a href="#a9996f14f3a34ef9c07f55236ebe8d293">More...</a><br/></td></tr>
+<tr class="separator:a9996f14f3a34ef9c07f55236ebe8d293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a21ce76b47ec22d6fe276afd6cf12fd"><td class="memItemLeft" align="right" valign="top">IDictionary&lt; GameObject, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#a3a21ce76b47ec22d6fe276afd6cf12fd">reverseMapLookup</a></td></tr>
+<tr class="memdesc:a3a21ce76b47ec22d6fe276afd6cf12fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">If a GameObject is already in currentVisibleOrgans, but we need to update its key, we need to be able to get the key for the object.  <a href="#a3a21ce76b47ec22d6fe276afd6cf12fd">More...</a><br/></td></tr>
+<tr class="separator:a3a21ce76b47ec22d6fe276afd6cf12fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976ef331c92da9e9d9b0767e89d50759"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#a976ef331c92da9e9d9b0767e89d50759">SCANLINES_PER_FRAME</a> = 5</td></tr>
+<tr class="memdesc:a976ef331c92da9e9d9b0767e89d50759"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of scanlines to check per frame.  <a href="#a976ef331c92da9e9d9b0767e89d50759">More...</a><br/></td></tr>
+<tr class="separator:a976ef331c92da9e9d9b0767e89d50759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d564354f53ccadd791fa5b081600aa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#a35d564354f53ccadd791fa5b081600aa">EXPIRATION_TIME_IN_SECONDS</a> = 5f</td></tr>
+<tr class="memdesc:a35d564354f53ccadd791fa5b081600aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">How long to wait to remove an organ.  <a href="#a35d564354f53ccadd791fa5b081600aa">More...</a><br/></td></tr>
+<tr class="separator:a35d564354f53ccadd791fa5b081600aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0d446fe94edc3aaad8bd5ab2598eed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d0d446fe94edc3aaad8bd5ab2598eed"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horay_organ_culler.html#a7d0d446fe94edc3aaad8bd5ab2598eed">scanlineIndex</a></td></tr>
+<tr class="memdesc:a7d0d446fe94edc3aaad8bd5ab2598eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">The last scanline checked during the previous frame. <br/></td></tr>
+<tr class="separator:a7d0d446fe94edc3aaad8bd5ab2598eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class responsible for detecting which organs can possibly be hit by raycasts. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af44adcb926f82444ff0d6abdf20692e6"></a>
+<p>This function is roughly analagous to "culling" in a traditional 3D renderings pipeline.</p>
+<p>There may be a short (2-5 frame) delay before new objects are recognized as potentially visible. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9ba5aaacf07408d3e61a0b74efaad475"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HorayOrganCuller.CheckScanlines </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; <a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a> &gt;&#160;</td>
+          <td class="paramname"><em>scanlines</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks a list of scanlines for visible objects. </p>
+<p>If an object on the scanlines is hit by a raycast, it is marked as visible (added to the currentVisibleOrgans and reverseMapLookup dictionaries).</p>
+<p>Visible objects are given an expiration time (EXPIRATION_TIME_IN_SECONDS after the present). If an object that is already known to be visible is detected, its expiration time is reset.</p>
+<p>This method only checks a few scanlines each frame (as defined in the SCANLINES_PER_FRAME constant). We attempt to check scanlines that are spread apart, rather than checking sequentially, so that new objects are detected more quickly. For example, if there are 10 scanlines in total, it is more helpful to check scanlines (0, 3, 6, 9) in a single frame than to check (0, 1, 2, 3).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scanlines</td><td>The set of all scanlines sent out by this probe. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae7ff1da366af1adad5cc560eb55e898e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">HorayOrganCuller.HorayOrganCuller </td>
+          <td class="memname">IList&lt;GameObject&gt; HorayOrganCuller.HitableOrgansOnScanlines </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; <a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a> &gt;&#160;</td>
+          <td class="paramname"><em>scanlines</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a>&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Based on a probe configuration, determine which organs can possibly appear in the image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scanlines</td><td>The list of scanlines to be checked. </td></tr>
+    <tr><td class="paramname">config</td><td>The current <a class="el" href="class_ultrasound_probe_configuration.html" title="Holds the configuration of the current probe: that is, all the &quot;settings&quot; (master brightness...">UltrasoundProbeConfiguration</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A culled list of GameObjects to test for collisions. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5da07ecac56360e96d9e1c9d7f7c1e11"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HorayOrganCuller.RemoveExpiredObjects </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Instantiate a new <a class="el" href="class_horay_organ_culler.html">HorayOrganCuller</a>. </p>
+
+<p>Removes organs that are visible, but haven't been seen recently enough. </p>
+<p>(i.e. the time that the organ was last hit by a raycast is more than EXPIRATION_TIME_IN_SECONDS ago) </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a5f06e5089acfaac5e6fd539b51344dc4"></a>
+<a class="anchor" id="ad431ec90ff71726fef045a969fdc09cb"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IList&lt;GameObject&gt; HorayOrganCuller.HitableOrgans </td>
+          <td class="memname">IList&lt;GameObject&gt; HorayOrganCuller.ValidOrgansOnScanline </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a>&#160;</td>
-          <td class="paramname"><em>config</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_ultrasound_scanline.html">UltrasoundScanline</a>&#160;</td>
+          <td class="paramname"><em>scanline</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Based on a probe configuration, determine which organs can possibly appear in the image. </p>
+
+<p>Checks an individual scanline for valid organs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">config</td><td>The current <a class="el" href="class_ultrasound_probe_configuration.html">UltrasoundProbeConfiguration</a> </td></tr>
+    <tr><td class="paramname">scanline</td><td>The <a class="el" href="class_ultrasound_scanline.html" title="A scanline wraps a list of UltrasoundPoints along the same trajectory in space. ">UltrasoundScanline</a> being tested </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A culled list of GameObjects to test for collisions. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A list of organs that are on the scanline. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a9996f14f3a34ef9c07f55236ebe8d293"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SortedDictionary&lt;float, GameObject&gt; HorayOrganCuller.currentVisibleOrgans</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When organs are detected as visible, they are added to this queue. </p>
+<p>The Key for the organ should be the time that it was added (as measured by Time.time). Organs are removed from the dictionary after EXPIRATION_TIME. </p>
+
+</div>
+</div>
+<a class="anchor" id="a35d564354f53ccadd791fa5b081600aa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float HorayOrganCuller.EXPIRATION_TIME_IN_SECONDS = 5f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How long to wait to remove an organ. </p>
+<p>If the probe is configured for a large number of scanlines then this time may need to be increased. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3a21ce76b47ec22d6fe276afd6cf12fd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IDictionary&lt;GameObject, float&gt; HorayOrganCuller.reverseMapLookup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If a GameObject is already in currentVisibleOrgans, but we need to update its key, we need to be able to get the key for the object. </p>
+<p>.NET does not have a two-way SortedDictionary, so we must create another dictionary structure to hold the inverse relationship. </p>
+
+</div>
+</div>
+<a class="anchor" id="a976ef331c92da9e9d9b0767e89d50759"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int HorayOrganCuller.SCANLINES_PER_FRAME = 5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The number of scanlines to check per frame. </p>
+<p>This may be increased on faster machines so that newly visible organs are recognized more quickly. </p>
 
 </div>
 </div>
@@ -146,7 +374,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:45 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

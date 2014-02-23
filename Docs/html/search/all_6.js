@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['hitableorgans',['HitableOrgans',['../class_horay_organ_culler.html#a5f06e5089acfaac5e6fd539b51344dc4',1,'HorayOrganCuller']]],
+  ['hitableorgansonscanlines',['HitableOrgansOnScanlines',['../class_horay_organ_culler.html#ae7ff1da366af1adad5cc560eb55e898e',1,'HorayOrganCuller']]],
   ['horaybehavior',['HorayBehavior',['../class_horay_behavior.html',1,'']]],
   ['horaymaterialproperties',['HorayMaterialProperties',['../class_horay_material_properties.html',1,'']]],
   ['horayorganculler',['HorayOrganCuller',['../class_horay_organ_culler.html',1,'HorayOrganCuller'],['../class_horay_organ_culler.html#af44adcb926f82444ff0d6abdf20692e6',1,'HorayOrganCuller.HorayOrganCuller()']]],

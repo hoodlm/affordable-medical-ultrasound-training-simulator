@@ -83,30 +83,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_texture_source-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TextureSource Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A basic <a class="el" href="interface_i_texture_source.html" title="An interface describing a class that renders to a display Texture2D. ">ITextureSource</a> implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects.  
+ <a href="class_texture_source.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for TextureSource:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_texture_source.png" usemap="#TextureSource_map" alt=""/>
   <map id="TextureSource_map" name="TextureSource_map">
-<area href="interface_i_texture_source.html" alt="ITextureSource" shape="rect" coords="0,0,98,24"/>
+<area href="interface_i_texture_source.html" title="An interface describing a class that renders to a display Texture2D. " alt="ITextureSource" shape="rect" coords="0,0,98,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae7a7f7456997564074a95ecf8aef4168"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture_source.html#ae7a7f7456997564074a95ecf8aef4168">TextureSource</a> (<a class="el" href="interface_i_image_source.html">IImageSource</a> imageSource)</td></tr>
+<tr class="memitem:ae7a7f7456997564074a95ecf8aef4168"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture_source.html#ae7a7f7456997564074a95ecf8aef4168">TextureSource</a> (<a class="el" href="interface_i_image_source.html">IImageSource</a> <a class="el" href="class_texture_source.html#ab1b93ec1e4a59b076fd806afc2e43811">imageSource</a>)</td></tr>
+<tr class="memdesc:ae7a7f7456997564074a95ecf8aef4168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate a new <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a>.  <a href="#ae7a7f7456997564074a95ecf8aef4168">More...</a><br/></td></tr>
 <tr class="separator:ae7a7f7456997564074a95ecf8aef4168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33ce847d5b1b89d4fa15172ed44715aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture_source.html#a33ce847d5b1b89d4fa15172ed44715aa">RenderNextFrameToTexture</a> (ref Texture2D texture)</td></tr>
+<tr class="memdesc:a33ce847d5b1b89d4fa15172ed44715aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the next frame to a texture.  <a href="#a33ce847d5b1b89d4fa15172ed44715aa">More...</a><br/></td></tr>
 <tr class="separator:a33ce847d5b1b89d4fa15172ed44715aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab1b93ec1e4a59b076fd806afc2e43811"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1b93ec1e4a59b076fd806afc2e43811"></a>
+<a class="el" href="interface_i_image_source.html">IImageSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture_source.html#ab1b93ec1e4a59b076fd806afc2e43811">imageSource</a></td></tr>
+<tr class="memdesc:ab1b93ec1e4a59b076fd806afc2e43811"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class providing a bitmap to render. <br/></td></tr>
+<tr class="separator:ab1b93ec1e4a59b076fd806afc2e43811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A basic <a class="el" href="interface_i_texture_source.html">ITextureSource</a> implimentation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. </p>
+<div class="textblock"><p>A basic <a class="el" href="interface_i_texture_source.html" title="An interface describing a class that renders to a display Texture2D. ">ITextureSource</a> implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae7a7f7456997564074a95ecf8aef4168"></a>
 <div class="memitem">
@@ -121,10 +134,11 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Instantiate a new <a class="el" href="class_texture_source.html">TextureSource</a>. </p>
+
+<p>Instantiate a new <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">imageSource</td><td>The class providing a bitmap every frame. </td></tr>
+    <tr><td class="paramname">imageSource</td><td>The <a class="el" href="interface_i_image_source.html" title="Interface describing a class that can provide a bitmap every frame. ">IImageSource</a> providing a bitmap every frame. </td></tr>
   </table>
   </dd>
 </dl>
@@ -145,6 +159,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Draw the next frame to a texture. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -163,7 +178,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:45 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

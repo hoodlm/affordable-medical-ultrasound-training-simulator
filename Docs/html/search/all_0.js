@@ -4,6 +4,8 @@ var searchData=
   ['addscanlines',['AddScanlines',['../class_ultrasound_scan_data.html#af36f29a527b9a8d763424cf0c27889a5',1,'UltrasoundScanData']]],
   ['addultrasoundpoint',['AddUltrasoundPoint',['../class_ultrasound_scanline.html#a1db1148f2c593d8037f2c3920d0c0353',1,'UltrasoundScanline']]],
   ['addultrasoundpoints',['AddUltrasoundPoints',['../class_ultrasound_scanline.html#a6a8185b2604be432b5248c5a81916007',1,'UltrasoundScanline']]],
-  ['arcsizeindegrees',['ArcSizeInDegrees',['../class_horay_behavior.html#aa1265a5242758057306d840f87483fe4',1,'HorayBehavior']]],
-  ['assert',['Assert',['../class_ultrasound_debug.html#a7054dcf574f5e0706d92235e332bd05f',1,'UltrasoundDebug.Assert(bool assertion, string failMessage, object caller)'],['../class_ultrasound_debug.html#a9e6a842487efdde4e89ff360154ca39d',1,'UltrasoundDebug.Assert(bool assertion, string failMessage, object caller, bool isFatal)']]]
+  ['allorgansinscene',['allOrgansInScene',['../class_horay_organ_culler.html#a7ce880927400272bc02e69a61e6ea456',1,'HorayOrganCuller']]],
+  ['arcsizeindegrees',['ArcSizeInDegrees',['../class_horay_behavior.html#aa1265a5242758057306d840f87483fe4',1,'HorayBehavior.ArcSizeInDegrees()'],['../class_ultrasound_probe_configuration.html#acb53906fe1dac10ba8eafdab8a2d0650',1,'UltrasoundProbeConfiguration.arcSizeInDegrees()']]],
+  ['assert',['Assert',['../class_ultrasound_debug.html#a7054dcf574f5e0706d92235e332bd05f',1,'UltrasoundDebug.Assert(bool assertion, string failMessage, object caller)'],['../class_ultrasound_debug.html#a9e6a842487efdde4e89ff360154ca39d',1,'UltrasoundDebug.Assert(bool assertion, string failMessage, object caller, bool isFatal)']]],
+  ['attenuation',['attenuation',['../class_horay_material_properties.html#af038cdc7d0cb22496ff7541934561a3c',1,'HorayMaterialProperties']]]
 ];

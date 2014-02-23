@@ -2,10 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 /**
- *  Handles the behavior of a display GameObject.
+ *  Handles the behavior of a display GameObject. The behavior is primarily configured by setting the displayMode
+ * 	in the inspector. See documentation below on DisplayBehavior.DisplayModes for specific information on what
+ *  each mode does.
  */
 public class DisplayBehavior : MonoBehaviour {
 
+	/// The class responsible for dynamically generating the texture that is drawn to this display object.
     private ITextureSource textureSource;
 
 	/**
@@ -27,8 +30,12 @@ public class DisplayBehavior : MonoBehaviour {
     /// The height of the display's texture.
     public int textureHeight = 480;
     
+	/// The actual texture applied to the display's model. This texture is dynamically generated, not static.
     private Texture2D texture;
 
+	/// Initialization when the scene is started. This sets up the source of dynamic texture generation for the display.
+	/// Based on the current choice of DisplayModes, the DisplayTexturePipelineFactory will provide the appropriate
+	/// ITextureSource.
     void Start () {
 		switch (displayMode) {
 
@@ -61,6 +68,7 @@ public class DisplayBehavior : MonoBehaviour {
         
     }
 
+	/// Called every frame. This is the "entry point" into the ultrasound rendering procedure.
     void Update () {
         textureSource.RenderNextFrameToTexture(ref texture);
     }

@@ -164,7 +164,7 @@ public class HorayProbe {
 
 	/**
 	 *	Helper method to calculate a Vector3 (WorldSpace) from a Projected Position in local space.
-	 *	@param positionInPlace A Vector2 representing a point in the scanning plane.
+	 *	@param positionInPlane A Vector2 representing a point in the scanning plane.
 	 *	@param config The UltrasoundProbeConfiguration object, used for rotation and translation.
 	 *	@return A 3D point in world space.
 	 */

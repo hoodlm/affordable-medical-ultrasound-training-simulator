@@ -83,19 +83,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_ultrasound_collision_utils-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UltrasoundCollisionUtils Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Some custom-collision functions that to supplement the standard UnityEngine library.  
+ <a href="class_ultrasound_collision_utils.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa5f110afd1217d9a6a96194d4d71f9d4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_collision_utils.html#aa5f110afd1217d9a6a96194d4d71f9d4">IsContained</a> (Vector3 targetPoint, Collider collider)</td></tr>
+<tr class="memdesc:aa5f110afd1217d9a6a96194d4d71f9d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses a heuristic raycasting approach to decide if a point in world space is contained in a collider.  <a href="#aa5f110afd1217d9a6a96194d4d71f9d4">More...</a><br/></td></tr>
 <tr class="separator:aa5f110afd1217d9a6a96194d4d71f9d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a644cedf9aaf5a0605d9b2e7e1b11a449"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a644cedf9aaf5a0605d9b2e7e1b11a449"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_collision_utils.html#a644cedf9aaf5a0605d9b2e7e1b11a449">UltrasoundCollisionUtils</a> ()</td></tr>
+<tr class="memdesc:a644cedf9aaf5a0605d9b2e7e1b11a449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="class_ultrasound_collision_utils.html" title="Some custom-collision functions that to supplement the standard UnityEngine library. ">UltrasoundCollisionUtils</a> class. Populates the raycastDirections array with hard-coded values. <br/></td></tr>
+<tr class="separator:a644cedf9aaf5a0605d9b2e7e1b11a449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a699f3c1d1a7a54da0862afb060c75adf"><td class="memItemLeft" align="right" valign="top">static readonly Vector3[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasound_collision_utils.html#a699f3c1d1a7a54da0862afb060c75adf">raycastDirections</a></td></tr>
+<tr class="memdesc:a699f3c1d1a7a54da0862afb060c75adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the directions for raycasting in the isContained method.  <a href="#a699f3c1d1a7a54da0862afb060c75adf">More...</a><br/></td></tr>
+<tr class="separator:a699f3c1d1a7a54da0862afb060c75adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Some custom-collision functions that are not included in the Unity library. </p>
+<div class="textblock"><p>Some custom-collision functions that to supplement the standard UnityEngine library. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aa5f110afd1217d9a6a96194d4d71f9d4"></a>
 <div class="memitem">
@@ -128,7 +147,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Uses a heuristic raycasting approach to decide if a point in world space is contained in a collider.</p>
+
+<p>Uses a heuristic raycasting approach to decide if a point in world space is contained in a collider. </p>
 <dl class="section return"><dt>Returns</dt><dd>Is the point contained inside the collider? </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -140,13 +160,37 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a699f3c1d1a7a54da0862afb060c75adf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly Vector3 [] UltrasoundCollisionUtils.raycastDirections</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Defines the directions for raycasting in the isContained method. </p>
+<p>The directions are declared in the static initialization block for this method. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>UltrasoundCollisionUtils.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 17 2014 12:55:15 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 03:36:45 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

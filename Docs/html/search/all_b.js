@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['pointsperscanline',['PointsPerScanline',['../class_horay_behavior.html#af5485e88f83648299d93a5d03b22985b',1,'HorayBehavior']]],
-  ['populatedata',['PopulateData',['../class_horay_probe.html#a90b968ebb0a4732d0df3418c0cebe5a9',1,'HorayProbe']]],
-  ['position',['position',['../struct_position_and_rotation.html#a40711d57aa472ed41ea3f80ba2123f02',1,'PositionAndRotation']]],
-  ['positionandrotation',['PositionAndRotation',['../struct_position_and_rotation.html',1,'']]],
-  ['probe',['probe',['../class_horay_probe_output.html#a602911ff8270021676a9532ec38085f9',1,'HorayProbeOutput']]],
-  ['probegameobject',['probeGameObject',['../class_horay_probe.html#aa1169b96548c2b3b9f8d02d1b9e0eb2e',1,'HorayProbe.probeGameObject()'],['../class_horay_probe_output.html#aa3157c719af267232d4bc1f7db1d103d',1,'HorayProbeOutput.probeGameObject()']]],
-  ['probeoutput',['probeOutput',['../class_b_mode_output_image_decoder.html#acd635fc3852753638057fbf8808b235b',1,'BModeOutputImageDecoder']]]
+  ['ongui',['OnGUI',['../class_gui_instructions.html#ac05eebef124fe4921ca90220e339a56c',1,'GuiInstructions']]],
+  ['organpresets',['OrganPresets',['../class_horay_material_properties.html#a0e400a211805ed1f0c055c539adb6754',1,'HorayMaterialProperties']]],
+  ['organtype',['organType',['../class_horay_material_properties.html#a65bfb1b6033ac7a3686fe7d701687f3b',1,'HorayMaterialProperties']]],
+  ['origin',['origin',['../class_ultrasound_scanline.html#a04d263535e9952523f116c3d2b246633',1,'UltrasoundScanline']]],
+  ['output',['output',['../class_horay_behavior.html#ab23fdae8f935565e8a88d3ceb463b395',1,'HorayBehavior.output()'],['../class_horay_probe.html#aaf4d9d4842722a479db49d7d6be03384',1,'HorayProbe.output()']]]
 ];

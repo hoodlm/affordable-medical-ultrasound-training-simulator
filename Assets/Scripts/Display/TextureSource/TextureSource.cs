@@ -20,11 +20,15 @@ public class TextureSource : ITextureSource {
     }
 
     public void RenderNextFrameToTexture(ref Texture2D texture){
+		OnionLogger.globalLog.PushInfoLayer("TextureSource");
         int width = texture.width;
         int height = texture.height;
         Color[] pixels = imageSource.BitmapWithDimensions (width, height);
+		OnionLogger.globalLog.PushInfoLayer("Applying Bitmap to texture");
         texture.SetPixels(pixels);
         texture.Apply();
+		OnionLogger.globalLog.PopInfoLayer();
+		OnionLogger.globalLog.PopInfoLayer();
     }
 
 }

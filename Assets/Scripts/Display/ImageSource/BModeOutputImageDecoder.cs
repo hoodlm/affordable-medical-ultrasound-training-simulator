@@ -23,8 +23,11 @@ public class BModeOutputImageDecoder : IImageSource {
     }
 
     public virtual Color[] BitmapWithDimensions (int width, int height) {
+		OnionLogger.globalLog.PushInfoLayer("BModeOutputImageDecoder");
         Color[] buffer = new Color[width * height];
         UltrasoundScanData data = probeOutput.SendScanData ();
+
+		OnionLogger.globalLog.PushInfoLayer("Rendering UltrasoundData to bitmap");
         foreach (UltrasoundScanline scanline in data) {
             foreach (UltrasoundPoint point in scanline) {
                 int index = MapScanningPlaneToPixelCoordinate (height, 
@@ -34,8 +37,8 @@ public class BModeOutputImageDecoder : IImageSource {
                 DrawPoint (point, index, ref buffer, width * height);
             }
         }
-
-
+		OnionLogger.globalLog.PopInfoLayer();
+		OnionLogger.globalLog.PopInfoLayer();
         return buffer;
     }
 

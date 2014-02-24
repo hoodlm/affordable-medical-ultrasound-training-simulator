@@ -68,8 +68,10 @@ public class HorayOrganCuller {
 	public IList<GameObject> HitableOrgansOnScanlines(IList<UltrasoundScanline> scanlines,
 	                                                  UltrasoundProbeConfiguration config)
 	{
+		OnionLogger.globalLog.PushInfoLayer("HORAYOrganCuller");
 		CheckScanlines(scanlines);
 		RemoveExpiredObjects();
+		OnionLogger.globalLog.PopInfoLayer();
 		return new List<GameObject>(currentVisibleOrgans.Values);
 	}
 

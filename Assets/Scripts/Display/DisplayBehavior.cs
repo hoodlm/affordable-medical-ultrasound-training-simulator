@@ -37,6 +37,7 @@ public class DisplayBehavior : MonoBehaviour {
 	/// Based on the current choice of DisplayModes, the DisplayTexturePipelineFactory will provide the appropriate
 	/// ITextureSource.
     void Start () {
+		OnionLogger.globalLog.PushInfoLayer("Initializing Display");
 		switch (displayMode) {
 
 		case (DisplayModes.HORAY):
@@ -65,12 +66,15 @@ public class DisplayBehavior : MonoBehaviour {
 		}
         texture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGB24, false);
         this.renderer.material.mainTexture = texture;
-        
+		OnionLogger.globalLog.PopInfoLayer();
     }
 
 	/// Called every frame. This is the "entry point" into the ultrasound rendering procedure.
     void Update () {
+		string frameCountStr = string.Format("Frame {0}", Time.frameCount);
+		OnionLogger.globalLog.PushInfoLayer(frameCountStr);
         textureSource.RenderNextFrameToTexture(ref texture);
+		OnionLogger.globalLog.PopInfoLayer();
     }
 }
 

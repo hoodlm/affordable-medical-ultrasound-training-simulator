@@ -46,6 +46,7 @@ public class HorayProbe {
 	 * 	@param data The object into which to put the scan data.
 	 */
 	public void PopulateData(ref UltrasoundScanData data) {
+		OnionLogger.globalLog.PushInfoLayer("HORAYProbe populating data");
 #if UNITY_EDITOR
 		UltrasoundDebug.Assert(null != data, 
 		                       "Null data object passed to HorayProbe's PopulateData method.",
@@ -55,6 +56,8 @@ public class HorayProbe {
 		IList<GameObject> culledOrganList = culler.HitableOrgansOnScanlines(data.GetScanlines(),
 		                                                         			data.GetProbeConfig());
 		ScanPointsForOrgans(ref data, culledOrganList);
+
+		OnionLogger.globalLog.PopInfoLayer();
 	}
 
 	/**
@@ -67,7 +70,15 @@ public class HorayProbe {
 	 */
 	private void ScanPointsForOrgans(ref UltrasoundScanData data, IList<GameObject> organList)
 	{
+		OnionLogger.globalLog.PushInfoLayer("Performing Scan");
+
+		int scanlineIndex = 0;
+		int totalScanlines = data.GetProbeConfig().GetNumberOfScanlines();
 		foreach (UltrasoundScanline scanline in data) {
+
+			OnionLogger.globalLog.PushDebugLayer(string.Format("Scanline {0}/{1}", 
+			                                                   ++scanlineIndex,
+			                                                   totalScanlines));
 
 			// Reset the intensity when starting each scanline
 			float pulseIntensity = data.GetProbeConfig().GetGain();
@@ -88,7 +99,9 @@ public class HorayProbe {
 					}
 				}
 			}
+			OnionLogger.globalLog.PopDebugLayer();
 		}
+		OnionLogger.globalLog.PopInfoLayer();
 	}
 
 	/**
@@ -98,6 +111,8 @@ public class HorayProbe {
 	 * 	This is analagous to setting up the view frustum in traditional 3D graphics.
 	 */
 	private void EstablishScanningPlane(ref UltrasoundScanData data) {
+		OnionLogger.globalLog.PushInfoLayer("Pre-populating data");
+
 		UltrasoundProbeConfiguration config = data.GetProbeConfig();
 
 		// nearZ and farZ represent near and far clipping "planes" (they're really arcs)
@@ -124,6 +139,8 @@ public class HorayProbe {
 
 			data.AddScanline(scanline);
 		}
+
+		OnionLogger.globalLog.PopInfoLayer();
 	}
 
 	/**

@@ -30,9 +30,9 @@ public static class UltrasoundDebug {
 	 */
 	public static void Assert(bool assertion, string failMessage, object caller, bool isFatal) {
 		if (!assertion) {
-			Debug.LogError(string.Format ("{0}: {1}", caller.GetType(), failMessage));
+			OnionLogger.globalLog.LogError(string.Format ("{0}: {1}", caller.GetType(), failMessage));
 			if (isFatal) {
-				Debug.LogError("FATAL: Killing at the end of this frame.");
+				OnionLogger.globalLog.LogFatal("FATAL: Killing at the end of this frame.");
 #if UNITY_EDITOR
 				UnityEditor.EditorApplication.isPlaying = false;
 #else

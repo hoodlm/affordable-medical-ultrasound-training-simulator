@@ -36,11 +36,16 @@ public class HorayProbeOutput : IProbeOutput {
 		probe = new HorayProbe(probeGameObject, this);
 	}
 
-	public UltrasoundScanData SendScanData () {
+	public UltrasoundScanData SendScanData ()
+	{
+		OnionLogger.globalLog.PushInfoLayer("HORAYProbeOutput");
+
 		UltrasoundProbeConfiguration currentConfig =
 			probeGameObject.GetComponent<HorayBehavior>().GetProbeConfig();
 		UltrasoundScanData data = new UltrasoundScanData(currentConfig);
 		probe.PopulateData(ref data);
+
+		OnionLogger.globalLog.PopInfoLayer();
 		return data;
 	}
 

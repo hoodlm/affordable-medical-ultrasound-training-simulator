@@ -8,3 +8,4 @@ Library/*
 Temp
 *.pidb
 Build
+Logs/

@@ -11,6 +11,9 @@ using System.Collections;
  */
 public class UnityOnionLoggerWrapper : MonoBehaviour {
 
+	/// Set the level of this log. Messages that are lower than the logging level are suppressed.
+	public OnionLogger.LoggingLevels LogLevel = OnionLogger.LoggingLevels.INFO;
+
 	/// Sets up a logger to write to a Logs directory in the project folder.
 	void Awake ()
 	{
@@ -22,11 +25,8 @@ public class UnityOnionLoggerWrapper : MonoBehaviour {
 		// which uses the format "YYYY-MM-DD.HH.MM.SS.txt".
 		string filepath = logDirectory + "/" + OnionLogger.DefaultLogFilename();
 
-		// Set the level for this logger.
-		// Messages that are a lower level than the logLevel will be suppressed.
-		// The order of levels is:
-		// TRACE < DEBUG < INFO < WARN < ERROR < FATAL
-		OnionLogger.LoggingLevels logLevel = OnionLogger.LoggingLevels.INFO;
+		// Set the level for this logger from the inspector setting.
+		OnionLogger.LoggingLevels logLevel = this.LogLevel;
 
 		// Configure the appearance of the logs. 
 		char indentChar = ' ';

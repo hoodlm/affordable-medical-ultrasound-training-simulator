@@ -24,7 +24,7 @@ public class GaussianBlur : IImagePostProcessor {
 		MonochromeBitmap blurB = ColorUtils.blueBitmapFromRGBBitmap(ref rgbBitmap);
 
 		// temp hard-coded
-		int numberOfCoefficients = 4;
+		int numberOfCoefficients = 5;
 		this.coefficients = ApproximateGaussianCoefficients(numberOfCoefficients);
 
 //		ProcessChannel(ref blurR);
@@ -32,6 +32,7 @@ public class GaussianBlur : IImagePostProcessor {
 //		ProcessChannel(ref blurB);
 
 		// We can run each channel in parallel.
+		OnionLogger.globalLog.PushInfoLayer("Setting up GaussianBlur threads");
 		int numberOfThreads = 3;
 
 		// Each thread needs an original copy of its channel.
@@ -47,12 +48,15 @@ public class GaussianBlur : IImagePostProcessor {
 			threadsDone[i] = new ManualResetEvent(false);
 			threads[i] = new GaussianBlurThread(threadsDone[i], this.coefficients, originals[i]);
 		}
+		OnionLogger.globalLog.PopInfoLayer();
 
+		OnionLogger.globalLog.PushInfoLayer("Running Gaussian blur threads");
 		ThreadPool.QueueUserWorkItem(new WaitCallback(threads[0].ThreadedProcessChannel), blurR);
 		ThreadPool.QueueUserWorkItem(new WaitCallback(threads[1].ThreadedProcessChannel), blurG);
 		ThreadPool.QueueUserWorkItem(new WaitCallback(threads[2].ThreadedProcessChannel), blurB);
 		
 		WaitHandle.WaitAll(threadsDone);
+		OnionLogger.globalLog.PopInfoLayer();
 		// Done with parallel section.
 		
 		rgbBitmap.rgb.r = blurR.channel;
@@ -140,13 +144,13 @@ public class GaussianBlur : IImagePostProcessor {
 }
 
 /**
- *	A thread that can blur an image in parallel.
+ *	A thread that blurs a MonochromeBitmap.
  */
 public class GaussianBlurThread : IImagePostProcessorThread {
 	
 	private ManualResetEvent done;
 	private readonly float[] coefficients;
-	private readonly MonochromeBitmap original;
+	private MonochromeBitmap original;
 	
 	public GaussianBlurThread(ManualResetEvent handle, 
 	                          float[] gaussianCoefficients, 
@@ -158,7 +162,7 @@ public class GaussianBlurThread : IImagePostProcessorThread {
 	}
 	
 	/**
-	 *	No parallel implementation yet for ProcessBitmap of ColorInvert.
+	 *	No parallel implementation yet
 	 * 	@param state
 	 */
 	public void ThreadedProcessBitmap(object state)
@@ -167,14 +171,24 @@ public class GaussianBlurThread : IImagePostProcessorThread {
 	}
 	
 	/**
-	 * 	Blurs a single channel.
+	 * 	Blurs a single channel horizontally.
 	 * 	@param state 	An object containing a MonochromeBitmap.
 	 * 					Must be 'object' because of how .NET handles threads.
 	 */
 	public void ThreadedProcessChannel(object state)
 	{
 		MonochromeBitmap blurred = (MonochromeBitmap)state;
+		BlurHorizontal(ref blurred);
+		ColorUtils.Transpose(ref blurred);
+		original = ColorUtils.Copy(ref blurred);
+		BlurHorizontal(ref blurred);
+		ColorUtils.Transpose(ref blurred);
 
+		done.Set();
+	}
+
+	private void BlurHorizontal(ref MonochromeBitmap blurred)
+	{
 		// Zero the bitmap we are blurring.
 		for (int i = 0; i < blurred.channel.Length; ++i) {
 			blurred.channel[i] = 0f;
@@ -197,6 +211,5 @@ public class GaussianBlurThread : IImagePostProcessorThread {
 				}
 			}
 		}
-		done.Set();
 	}
 }

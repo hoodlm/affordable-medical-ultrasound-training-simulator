@@ -143,16 +143,35 @@ public class ColorUtils {
 	 *	@return A deep copy of the original.
 	 */
 	public static MonochromeBitmap Copy(ref MonochromeBitmap original) {
-		OnionLogger.globalLog.PushDebugLayer("Copying monochrome bitmap");
 
 		MonochromeBitmap copy = new MonochromeBitmap();
 		copy.height = original.height;
 		copy.width = original.width;
 		copy.channel = (float[])original.channel.Clone();
 
-		OnionLogger.globalLog.PopDebugLayer();
-
 		return copy;
+	}
+
+	/**
+	 *	Transposes the data in a bitmap.
+	 *	@param bitmap The bitmap that will be transposed.
+	 */
+	public static void Transpose(ref MonochromeBitmap bitmap) {
+		float[] transposedData = new float[bitmap.channel.Length];
+		int insertionIndex = 0;
+		for (int j = 0; j < bitmap.height; ++j) {
+			for (int i = 0; i < bitmap.width; ++i) {
+				int pixelIndex = j * bitmap.width + i;
+				transposedData[insertionIndex++] = bitmap.channel[pixelIndex];
+			}
+		}
+		// set the new data
+		bitmap.channel = transposedData;
+
+		// swap width and height
+		int temp = bitmap.height;
+		bitmap.height = bitmap.width;
+		bitmap.width = temp;
 	}
 
 }

@@ -58,6 +58,7 @@ public class BModeOutputImageDecoder : IImageSource {
 			effect.ProcessBitmap(ref bitmap);
 		}
 		OnionLogger.globalLog.PopInfoLayer();
+		OnionLogger.globalLog.PopInfoLayer();
     }
 
     /**

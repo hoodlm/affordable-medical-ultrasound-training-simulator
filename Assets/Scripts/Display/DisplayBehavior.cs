@@ -108,7 +108,7 @@ public sealed class DisplayTexturePipelineFactory
 	/**
 	 *	Sets up a HORAY configuration with inverted colors:
 	 *
-	 *		probe -> HorayProbeOutput -> BlackOnWhiteBModeOutputImageDecoder -> TextureSource
+	 *		probe -> HorayProbeOutput -> BModeOutputImageDecoder(+invert) -> TextureSource
 	 */
 	public static ITextureSource BuildBlackOnWhiteHORAYConfig() {
 		GameObject probe = GameObject.FindGameObjectWithTag("Probe");
@@ -117,7 +117,6 @@ public sealed class DisplayTexturePipelineFactory
 		IProbeOutput horayOutput = new HorayProbeOutput(probe);
 		IImageSource bmodeImageDecoder = new BModeOutputImageDecoder(horayOutput);
 		bmodeImageDecoder.AddPostProcessingEffect(new ColorInvert());
-		//bmodeImageDecoder.AddPostProcessingEffect(new GaussianBlur());
 		return new TextureSource(bmodeImageDecoder);
 	}
 

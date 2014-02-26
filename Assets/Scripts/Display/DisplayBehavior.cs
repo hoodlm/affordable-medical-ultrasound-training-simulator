@@ -19,7 +19,7 @@ public class DisplayBehavior : MonoBehaviour {
 	 * - HORAY: a HOmogeneous tissue RAYcasting algorithm to generate an ultrasound image.
 	 * - InvHORAY: HORAY with inverted colors (black on white).
 	 */
-	public enum DisplayModes {InvHORAY, HORAY, FakeTexture, FakeImage, FakeProbeOutput};
+	public enum DisplayModes {InvHORAY, HORAY, FakeTexture, FakeImage, FakeProbeOutput, GaussianBlurTest};
 	
 	/// The selected mode from DisplayModes for this display.
 	public DisplayModes displayMode;
@@ -58,6 +58,10 @@ public class DisplayBehavior : MonoBehaviour {
 
 		case (DisplayModes.FakeProbeOutput):
 			textureSource = DisplayTexturePipelineFactory.BuildWithFakeBModeProbeOutput();
+			break;
+
+		case (DisplayModes.GaussianBlurTest):
+			textureSource = DisplayTexturePipelineFactory.BuildWithGaussianBlurImageSource();
 			break;
 		
 		default:
@@ -141,4 +145,12 @@ public sealed class DisplayTexturePipelineFactory
 		IImageSource imageSource = new BModeOutputImageDecoder(fakeProbeOutput);
 		return new TextureSource(imageSource);
 	} 
+
+	/**
+	 *	Test image for gaussian blur.
+	 */
+	public static ITextureSource BuildWithGaussianBlurImageSource() {
+		IImageSource gaussianBlurredTestImage = new TestGaussianImageSource();
+		return new TextureSource(gaussianBlurredTestImage);
+	}
 }

@@ -137,4 +137,22 @@ public class ColorUtils {
 		return blue;
 	}
 
+	/**
+	 *	Create a deep copy of this monochrome bitmap.
+	 *	@param original The bitmap to copy.
+	 *	@return A deep copy of the original.
+	 */
+	public static MonochromeBitmap Copy(ref MonochromeBitmap original) {
+		OnionLogger.globalLog.PushDebugLayer("Copying monochrome bitmap");
+
+		MonochromeBitmap copy = new MonochromeBitmap();
+		copy.height = original.height;
+		copy.width = original.width;
+		copy.channel = (float[])original.channel.Clone();
+
+		OnionLogger.globalLog.PopDebugLayer();
+
+		return copy;
+	}
+
 }

@@ -64,7 +64,7 @@ public class BModeOutputImageDecoder : IImageSource {
 		                       string.Format("Pixel brightness {0} should be in the interval [0,1]",
 		              						 point.GetBrightness()),
 								this);
-		#endif
+#endif
 		if (index >= bufferSize || index < 0) {
             return;
         }

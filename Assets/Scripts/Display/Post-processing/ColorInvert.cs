@@ -21,7 +21,6 @@ public class ColorInvert : IImagePostProcessor {
 		RGBBitmap rgbBitmap = new RGBBitmap();
 		ColorUtils.colorBitmapToRGBBitmap(ref colorBitmap, ref rgbBitmap);
 
-		OnionLogger.globalLog.PushInfoLayer("Inverting channels");
 
 		MonochromeBitmap invertedr = ColorUtils.redBitmapFromRGBBitmap(ref rgbBitmap);
 		MonochromeBitmap invertedg = ColorUtils.greenBitmapFromRGBBitmap(ref rgbBitmap);
@@ -43,8 +42,6 @@ public class ColorInvert : IImagePostProcessor {
 		WaitHandle.WaitAll(threadsDone);
 		// Done with parallel section.
 
-		OnionLogger.globalLog.PopInfoLayer();
-
 		rgbBitmap.rgb.r = invertedr.channel;
 		rgbBitmap.rgb.g = invertedg.channel;
 		rgbBitmap.rgb.b = invertedb.channel;
@@ -55,6 +52,7 @@ public class ColorInvert : IImagePostProcessor {
 
 	/**
 	 * 	Inverts the values in a single channel, represented as an array of floats.
+	 * 	This is a serial implementation and isn't really used right now.
 	 * 	@param channel 	An array of floats representing the value of each pixel,
 	 * 					to which the effect will be applied.
 	 * 	@param width 	The width of the bitmap in pixels.

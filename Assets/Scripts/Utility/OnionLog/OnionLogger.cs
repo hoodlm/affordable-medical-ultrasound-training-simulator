@@ -430,7 +430,7 @@ public class OnionLogger {
      */
     public static string DefaultLogFilename() {
         string timestamp = 
-            string.Format("{0,4}-{1,2}-{2,2}-{3,2:D2}.{4,2:D2}.{5,2:D2}",
+            string.Format("{0,4:D4}-{1,2:D2}-{2,2:D2}-{3,2:D2}.{4,2:D2}.{5,2:D2}",
                           DateTime.Now.Year,
                           DateTime.Now.Month,
                           DateTime.Now.Day,

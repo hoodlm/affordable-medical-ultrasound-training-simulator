@@ -115,7 +115,9 @@ public sealed class DisplayTexturePipelineFactory
 		UltrasoundDebug.Assert(null != probe, "No object with Probe tag in scene.", new DisplayTexturePipelineFactory());
 		
 		IProbeOutput horayOutput = new HorayProbeOutput(probe);
-		IImageSource bmodeImageDecoder = new BlackOnWhiteBModeOutputImageDecoder(horayOutput);
+		IImageSource bmodeImageDecoder = new BModeOutputImageDecoder(horayOutput);
+		bmodeImageDecoder.AddPostProcessingEffect(new ColorInvert());
+		//bmodeImageDecoder.AddPostProcessingEffect(new GaussianBlur());
 		return new TextureSource(bmodeImageDecoder);
 	}
 

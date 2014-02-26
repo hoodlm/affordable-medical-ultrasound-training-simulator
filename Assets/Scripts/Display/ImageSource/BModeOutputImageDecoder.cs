@@ -22,24 +22,28 @@ public class BModeOutputImageDecoder : IImageSource {
         probeOutput = output;
     }
 
-    public virtual Color[] BitmapWithDimensions (int width, int height) {
+	public virtual void RenderColorImageInBitmap (ref ColorBitmap bitmap) {
 		OnionLogger.globalLog.PushInfoLayer("BModeOutputImageDecoder");
-        Color[] buffer = new Color[width * height];
+
         UltrasoundScanData data = probeOutput.SendScanData ();
 
 		OnionLogger.globalLog.PushInfoLayer("Rendering UltrasoundData to bitmap");
+		int scanlineIndex = 0;
+		int totalScanlines = data.GetScanlines().Count;
         foreach (UltrasoundScanline scanline in data) {
+			string logStr = string.Format("Drawing scanline {0}/{1}", scanlineIndex++, totalScanlines);
+			OnionLogger.globalLog.PushDebugLayer(logStr);
             foreach (UltrasoundPoint point in scanline) {
-                int index = MapScanningPlaneToPixelCoordinate (height, 
-                                                                width, 
-                                                                point.GetProjectedLocation (),
-				                                                data.GetProbeConfig());
-                DrawPoint (point, index, ref buffer, width * height);
+                int index = MapScanningPlaneToPixelCoordinate (bitmap.height, 
+                                                               bitmap.width, 
+                                                               point.GetProjectedLocation (),
+				                                               data.GetProbeConfig());
+                DrawPoint (point, index, ref bitmap);
             }
+			OnionLogger.globalLog.PopDebugLayer();
         }
 		OnionLogger.globalLog.PopInfoLayer();
 		OnionLogger.globalLog.PopInfoLayer();
-        return buffer;
     }
 
     /**
@@ -49,7 +53,9 @@ public class BModeOutputImageDecoder : IImageSource {
      *  @param buffer An array of UnityEngine.Color representing the result image. 
      *  @param bufferSize The number of pixels in the buffer.
      */
-    protected virtual void DrawPoint(UltrasoundPoint point, int index, ref Color[] buffer, int bufferSize) {
+    protected virtual void DrawPoint(UltrasoundPoint point, int index, ref ColorBitmap bitmap) {
+
+		long bufferSize = bitmap.colors.Length;
 #if UNITY_EDITOR
 		UltrasoundDebug.Assert(index < bufferSize && index >= 0,
 		                       string.Format("{0} should be in the interval[0, {1})", index, bufferSize),
@@ -66,7 +72,7 @@ public class BModeOutputImageDecoder : IImageSource {
         Color pointColor = drawColor;
 		// minimum pixel brightness of 0.1f
         pointColor *= Mathf.Max(0.1f, point.GetBrightness());
-        buffer[index] = pointColor;
+        bitmap.colors[index] = pointColor;
     }
 
     /**

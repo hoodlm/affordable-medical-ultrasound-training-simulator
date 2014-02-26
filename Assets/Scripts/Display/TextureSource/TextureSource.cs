@@ -21,9 +21,18 @@ public class TextureSource : ITextureSource {
 
     public void RenderNextFrameToTexture(ref Texture2D texture){
 		OnionLogger.globalLog.PushInfoLayer("TextureSource");
-        int width = texture.width;
-        int height = texture.height;
-        Color[] pixels = imageSource.BitmapWithDimensions (width, height);
+		
+		OnionLogger.globalLog.PushInfoLayer("Allocating ColorBitmap");
+		int width = texture.width;
+		int height = texture.height;
+		Color[] pixels = new Color[width * height];
+		ColorBitmap colorBitmap = new ColorBitmap();
+		colorBitmap.colors = pixels;
+		colorBitmap.width = width;
+		colorBitmap.height = height;
+		OnionLogger.globalLog.PopInfoLayer();
+
+        imageSource.RenderColorImageInBitmap(ref colorBitmap);
 		OnionLogger.globalLog.PushInfoLayer("Applying Bitmap to texture");
         texture.SetPixels(pixels);
         texture.Apply();

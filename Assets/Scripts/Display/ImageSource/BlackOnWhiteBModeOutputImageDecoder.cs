@@ -13,9 +13,8 @@ public class BlackOnWhiteBModeOutputImageDecoder : BModeOutputImageDecoder {
 		inverter = new ColorInvert();
 	}
 
-	public override Color[] BitmapWithDimensions (int width, int height) {
-		Color[] buffer = base.BitmapWithDimensions(width, height);
-		inverter.ProcessBitmap(ref buffer, width, height);
-		return buffer;
+	public override void RenderColorImageInBitmap (ref ColorBitmap bitmap) {
+		base.RenderColorImageInBitmap(ref bitmap);
+		inverter.ProcessBitmap(ref bitmap);
 	}
 }

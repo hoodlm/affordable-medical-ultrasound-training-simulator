@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Threading;
 
+/**
+ *	An example IImagePostProcessor that inverts the colors of a bitmap.
+ *	This is utilized by the BlackOnWhiteBModeOutputImageDecoder class.
+ */
 public class ColorInvert : IImagePostProcessor {
 	
 	/**
@@ -10,16 +14,21 @@ public class ColorInvert : IImagePostProcessor {
 	 * 	@param width 	The width of the bitmap in pixels.
 	 * 	@param height 	The height of the bitmap in pixels.
 	 */
-	public void ProcessBitmap(ref Color[] bitmap, int width, int height)
+	public void ProcessBitmap(ref ColorBitmap colorBitmap)
 	{
 		OnionLogger.globalLog.PushInfoLayer("Inverting bitmap");
-		RGBChannels rgb = ColorUtils.bitmapToRGBChannels(ref bitmap);
+		RGBBitmap rgbBitmap = ColorUtils.colorBitmapToRGBBitmap(ref colorBitmap);
 
-		ProcessChannel(ref rgb.r, width, height);
-		ProcessChannel(ref rgb.g, width, height);
-		ProcessChannel(ref rgb.b, width, height);
+		OnionLogger.globalLog.PushInfoLayer("Inverting channels");
+		MonochromeBitmap r = ColorUtils.redBitmapFromRGBBitmap(ref rgbBitmap);
+		MonochromeBitmap g = ColorUtils.greenBitmapFromRGBBitmap(ref rgbBitmap);
+		MonochromeBitmap b = ColorUtils.blueBitmapFromRGBBitmap(ref rgbBitmap);
+		ProcessChannel(ref r);
+		ProcessChannel(ref g);
+		ProcessChannel(ref b);
+		OnionLogger.globalLog.PopInfoLayer();
 
-		bitmap = ColorUtils.RGBChannelsToBitmap(ref rgb);
+		colorBitmap = ColorUtils.RGBBitmapToColorBitmap(ref rgbBitmap);
 		OnionLogger.globalLog.PopInfoLayer();
 	}
 
@@ -30,11 +39,10 @@ public class ColorInvert : IImagePostProcessor {
 	 * 	@param width 	The width of the bitmap in pixels.
 	 * 	@param height 	The height of the bitmap in pixels.
 	 */
-	public void ProcessChannel(ref float[] channel, int width, int height)
+	public void ProcessChannel(ref MonochromeBitmap monochromeBitmap)
 	{
-		for (int i = 0; i < channel.Length; ++i) {
-			channel[i] = 1f - channel[i];
+		for (int i = 0; i < monochromeBitmap.channel.Length; ++i) {
+			monochromeBitmap.channel[i] = 1f - monochromeBitmap.channel[i];
 		}
 	}
-
 }

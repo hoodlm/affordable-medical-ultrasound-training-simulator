@@ -7,11 +7,8 @@ using System.Collections;
 public interface IImageSource {
 
     /**
-     *  Generate the next frame.
-     *  @param width The requested width in pixels of the image.
-     *  @param height The requested height in pixels of the image.
-     *  @return A color array containing the pixels of the image.
+     *  Generate the next frame, and populate a provided bitmap.
+     *  @param bitmap A ColorBitmap struct (Color[], width, height) to be populated for this frame.
      */
-    Color[] BitmapWithDimensions (int width, int height);
-
+    void RenderColorImageInBitmap (ref ColorBitmap bitmap);
 }

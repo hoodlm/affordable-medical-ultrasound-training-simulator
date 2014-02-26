@@ -1,27 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Threading;
 
 /**
  *	Interface for a class that applies a post-processing effect to a 2D image.
  */
 public interface IImagePostProcessor {
-
 	/**
 	 *	Applies the effect to a bitmap.
-	 * 	@param bitmap An array of UnityEngine Color structs 
-	 * 	@param width The width of the bitmap in pixels.
-	 * 	@param height The height of the bitmap in pixels.
-	 * 	@param The bitmap with the effect applied.
+	 * 	@param colorBitmap the image to be processed.
 	 */
-	void ProcessBitmap(ref Color[] bitmap, int width, int height);
+	void ProcessBitmap(ref ColorBitmap colorBitmap);
 
 	/**
 	 * 	Applies the effect to a single channel, represented as an array of floats.
-	 * 	@param channel An array of floats representing the value of each pixel.
-	 * 	@param width The width of the bitmap in pixels.
-	 * 	@param height The height of the bitmap in pixels.
-	 * 	@return The input channel with the effect applied.
+	 * 	@param channel A single channel (or monochrome image) to be processed.
 	 */
-	void ProcessChannel(ref float[] channel, int width, int height);
-
+	void ProcessChannel(ref MonochromeBitmap channel);
 }

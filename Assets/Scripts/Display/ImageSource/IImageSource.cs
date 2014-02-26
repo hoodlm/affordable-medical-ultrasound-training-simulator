@@ -11,4 +11,6 @@ public interface IImageSource {
      *  @param bitmap A ColorBitmap struct (Color[], width, height) to be populated for this frame.
      */
     void RenderColorImageInBitmap (ref ColorBitmap bitmap);
+
+	void AddPostProcessingEffect(IImagePostProcessor effect);
 }

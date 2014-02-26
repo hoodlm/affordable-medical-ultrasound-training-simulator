@@ -24,7 +24,7 @@ public class GaussianBlur : IImagePostProcessor {
 		MonochromeBitmap blurB = ColorUtils.blueBitmapFromRGBBitmap(ref rgbBitmap);
 
 		// temp hard-coded
-		int numberOfCoefficients = 2;
+		int numberOfCoefficients = 4;
 		this.coefficients = ApproximateGaussianCoefficients(numberOfCoefficients);
 
 //		ProcessChannel(ref blurR);

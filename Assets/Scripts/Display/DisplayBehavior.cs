@@ -93,7 +93,7 @@ public sealed class DisplayTexturePipelineFactory
 	/**
 	 *	Sets up a standard HORAY configuration:
 	 *
-	 *		probe -> HorayProbeOutput -> BModeOutputImageDecoder -> TextureSource
+	 *		probe -> HorayProbeOutput -> BModeOutputImageDecoder (+blur) -> TextureSource
 	 */
 	public static ITextureSource BuildStandardHORAYConfig() {
 		GameObject probe = GameObject.FindGameObjectWithTag("Probe");
@@ -101,6 +101,7 @@ public sealed class DisplayTexturePipelineFactory
 		
 		IProbeOutput horayOutput = new HorayProbeOutput(probe);
 		IImageSource bmodeImageDecoder = new BModeOutputImageDecoder(horayOutput);
+		bmodeImageDecoder.AddPostProcessingEffect(new GaussianBlur());
 		return new TextureSource(bmodeImageDecoder);
 	}
 

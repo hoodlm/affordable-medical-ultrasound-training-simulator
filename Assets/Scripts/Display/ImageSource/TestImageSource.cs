@@ -19,4 +19,7 @@ public class TestImageSource : IImageSource {
 		OnionLogger.globalLog.PopInfoLayer();
     }
 
+	public void AddPostProcessingEffect(IImagePostProcessor effect) {
+		// do nothing
+	}
 }

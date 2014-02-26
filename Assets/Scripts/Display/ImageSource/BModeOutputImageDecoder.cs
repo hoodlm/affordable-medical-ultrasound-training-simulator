@@ -1,10 +1,13 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 /**
  *  An IImageSource that generates image data from an UltrasoundProbe%'s IProbeOutput.
  */
 public class BModeOutputImageDecoder : IImageSource {
+
+	/// Keep a list of post-processing effects to add to the final image.
+	private IList<IImagePostProcessor> imageEffects;
 
 	///	The IProbeOutput from which this BModeOutputImageDecoder receives data.
     protected IProbeOutput probeOutput;
@@ -20,7 +23,14 @@ public class BModeOutputImageDecoder : IImageSource {
 		UltrasoundDebug.Assert(null != output, "Null probe output used in constructor", this);
 		drawColor = Color.white;
         probeOutput = output;
+		imageEffects = new List<IImagePostProcessor>();
     }
+
+	public void AddPostProcessingEffect(IImagePostProcessor effect)
+	{
+		UltrasoundDebug.Assert(null != effect, "Null effect added to ImageSource", this);
+		imageEffects.Add(effect);
+	}
 
 	public virtual void RenderColorImageInBitmap (ref ColorBitmap bitmap) {
 		OnionLogger.globalLog.PushInfoLayer("BModeOutputImageDecoder");
@@ -43,6 +53,10 @@ public class BModeOutputImageDecoder : IImageSource {
 			OnionLogger.globalLog.PopDebugLayer();
         }
 		OnionLogger.globalLog.PopInfoLayer();
+		OnionLogger.globalLog.PushInfoLayer("Post-processing");
+		foreach(IImagePostProcessor effect in imageEffects) {
+			effect.ProcessBitmap(ref bitmap);
+		}
 		OnionLogger.globalLog.PopInfoLayer();
     }
 

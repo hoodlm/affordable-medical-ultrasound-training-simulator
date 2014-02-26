@@ -42,38 +42,36 @@ public class ColorUtils {
 	 *	Joins an RGBBitmap struct containing individual color components into a single
 	 *	bitmap (array of UnityEngine.Color). The RGBBitmap is left unchanged.
 	 *
-	 *	@param rgbBitmap The RGB data to join into a ColorBitmap.
-	 *	@return A ColorBitmap equivalent to the rgb data.
+	 *	@param fromRGB The RGB data to join into a ColorBitmap.
+	 *	@param toColors A ColorBitmap equivalent to the rgb data.
 	 */
-	public static ColorBitmap RGBBitmapToColorBitmap(ref RGBBitmap rgbBitmap)
+	public static void RGBBitmapToColorBitmap(ref RGBBitmap fromRGB, ref ColorBitmap toColors)
 	{
-		int channelLength = rgbBitmap.rgb.r.Length;
+		int channelLength = fromRGB.rgb.r.Length;
 		string logString = string.Format("Converting RGBBitmap to ColorBitmap (length {0})", channelLength);
 		OnionLogger.globalLog.PushInfoLayer(logString);
 
-		ColorBitmap colorBitmap = new ColorBitmap();
-		colorBitmap.colors = new Color[channelLength];
-		colorBitmap.width = rgbBitmap.width;
-		colorBitmap.height = rgbBitmap.height;
+		toColors.colors = new Color[channelLength];
+		toColors.width = fromRGB.width;
+		toColors.height = fromRGB.height;
 
 		for (int i = 0; i < channelLength; ++i) {
-			colorBitmap.colors[i] = new Color(rgbBitmap.rgb.r[i], rgbBitmap.rgb.g[i], rgbBitmap.rgb.b[i]);
+			toColors.colors[i] = new Color(fromRGB.rgb.r[i], fromRGB.rgb.g[i], fromRGB.rgb.b[i]);
 		}
 
 		OnionLogger.globalLog.PopInfoLayer();
-		return colorBitmap;
 	}
 
 	/**
 	 *	Splits a ColorBitmap into an RGBBitmap struct containing the
 	 *	individual color componenets. The original ColorBitmap is left unmodified.
 	 *
-	 *	@param bitmap The bitmap to split into channels.
-	 *	@return An RGBChannels struct containing the channels for the ColorBitmap.
+	 *	@param fromColors The bitmap to split into channels.
+	 *	@param toRGB RGBBitmap struct containing the channels for the ColorBitmap.
 	 */
-	public static RGBBitmap colorBitmapToRGBBitmap(ref ColorBitmap colorBitmap)
+	public static void colorBitmapToRGBBitmap(ref ColorBitmap fromColors, ref RGBBitmap toRGB)
 	{
-		int channelLength = colorBitmap.colors.Length;
+		int channelLength = fromColors.colors.Length;
 		string logString = string.Format("Converting bitmap to RGB (length {0})", channelLength);
 		OnionLogger.globalLog.PushInfoLayer(logString);
 
@@ -82,7 +80,7 @@ public class ColorUtils {
 		float[] b = new float[channelLength];
 
 		for (int i = 0; i < channelLength; ++i) {
-			Color colorTuple = colorBitmap.colors[i];
+			Color colorTuple = fromColors.colors[i];
 			r[i] = colorTuple.r;
 			g[i] = colorTuple.g;
 			b[i] = colorTuple.b;
@@ -93,13 +91,11 @@ public class ColorUtils {
 		rgb.g = g;
 		rgb.b = b;
 
-		RGBBitmap rgbBitmap = new RGBBitmap();
-		rgbBitmap.rgb = rgb;
-		rgbBitmap.width = colorBitmap.width;
-		rgbBitmap.height = colorBitmap.height;
+		toRGB.rgb = rgb;
+		toRGB.width = fromColors.width;
+		toRGB.height = fromColors.height;
 
 		OnionLogger.globalLog.PopInfoLayer();
-		return rgbBitmap;
 	}
 
 	/**

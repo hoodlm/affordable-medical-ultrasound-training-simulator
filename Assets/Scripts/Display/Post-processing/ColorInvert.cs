@@ -17,18 +17,24 @@ public class ColorInvert : IImagePostProcessor {
 	public void ProcessBitmap(ref ColorBitmap colorBitmap)
 	{
 		OnionLogger.globalLog.PushInfoLayer("Inverting bitmap");
-		RGBBitmap rgbBitmap = ColorUtils.colorBitmapToRGBBitmap(ref colorBitmap);
+		RGBBitmap rgbBitmap = new RGBBitmap();
+		ColorUtils.colorBitmapToRGBBitmap(ref colorBitmap, ref rgbBitmap);
 
 		OnionLogger.globalLog.PushInfoLayer("Inverting channels");
-		MonochromeBitmap r = ColorUtils.redBitmapFromRGBBitmap(ref rgbBitmap);
-		MonochromeBitmap g = ColorUtils.greenBitmapFromRGBBitmap(ref rgbBitmap);
-		MonochromeBitmap b = ColorUtils.blueBitmapFromRGBBitmap(ref rgbBitmap);
-		ProcessChannel(ref r);
-		ProcessChannel(ref g);
-		ProcessChannel(ref b);
+
+		MonochromeBitmap invertedr = ColorUtils.redBitmapFromRGBBitmap(ref rgbBitmap);
+		MonochromeBitmap invertedg = ColorUtils.greenBitmapFromRGBBitmap(ref rgbBitmap);
+		MonochromeBitmap invertedb = ColorUtils.blueBitmapFromRGBBitmap(ref rgbBitmap);
+		ProcessChannel(ref invertedr);
+		ProcessChannel(ref invertedg);
+		ProcessChannel(ref invertedb);
 		OnionLogger.globalLog.PopInfoLayer();
 
-		colorBitmap = ColorUtils.RGBBitmapToColorBitmap(ref rgbBitmap);
+		rgbBitmap.rgb.r = invertedr.channel;
+		rgbBitmap.rgb.g = invertedg.channel;
+		rgbBitmap.rgb.b = invertedb.channel;
+
+		ColorUtils.RGBBitmapToColorBitmap(ref rgbBitmap, ref colorBitmap);
 		OnionLogger.globalLog.PopInfoLayer();
 	}
 

@@ -101,7 +101,7 @@ public sealed class DisplayTexturePipelineFactory
 		
 		IProbeOutput horayOutput = new HorayProbeOutput(probe);
 		IImageSource bmodeImageDecoder = new BModeOutputImageDecoder(horayOutput);
-		bmodeImageDecoder.AddPostProcessingEffect(new GaussianBlur());
+		bmodeImageDecoder.AddPostProcessingEffect(new GrayscaleGaussianBlur());
 		return new TextureSource(bmodeImageDecoder);
 	}
 
@@ -153,7 +153,7 @@ public sealed class DisplayTexturePipelineFactory
 	 */
 	public static ITextureSource BuildWithGaussianBlurImageSource() {
 		IImageSource imageSource = new TestImageSource();
-		imageSource.AddPostProcessingEffect(new GaussianBlur());
+		imageSource.AddPostProcessingEffect(new GrayscaleGaussianBlur());
 		return new TextureSource(imageSource);
 	}
 }

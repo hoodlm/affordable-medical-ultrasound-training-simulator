@@ -1,0 +1,213 @@
+System:
+  OS: Windows 7  (6.1.7600)
+  CPU: Intel(R) Core(TM) i5 CPU M 450 @ 2.40GHz, count: 4
+  Physical RAM: 2992 MB
+  Addressable RAM: 2048 MB
+
+D3D9:
+  Renderer: Intel(R) HD Graphics
+  VendorID: 8086
+  Driver: igdumdx32.dll 8.15.10.2119
+  VRAM: 683 (via DXGI)
+
+OpenGL:
+  Version: 2.1.0 - Build 8.15.10.2119
+  Vendor: Intel
+  Renderer: Intel(R) HD Graphics
+  Driver: RDPDD, version 4456530.4456528.68.234881038
+  VRAM: 683 (via DXGI)
+  Extensions: GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_blend_color GL_EXT_abgr GL_EXT_texture3D GL_EXT_clip_volume_hint GL_EXT_compiled_vertex_array GL_SGIS_texture_edge_clamp GL_SGIS_generate_mipmap GL_EXT_draw_range_elements GL_SGIS_texture_lod GL_EXT_rescale_normal GL_EXT_packed_pixels GL_EXT_texture_edge_clamp GL_EXT_separate_specular_color GL_ARB_multitexture GL_EXT_texture_env_combine GL_EXT_bgra GL_EXT_blend_func_separate GL_EXT_secondary_color GL_EXT_fog_coord GL_EXT_texture_env_add GL_ARB_texture_cube_map GL_ARB_transpose_matrix GL_ARB_texture_env_add GL_IBM_texture_mirrored_repeat GL_EXT_multi_draw_arrays GL_NV_blend_square GL_ARB_texture_compression GL_3DFX_texture_compression_FXT1 GL_EXT_texture_filter_anisotropic GL_ARB_texture_border_clamp GL_ARB_point_parameters GL_ARB_texture_env_combine GL_ARB_texture_env_dot3 GL_ARB_texture_env_crossbar GL_EXT_texture_compression_s3tc GL_ARB_shadow GL_ARB_window_pos GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_ARB_vertex_program GL_EXT_texture_rectangle GL_ARB_fragment_program GL_EXT_stencil_two_side GL_ATI_separate_stencil GL_ARB_vertex_buffer_object GL_EXT_texture_lod_bias GL_ARB_occlusion_query GL_ARB_fragment_shader GL_ARB_shader_objects GL_ARB_shading_language_100 GL_ARB_texture_non_power_of_two GL_ARB_vertex_shader GL_NV_texgen_reflection GL_ARB_point_sprite GL_EXT_blend_equation_separate GL_ARB_depth_texture GL_ARB_texture_rectangle GL_ARB_draw_buffers GL_ARB_color_buffer_float GL_ARB_half_float_pixel GL_ARB_texture_float GL_ARB_pixel_buffer_object GL_EXT_framebuffer_object GL_ARB_draw_instanced GL_ARB_half_float_vertex GL_EXT_draw_buffers2 GL_WIN_swap_hint GL_EXT_texture_sRGB GL_EXT_packed_float GL_EXT_texture_shared_exponent GL_ARB_texture_rg GL_ARB_texture_compression_rgtc GL_NV_conditional_render GL_EXT_texture_swizzle GL_ARB_framebuffer_sRGB GL_EXT_packed_depth_stencil GL_ARB_depth_buffer_float GL_EXT_transform_feedback GL_EXT_framebuffer_blit GL_ARB_vertex_array_object 
+
+User locale: en-US
+System locale: en-US
+
+Running processes:
+taskhost.exe (2780)
+    path: C:\Windows\system32\taskhost.exe
+    company:  Microsoft Corporation
+    product:  Microsoft® Windows® Operating System
+    filedesc: Host Process for Windows Tasks
+    filever:  6.1.7600.16385
+    prodver:  6.1.7600.16385
+taskeng.exe (2852)
+    path: C:\Windows\system32\taskeng.exe
+    company:  Microsoft Corporation
+    product:  Microsoft® Windows® Operating System
+    filedesc: Task Scheduler Engine
+    filever:  6.1.7600.16699
+    prodver:  6.1.7600.16699
+Dwm.exe (2868)
+    path: C:\Windows\system32\Dwm.exe
+    company:  Microsoft Corporation
+    product:  Microsoft® Windows® Operating System
+    filedesc: Desktop Window Manager
+    filever:  6.1.7600.16385
+    prodver:  6.1.7600.16385
+Explorer.EXE (2900)
+    path: C:\Windows\Explorer.EXE
+    company:  Microsoft Corporation
+    product:  Microsoft® Windows® Operating System
+    filedesc: Windows Explorer
+    filever:  6.1.7600.16450
+    prodver:  6.1.7600.16450
+ipoint.exe (3004)
+    path: c:\Program Files\Microsoft Mouse and Keyboard Center\ipoint.exe
+    company:  Microsoft Corporation
+    product:  Microsoft Mouse and Keyboard Center
+    filedesc: IPoint.exe
+    filever:  2.2.173.0
+    prodver:  2.2.173.0
+itype.exe (3020)
+    path: c:\Program Files\Microsoft Mouse and Keyboard Center\itype.exe
+    company:  Microsoft Corporation
+    product:  Microsoft Mouse and Keyboard Center
+    filedesc: IType.exe
+    filever:  2.2.173.0
+    prodver:  2.2.173.0
+QLBController.exe (3136)
+    path: C:\Program Files\Hewlett-Packard\HP HotKey Support\QLBController.exe
+    company:  Hewlett-Packard Company
+    product:  QLBController
+    filedesc: QLBController
+    filever:  3.5.15.1
+    prodver:  3.5.15.1
+sttray.exe (3156)
+    path: C:\Program Files\IDT\WDM\sttray.exe
+    company:  IDT, Inc.
+    product:  IDT PC Audio
+    filedesc: IDT PC Audio
+    filever:  1.0.6275.0
+    prodver:  1.0.6275.0
+IAANOTIF.EXE (3176)
+    path: C:\Program Files\Intel\Intel Matrix Storage Manager\IAANOTIF.EXE
+    company:  Intel Corporation
+    product:  RAID Event Monitor
+    filedesc: Event Monitor User Notification Tool
+    filever:  8.9.6.1002
+    prodver:  8.9.6.1002
+igfxtray.exe (3188)
+    path: C:\Windows\System32\igfxtray.exe
+    company:  Intel Corporation
+    product:  Intel(R) Common User Interface
+    filedesc: igfxTray Module
+    filever:  7.15.10.2119
+    prodver:  7.15.10.2119
+hkcmd.exe (3208)
+    path: C:\Windows\System32\hkcmd.exe
+    company:  Intel Corporation
+    product:  Intel(R) Common User Interface
+    filedesc: hkcmd Module
+    filever:  7.15.10.2119
+    prodver:  7.15.10.2119
+igfxpers.exe (3216)
+    path: C:\Windows\System32\igfxpers.exe
+    company:  Intel Corporation
+    product:  Intel(R) Common User Interface
+    filedesc: persistence Module
+    filever:  7.15.10.2119
+    prodver:  7.15.10.2119
+SynTPEnh.exe (3244)
+    path: C:\Program Files\Synaptics\SynTP\SynTPEnh.exe
+    company:  Synaptics Incorporated
+    product:  Synaptics Pointing Device Driver
+    filedesc: Synaptics TouchPad Enhancements
+    filever:  15.0.10.0
+    prodver:  15.0.10.0
+msseces.exe (3268)
+    path: C:\Program Files\Microsoft Security Client\msseces.exe
+    company:  Microsoft Corporation
+    product:  Microsoft Security Client
+    filedesc: Microsoft Security Client User Interface
+    filever:  4.4.304.0
+    prodver:  4.4.304.0
+SpotifyWebHelper.exe (3600)
+    path: C:\Users\hoodlm\AppData\Roaming\Spotify\Data\SpotifyWebHelper.exe
+    company:  Spotify Ltd
+    product:  Spotify
+    filedesc: SpotifyWebHelper
+    filever:  0.9.7.16
+    prodver:  0.9.7.16
+PrivacyIconClient.exe (4736)
+    path: C:\Program Files\Intel\Intel(R) Management Engine Components\IMSS\PrivacyIconClient.exe
+    company:  Intel Corporation
+    product:  Intel(R) Management and Security Status
+    filedesc: Intel(R) Management and Security Status
+    filever:  6.0.40.1213
+    prodver:  6.0.40.1213
+hpCaslNotification.exe (4588)
+    path: C:\Program Files\Hewlett-Packard\Shared\hpCaslNotification.exe
+    company:  Hewlett-Packard Development Company L.P.
+    product:  hpCaslNotification
+    filedesc: hpCaslNotification
+    filever:  3.5.17.1
+    prodver:  3.5.17.1
+MonoDevelop.exe (4360)
+    path: C:\Program Files\Unity\MonoDevelop\bin\MonoDevelop.exe
+    company:  
+    product:  MonoDevelop
+    filedesc: MonoDevelop
+    filever:  2.6.0.0
+    prodver:  2.6.0.0
+chrome.exe (1492)
+    path: C:\Program Files\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  33.0.1750.154
+    prodver:  33.0.1750.154
+chrome.exe (3168)
+    path: C:\Program Files\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  33.0.1750.154
+    prodver:  33.0.1750.154
+chrome.exe (1120)
+    path: C:\Program Files\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  33.0.1750.154
+    prodver:  33.0.1750.154
+chrome.exe (6112)
+    path: C:\Program Files\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  33.0.1750.154
+    prodver:  33.0.1750.154
+chrome.exe (340)
+    path: C:\Program Files\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  33.0.1750.154
+    prodver:  33.0.1750.154
+chrome.exe (5744)
+    path: C:\Program Files\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  33.0.1750.154
+    prodver:  33.0.1750.154
+chrome.exe (3648)
+    path: C:\Program Files\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  33.0.1750.154
+    prodver:  33.0.1750.154
+chrome.exe (1440)
+    path: C:\Program Files\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  33.0.1750.154
+    prodver:  33.0.1750.154
+UnityBugReporter.exe (4468)
+    path: C:\Program Files\Unity\Editor\UnityBugReporter.exe
+    company:  Unity Technologies ApS
+    product:  Unity Bug Reporter
+    filedesc: Unity Bug Reporter
+    filever:  4.3.4.31067
+    prodver:  4.3.4.31067

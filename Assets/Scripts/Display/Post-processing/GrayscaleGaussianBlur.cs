@@ -24,20 +24,43 @@ public class GrayscaleGaussianBlur : IImagePostProcessor {
 		MonochromeBitmap blurR = ColorUtils.redBitmapFromRGBBitmap(ref rgbBitmap);
 		
 		// temporarily hard-coded
-		int numberOfCoefficients = 5;
+		int numberOfCoefficients = 9;
 		this.coefficients = ApproximateGaussianCoefficients(numberOfCoefficients);
 
-		// We can run each row in parallel.
-		int numberOfThreads = blurR.height;
+		OnionLogger.globalLog.PushInfoLayer("Blurring rows");
+		ExecuteHorizontalBlur(ref blurR);
+		ColorUtils.Transpose(ref blurR); /* transpose to set up for blurring columns */
+		OnionLogger.globalLog.PopInfoLayer();
+
+		// Since we transposed the image, we can re-use the horizontal blur operation to blur the columns.
+		OnionLogger.globalLog.PushInfoLayer("Blurring columns");
+		ExecuteHorizontalBlur(ref blurR);
+		ColorUtils.Transpose(ref blurR); /* reset the image to original orientation */
+		OnionLogger.globalLog.PopInfoLayer();
+
+		// Since we assumed that we are using a grayscale image, the Blue and Green channels can be copied from
+		// the red channel.
+		rgbBitmap.rgb.r = blurR.channel;
+		rgbBitmap.rgb.b = blurR.channel;
+		rgbBitmap.rgb.g = blurR.channel;
+
+		ColorUtils.RGBBitmapToColorBitmap(ref rgbBitmap, ref colorBitmap);
+		
+		OnionLogger.globalLog.PopInfoLayer();
+	}
+
+	private void ExecuteHorizontalBlur(ref MonochromeBitmap channelToBlur)
+	{
+		// We will blur each row in parallel.
+		int numberOfThreads = channelToBlur.height;
 		OnionLogger.globalLog.PushInfoLayer(string.Format("Setting up {0} GrayscaleGaussianBlur threads",
 		                                                  numberOfThreads));
-
+		
 		// We will keep an active thread count that is atomically decremented when each thread finishes.
+		// When this count reaches 0, then we know that all threads have finished and can set "allThreadsDone".
 		activeThreadCount = numberOfThreads;
-
-		// When this count reaches 0, then we know that all threads have finished.
 		allThreadsDone = new ManualResetEvent(false);
-
+		
 		// Initialize thread objects
 		GrayscaleGaussianBlurThread[] threads = new GrayscaleGaussianBlurThread[numberOfThreads];
 		for (int i = 0; i < numberOfThreads; ++i) {
@@ -45,29 +68,17 @@ public class GrayscaleGaussianBlur : IImagePostProcessor {
 		}
 		OnionLogger.globalLog.PopInfoLayer();
 		
-		OnionLogger.globalLog.PushInfoLayer("Running Gaussian blur threads");
-
+		OnionLogger.globalLog.PushInfoLayer("Running Gaussian blur");
 		for (int i = 0; i < numberOfThreads; ++i) {
-			ThreadPool.QueueUserWorkItem(new WaitCallback(threads[i].BlurRow), blurR);
+			ThreadPool.QueueUserWorkItem(new WaitCallback(threads[i].BlurRow), channelToBlur);
 		}
-
+		
 		if (!allThreadsDone.WaitOne(500)) {
 			string logStr = string.Format("Timed out after 500ms - {0} threads unfinished.",
 			                              activeThreadCount);
 			OnionLogger.globalLog.LogError(logStr);
 		}
-
 		OnionLogger.globalLog.PopInfoLayer(); /* Done with parallel section. */
-
-		// Since we assumed that we are using a grayscale image, the Blue and Green channels can be copied from
-		// the red channel.
-		rgbBitmap.rgb.r = blurR.channel;
-		rgbBitmap.rgb.b = blurR.channel;
-		rgbBitmap.rgb.g = blurR.channel;
-		
-		ColorUtils.RGBBitmapToColorBitmap(ref rgbBitmap, ref colorBitmap);
-		
-		OnionLogger.globalLog.PopInfoLayer();
 	}
 	
 	/**
@@ -98,13 +109,21 @@ public class GrayscaleGaussianBlur : IImagePostProcessor {
 		return coefficients;
 	}
 
+	/**
+	 * 	A single thread corresponds to a single row in the image.
+	 */
 	public class GrayscaleGaussianBlurThread : IImagePostProcessorThread {
 		
 		private GrayscaleGaussianBlur threadManager;
 		private readonly float[] coefficients;
 		private readonly int rowNumber;
 		private MonochromeBitmap original;
-		
+
+		/**
+		 * 	A new instance of GrayscaleGaussianBlurThread.
+		 * 	@param imageProcessor a pointer to the parent GaussianBlur image processor.
+		 * 	@param rowNumber the row that this thread will blur.
+		 */
 		public GrayscaleGaussianBlurThread(GrayscaleGaussianBlur imageProcessor,
 		                                   int rowNumber) 
 		{
@@ -114,10 +133,10 @@ public class GrayscaleGaussianBlur : IImagePostProcessor {
 		}
 		
 		/**
-	 * 	Blurs a single row of a bitmap.
-	 * 	@param state 	An object containing a MonochromeBitmap.
-	 * 					Must be 'object' because of how .NET handles threads.
-	 */
+		 * 	Blurs a single row of a bitmap.
+		 * 	@param state 	An object containing a MonochromeBitmap.
+		 * 					Must be 'object' because of how .NET handles threads.
+		 */
 		public void BlurRow(object state)
 		{
 			MonochromeBitmap blurred = (MonochromeBitmap)state;
@@ -131,12 +150,11 @@ public class GrayscaleGaussianBlur : IImagePostProcessor {
 			}
 			
 			int numberOfCoefficients = this.coefficients.Length - 1;
-			
-			// Perform the blurring operation.
+
 			for (int j = 0; j < blurred.width; ++j) {
 				int targetPixel = rowNumber * blurred.width + j;
 				
-				for (int k = -numberOfCoefficients; k <= numberOfCoefficients; ++k) {
+				for (int k = 0; k <= numberOfCoefficients; ++k) {
 					if (j + k < 0 || j + k >= blurred.width) {
 						continue;
 					}

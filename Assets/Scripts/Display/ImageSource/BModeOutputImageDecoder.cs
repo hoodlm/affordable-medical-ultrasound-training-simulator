@@ -41,8 +41,6 @@ public class BModeOutputImageDecoder : IImageSource {
 		int scanlineIndex = 0;
 		int totalScanlines = data.GetScanlines().Count;
         foreach (UltrasoundScanline scanline in data) {
-			string logStr = string.Format("Drawing scanline {0}/{1}", scanlineIndex++, totalScanlines);
-			OnionLogger.globalLog.PushDebugLayer(logStr);
             foreach (UltrasoundPoint point in scanline) {
                 int index = MapScanningPlaneToPixelCoordinate (bitmap.height, 
                                                                bitmap.width, 
@@ -50,7 +48,6 @@ public class BModeOutputImageDecoder : IImageSource {
 				                                               data.GetProbeConfig());
                 DrawPoint (point, index, ref bitmap);
             }
-			OnionLogger.globalLog.PopDebugLayer();
         }
 		OnionLogger.globalLog.PopInfoLayer();
 		OnionLogger.globalLog.PushInfoLayer("Post-processing");

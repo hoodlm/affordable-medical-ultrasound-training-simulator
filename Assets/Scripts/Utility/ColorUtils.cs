@@ -157,12 +157,13 @@ public class ColorUtils {
 	 *	@param bitmap The bitmap that will be transposed.
 	 */
 	public static void Transpose(ref MonochromeBitmap bitmap) {
+		OnionLogger.globalLog.PushInfoLayer("Transposing bitmap of length "+(bitmap.height * bitmap.width));
 		float[] transposedData = new float[bitmap.channel.Length];
 		int insertionIndex = 0;
 		for (int x = 0; x < bitmap.width; ++x) {
 			for (int y = 0; y < bitmap.height; ++y) {
 				int pixelIndex = y * bitmap.width + x;
-				OnionLogger.globalLog.LogTrace(string.Format("Moving pixel {0} to {1}", pixelIndex, insertionIndex));
+				//OnionLogger.globalLog.LogTrace(string.Format("Moving pixel {0} to {1}", pixelIndex, insertionIndex));
 				transposedData[insertionIndex++] = bitmap.channel[pixelIndex];
 			}
 		}
@@ -173,6 +174,8 @@ public class ColorUtils {
 		int temp = bitmap.height;
 		bitmap.height = bitmap.width;
 		bitmap.width = temp;
+
+		OnionLogger.globalLog.PopInfoLayer();
 	}
 
 }

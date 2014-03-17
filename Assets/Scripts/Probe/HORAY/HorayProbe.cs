@@ -76,10 +76,6 @@ public class HorayProbe {
 		int totalScanlines = data.GetProbeConfig().GetNumberOfScanlines();
 		foreach (UltrasoundScanline scanline in data) {
 
-			OnionLogger.globalLog.PushDebugLayer(string.Format("Scanline {0}/{1}", 
-			                                                   ++scanlineIndex,
-			                                                   totalScanlines));
-
 			// Reset the intensity when starting each scanline
 			float pulseIntensity = data.GetProbeConfig().GetGain();
 
@@ -99,7 +95,6 @@ public class HorayProbe {
 					}
 				}
 			}
-			OnionLogger.globalLog.PopDebugLayer();
 		}
 		OnionLogger.globalLog.PopInfoLayer();
 	}

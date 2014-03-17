@@ -152,7 +152,8 @@ public sealed class DisplayTexturePipelineFactory
 	 *	Test image for gaussian blur.
 	 */
 	public static ITextureSource BuildWithGaussianBlurImageSource() {
-		IImageSource gaussianBlurredTestImage = new TestGaussianImageSource();
-		return new TextureSource(gaussianBlurredTestImage);
+		IImageSource imageSource = new TestImageSource();
+		imageSource.AddPostProcessingEffect(new GaussianBlur());
+		return new TextureSource(imageSource);
 	}
 }

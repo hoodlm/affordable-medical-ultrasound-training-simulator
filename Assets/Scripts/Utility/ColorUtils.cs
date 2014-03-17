@@ -159,9 +159,10 @@ public class ColorUtils {
 	public static void Transpose(ref MonochromeBitmap bitmap) {
 		float[] transposedData = new float[bitmap.channel.Length];
 		int insertionIndex = 0;
-		for (int j = 0; j < bitmap.height; ++j) {
-			for (int i = 0; i < bitmap.width; ++i) {
-				int pixelIndex = j * bitmap.width + i;
+		for (int x = 0; x < bitmap.width; ++x) {
+			for (int y = 0; y < bitmap.height; ++y) {
+				int pixelIndex = y * bitmap.width + x;
+				OnionLogger.globalLog.LogTrace(string.Format("Moving pixel {0} to {1}", pixelIndex, insertionIndex));
 				transposedData[insertionIndex++] = bitmap.channel[pixelIndex];
 			}
 		}

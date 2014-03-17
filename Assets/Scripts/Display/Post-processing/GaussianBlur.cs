@@ -27,26 +27,16 @@ public class GaussianBlur : IImagePostProcessor {
 		int numberOfCoefficients = 5;
 		this.coefficients = ApproximateGaussianCoefficients(numberOfCoefficients);
 
-//		ProcessChannel(ref blurR);
-//		ProcessChannel(ref blurG);
-//		ProcessChannel(ref blurB);
-
 		// We can run each channel in parallel.
 		OnionLogger.globalLog.PushInfoLayer("Setting up GaussianBlur threads");
 		int numberOfThreads = 3;
-
-		// Each thread needs an original copy of its channel.
-		MonochromeBitmap[] originals = new MonochromeBitmap[numberOfThreads];
-		originals[0] = ColorUtils.Copy(ref blurR);
-		originals[1] = ColorUtils.Copy(ref blurG);
-		originals[2] = ColorUtils.Copy(ref blurB);
 
 		// Initialize thread objects
 		ManualResetEvent[] threadsDone = new ManualResetEvent[numberOfThreads];
 		GaussianBlurThread[] threads = new GaussianBlurThread[numberOfThreads];
 		for (int i = 0; i < numberOfThreads; ++i) {
 			threadsDone[i] = new ManualResetEvent(false);
-			threads[i] = new GaussianBlurThread(threadsDone[i], this.coefficients, originals[i]);
+			threads[i] = new GaussianBlurThread(threadsDone[i], this.coefficients);
 		}
 		OnionLogger.globalLog.PopInfoLayer();
 
@@ -70,6 +60,7 @@ public class GaussianBlur : IImagePostProcessor {
 	
 	/**
 	 * 	Applies gaussian blur effect to a single channel, represented as an array of floats.
+	 * 	This is a non-parallel implementation.
 	 * 	@param channel A single channel (or monochrome image) to be processed.
 	 */
 	public void ProcessChannel(ref MonochromeBitmap blurred)
@@ -153,12 +144,10 @@ public class GaussianBlurThread : IImagePostProcessorThread {
 	private MonochromeBitmap original;
 	
 	public GaussianBlurThread(ManualResetEvent handle, 
-	                          float[] gaussianCoefficients, 
-	                          MonochromeBitmap original) 
+	                          float[] gaussianCoefficients) 
 	{
 		this.coefficients = gaussianCoefficients;
 		this.done = handle;
-		this.original = original;
 	}
 	
 	/**
@@ -171,13 +160,14 @@ public class GaussianBlurThread : IImagePostProcessorThread {
 	}
 	
 	/**
-	 * 	Blurs a single channel horizontally.
+	 * 	Blurs a single channel.
 	 * 	@param state 	An object containing a MonochromeBitmap.
 	 * 					Must be 'object' because of how .NET handles threads.
 	 */
 	public void ThreadedProcessChannel(object state)
 	{
 		MonochromeBitmap blurred = (MonochromeBitmap)state;
+		original = ColorUtils.Copy(ref blurred);
 		BlurHorizontal(ref blurred);
 		ColorUtils.Transpose(ref blurred);
 		original = ColorUtils.Copy(ref blurred);

@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['scanpointsfororgans',['ScanPointsForOrgans',['../class_horay_probe.html#a7bdb12ad42961aae8fb7575514769997',1,'HorayProbe']]],
-  ['sendscandata',['SendScanData',['../interface_i_probe_output.html#a9cbdb20c21d5d93addca0516ce12fdd5',1,'IProbeOutput.SendScanData()'],['../class_test_probe_output.html#aacfaeb92c0637b0517c34f45a3ac86aa',1,'TestProbeOutput.SendScanData()'],['../class_horay_probe_output.html#ac344b922b9f047895200508efa95dcd7',1,'HorayProbeOutput.SendScanData()']]],
-  ['setarcsizeindegrees',['SetArcSizeInDegrees',['../class_ultrasound_probe_configuration.html#ae0f949c5e2e249bd3d1a4f98153bd3c8',1,'UltrasoundProbeConfiguration']]],
-  ['setbrightness',['SetBrightness',['../class_ultrasound_point.html#ad606b7703ce7712048686ac13c5a04a9',1,'UltrasoundPoint']]],
-  ['setgain',['SetGain',['../class_ultrasound_probe_configuration.html#aa6fd726873467e696cb271d6486fc5a9',1,'UltrasoundProbeConfiguration']]],
-  ['setmaxscandistance',['SetMaxScanDistance',['../class_ultrasound_probe_configuration.html#a519e8efe9d1754718afe015a1af15871',1,'UltrasoundProbeConfiguration']]],
-  ['setminscandistance',['SetMinScanDistance',['../class_ultrasound_probe_configuration.html#a9ee69ebaa8113e309399193a22d9a33e',1,'UltrasoundProbeConfiguration']]],
-  ['setnumberofscanlines',['SetNumberOfScanlines',['../class_ultrasound_probe_configuration.html#aa5cd4391ed4ae2026cfb462001d14d75',1,'UltrasoundProbeConfiguration']]],
-  ['setpointsperscanline',['SetPointsPerScanline',['../class_ultrasound_probe_configuration.html#a16876d0dd9118f6b10999449c50e4034',1,'UltrasoundProbeConfiguration']]],
-  ['setposition',['SetPosition',['../class_ultrasound_probe_configuration.html#a76d845c3648d2bfa5ef5bfb4c8e5eb22',1,'UltrasoundProbeConfiguration']]],
-  ['setrotation',['SetRotation',['../class_ultrasound_probe_configuration.html#a830e08acfc1aaefce2b0f705565b9dd1',1,'UltrasoundProbeConfiguration']]],
-  ['start',['Start',['../class_gui_instructions.html#a3323b600a90f1eb6d7e8734c7fb90def',1,'GuiInstructions.Start()'],['../class_display_behavior.html#a0a96994d218aaa137db54ac059aa14f7',1,'DisplayBehavior.Start()'],['../class_keyboard_body_movement.html#afd4200366e14a0fe7a0e261f7b4e6ee3',1,'KeyboardBodyMovement.Start()'],['../class_mouse_probe_movement.html#a04e41574ddbc00029d53b17b9c5771f6',1,'MouseProbeMovement.Start()'],['../class_horay_behavior.html#a2d39573339ac7fb450d9fb638dbd4938',1,'HorayBehavior.Start()'],['../class_horay_material_properties.html#a9bb9d153b6bc544eb1e34bedf77dfad3',1,'HorayMaterialProperties.Start()']]]
+  ['popdebuglayer',['PopDebugLayer',['../class_onion_logger.html#af06ef3bef4414221d2d30466fc72dc87',1,'OnionLogger']]],
+  ['poperrorlayer',['PopErrorLayer',['../class_onion_logger.html#abe40313764fab7864b1579fb276064ce',1,'OnionLogger']]],
+  ['popfatallayer',['PopFatalLayer',['../class_onion_logger.html#a7a0f5cdad541dbf38f96f605d7834469',1,'OnionLogger']]],
+  ['popinfolayer',['PopInfoLayer',['../class_onion_logger.html#ae7fb2a0479b067c3b6dd25a4deee3ac1',1,'OnionLogger']]],
+  ['poplayerwithloglevel',['PopLayerWithLogLevel',['../class_onion_logger.html#a410f0eea4e8eef3dfdd6f82e6be254ca',1,'OnionLogger']]],
+  ['poptracelayer',['PopTraceLayer',['../class_onion_logger.html#a33b87973a21bc534fee4b0a9c93fa568',1,'OnionLogger']]],
+  ['populatedata',['PopulateData',['../class_horay_probe.html#a90b968ebb0a4732d0df3418c0cebe5a9',1,'HorayProbe']]],
+  ['popwarnlayer',['PopWarnLayer',['../class_onion_logger.html#a8a930fb120fb839cb23f844aa788a6af',1,'OnionLogger']]],
+  ['processbitmap',['ProcessBitmap',['../class_color_invert.html#a43d6f71d6bf3c86ab830113a69c86c6f',1,'ColorInvert.ProcessBitmap()'],['../class_grayscale_gaussian_blur.html#ab84311c62b6d597b64a2ddb4ef67360c',1,'GrayscaleGaussianBlur.ProcessBitmap()'],['../interface_i_image_post_processor.html#abaecf77701c98345c6ff68fc65c079a2',1,'IImagePostProcessor.ProcessBitmap()']]],
+  ['processchannel',['ProcessChannel',['../class_color_invert.html#adb620eeae467bf8e1180d2a2b796127b',1,'ColorInvert']]],
+  ['pulseintensityafterpoint',['PulseIntensityAfterPoint',['../class_horay_probe.html#ad7565d90c1379d10ffedbfa3ad1ec14d',1,'HorayProbe']]],
+  ['pushdebuglayer',['PushDebugLayer',['../class_onion_logger.html#aca34086e8fcc83f643c2ef4c0c1f1528',1,'OnionLogger']]],
+  ['pusherrorlayer',['PushErrorLayer',['../class_onion_logger.html#a6ab21adba1b495db0fb54cc8edba62d4',1,'OnionLogger']]],
+  ['pushfatallayer',['PushFatalLayer',['../class_onion_logger.html#ad73a8ce607a76affeea28a35439938f3',1,'OnionLogger']]],
+  ['pushinfolayer',['PushInfoLayer',['../class_onion_logger.html#a50a8e2610c58c218728db3eb69d93738',1,'OnionLogger']]],
+  ['pushlayerwithloglevel',['PushLayerWithLogLevel',['../class_onion_logger.html#a13f93d093d758deac4c4b0b25a339628',1,'OnionLogger']]],
+  ['pushtracelayer',['PushTraceLayer',['../class_onion_logger.html#a8230e2d5016bd5da6476fbd9b35dda92',1,'OnionLogger']]],
+  ['pushwarnlayer',['PushWarnLayer',['../class_onion_logger.html#a8ce0dc9320219155e0d773c80c837863',1,'OnionLogger']]]
 ];

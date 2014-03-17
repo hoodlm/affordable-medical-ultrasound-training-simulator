@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mouseprobemovement',['MouseProbeMovement',['../class_mouse_probe_movement.html',1,'']]]
+  ['keyboardbodymovement',['KeyboardBodyMovement',['../class_keyboard_body_movement.html',1,'']]]
 ];

@@ -2,9 +2,15 @@
 using System.Threading;
 
 public class GrayscaleGaussianBlur : IImagePostProcessor {
-	
+
+	/// The gaussian coefficients corresponding to the blending weight of each pixel in a pixel's neighborhood.
 	protected float[] coefficients;
+
+	/// The number of threads that are actively running.
+	/// This should be accessed only atomically while threads are running.
 	protected int activeThreadCount;
+
+	/// An event to indicate whether threads have finished running.
 	protected ManualResetEvent allThreadsDone;
 	
 	/**
@@ -49,6 +55,8 @@ public class GrayscaleGaussianBlur : IImagePostProcessor {
 		OnionLogger.globalLog.PopInfoLayer();
 	}
 
+	/// Applies a Gaussian blur to the rows of an image.
+	/// @param channelToBlur A gray-scale channel to be blurred.
 	private void ExecuteHorizontalBlur(ref MonochromeBitmap channelToBlur)
 	{
 		// We will blur each row in parallel.
@@ -113,10 +121,14 @@ public class GrayscaleGaussianBlur : IImagePostProcessor {
 	 * 	A single thread corresponds to a single row in the image.
 	 */
 	public class GrayscaleGaussianBlurThread : IImagePostProcessorThread {
-		
+
+		/// A pointer back to the IImagePostProcessor that spawned this thread.
 		private GrayscaleGaussianBlur threadManager;
+		/// The Gaussian coefficients used for weighting the neighbors of a pixel.
 		private readonly float[] coefficients;
+		/// The row number that this thread should be blurring.
 		private readonly int rowNumber;
+		/// A copy of the original bitmap.
 		private MonochromeBitmap original;
 
 		/**

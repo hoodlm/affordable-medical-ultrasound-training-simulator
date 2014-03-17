@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['organpresets',['OrganPresets',['../class_horay_material_properties.html#a0e400a211805ed1f0c055c539adb6754',1,'HorayMaterialProperties']]]
+  ['logginglevels',['LoggingLevels',['../class_onion_logger.html#a8fff841c0f6a2b9cb50be19471435c20',1,'OnionLogger']]]
 ];

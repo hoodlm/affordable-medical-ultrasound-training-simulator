@@ -97,56 +97,67 @@ Inheritance diagram for IImageSource:</div>
  <div class="center">
   <img src="interface_i_image_source.png" usemap="#IImageSource_map" alt=""/>
   <map id="IImageSource_map" name="IImageSource_map">
-<area href="class_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ..." alt="BModeOutputImageDecoder" shape="rect" coords="0,56,250,80"/>
-<area href="class_test_image_source.html" title="A fake IImageSource class to generate a test bitmap. " alt="TestImageSource" shape="rect" coords="260,56,510,80"/>
-<area href="class_black_on_white_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ..." alt="BlackOnWhiteBModeOutputImageDecoder" shape="rect" coords="0,112,250,136"/>
+<area href="class_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ..." alt="BModeOutputImageDecoder" shape="rect" coords="0,56,171,80"/>
+<area href="class_test_image_source.html" title="A fake IImageSource class to generate a test bitmap. " alt="TestImageSource" shape="rect" coords="181,56,352,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa998b226e82604b80db61ab4ec474ce7"><td class="memItemLeft" align="right" valign="top">Color[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_image_source.html#aa998b226e82604b80db61ab4ec474ce7">BitmapWithDimensions</a> (int width, int height)</td></tr>
-<tr class="memdesc:aa998b226e82604b80db61ab4ec474ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the next frame.  <a href="#aa998b226e82604b80db61ab4ec474ce7">More...</a><br/></td></tr>
-<tr class="separator:aa998b226e82604b80db61ab4ec474ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a200acd0d08045b6cadd66129107d0a92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_image_source.html#a200acd0d08045b6cadd66129107d0a92">RenderColorImageInBitmap</a> (ref <a class="el" href="struct_color_bitmap.html">ColorBitmap</a> bitmap)</td></tr>
+<tr class="memdesc:a200acd0d08045b6cadd66129107d0a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the next frame, and populate a provided bitmap.  <a href="#a200acd0d08045b6cadd66129107d0a92">More...</a><br/></td></tr>
+<tr class="separator:a200acd0d08045b6cadd66129107d0a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc45391c505d7e5dfbb35967271533e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_image_source.html#a8fc45391c505d7e5dfbb35967271533e">AddPostProcessingEffect</a> (<a class="el" href="interface_i_image_post_processor.html">IImagePostProcessor</a> effect)</td></tr>
+<tr class="memdesc:a8fc45391c505d7e5dfbb35967271533e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an <a class="el" href="interface_i_image_post_processor.html" title="Interface for a class that applies a post-processing effect to a 2D image. ">IImagePostProcessor</a> to this image source.  <a href="#a8fc45391c505d7e5dfbb35967271533e">More...</a><br/></td></tr>
+<tr class="separator:a8fc45391c505d7e5dfbb35967271533e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface describing a class that can provide a bitmap every frame. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa998b226e82604b80db61ab4ec474ce7"></a>
+<a class="anchor" id="a8fc45391c505d7e5dfbb35967271533e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Color [] IImageSource.BitmapWithDimensions </td>
+          <td class="memname">void IImageSource.AddPostProcessingEffect </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="interface_i_image_post_processor.html">IImagePostProcessor</a>&#160;</td>
+          <td class="paramname"><em>effect</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generate the next frame. </p>
+<p>Appends an <a class="el" href="interface_i_image_post_processor.html" title="Interface for a class that applies a post-processing effect to a 2D image. ">IImagePostProcessor</a> to this image source. </p>
+<p>All post-processors should be applied to the image after every frame. </p>
+
+<p>Implemented in <a class="el" href="class_test_image_source.html#a0c551b9fe44d59847a17b8df99b25b54">TestImageSource</a>, and <a class="el" href="class_b_mode_output_image_decoder.html#a8d11c7734a2dde8bcaa85d1122561409">BModeOutputImageDecoder</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a200acd0d08045b6cadd66129107d0a92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IImageSource.RenderColorImageInBitmap </td>
+          <td>(</td>
+          <td class="paramtype">ref <a class="el" href="struct_color_bitmap.html">ColorBitmap</a>&#160;</td>
+          <td class="paramname"><em>bitmap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate the next frame, and populate a provided bitmap. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">width</td><td>The requested width in pixels of the image. </td></tr>
-    <tr><td class="paramname">height</td><td>The requested height in pixels of the image. </td></tr>
+    <tr><td class="paramname">bitmap</td><td>A <a class="el" href="struct_color_bitmap.html" title="Struct to hold UnityEngine.Color array of image, with a width and height in pixels. ">ColorBitmap</a> struct (Color[], width, height) to be populated for this frame. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A color array containing the pixels of the image. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_b_mode_output_image_decoder.html#a36680bf50a0e2ac9af1bf30b39f40a7c">BModeOutputImageDecoder</a>, <a class="el" href="class_black_on_white_b_mode_output_image_decoder.html#aaf0bbdceb9fc2581d46fe73257d592ee">BlackOnWhiteBModeOutputImageDecoder</a>, and <a class="el" href="class_test_image_source.html#aaa032310dc02097b02a33c6c755df5fd">TestImageSource</a>.</p>
+<p>Implemented in <a class="el" href="class_b_mode_output_image_decoder.html#adada5a9285069beda3ea88dfcb183b32">BModeOutputImageDecoder</a>, and <a class="el" href="class_test_image_source.html#afd58989113ee58ba9829b44653f23a1d">TestImageSource</a>.</p>
 
 </div>
 </div>
@@ -156,7 +167,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 23 2014 03:36:45 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 17 2014 12:55:28 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

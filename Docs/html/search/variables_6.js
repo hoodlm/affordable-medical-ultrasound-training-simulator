@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['imagesource',['imageSource',['../class_texture_source.html#ab1b93ec1e4a59b076fd806afc2e43811',1,'TextureSource']]],
-  ['instructions',['INSTRUCTIONS',['../class_gui_instructions.html#a9720ae6dea492d59962fb16af45d082a',1,'GuiInstructions']]],
-  ['intensity',['Intensity',['../class_horay_behavior.html#a977d10b6c96ba4b358f46708b8caf699',1,'HorayBehavior']]]
+  ['g',['g',['../struct_r_g_b_channels.html#ab380b0c630c1a9b8444eec8ee7e35211',1,'RGBChannels']]],
+  ['gain',['gain',['../class_ultrasound_probe_configuration.html#a4b10f5c41ec8d6a6f57075047dfe3d47',1,'UltrasoundProbeConfiguration']]],
+  ['globallog',['globalLog',['../class_onion_logger.html#a5e072e9aa94233ef59d85b1253a8f5c1',1,'OnionLogger']]]
 ];

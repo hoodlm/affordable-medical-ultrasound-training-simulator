@@ -9,6 +9,7 @@ public class TestImageSource : IImageSource {
 	/// The colors used to generate this test image.
     private Color[] bars = {Color.green, Color.white, Color.red};
 
+	/// A list of post-processing effects that will be applied to the test image.
 	private IList<IImagePostProcessor> imageEffects;
 
 	public TestImageSource() {

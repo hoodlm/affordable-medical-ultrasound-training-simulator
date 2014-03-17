@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['removeexpiredobjects',['RemoveExpiredObjects',['../class_horay_organ_culler.html#a5da07ecac56360e96d9e1c9d7f7c1e11',1,'HorayOrganCuller']]],
-  ['rendernextframetotexture',['RenderNextFrameToTexture',['../interface_i_texture_source.html#a584774d4fd099de0f1bf55e7339e7833',1,'ITextureSource.RenderNextFrameToTexture()'],['../class_test_texture_source.html#a92f2bea9204ab45989798f190089d1f9',1,'TestTextureSource.RenderNextFrameToTexture()'],['../class_texture_source.html#a33ce847d5b1b89d4fa15172ed44715aa',1,'TextureSource.RenderNextFrameToTexture()']]],
-  ['rotateonmousemove',['RotateOnMouseMove',['../class_mouse_probe_movement.html#af9fb19f4960e7e2c7ab6369a30e6b6fb',1,'MouseProbeMovement']]]
+  ['ondestroy',['OnDestroy',['../class_unity_onion_logger_wrapper.html#a0eb1953d4cd72f24067c34ff078d9a7f',1,'UnityOnionLoggerWrapper']]],
+  ['ongui',['OnGUI',['../class_gui_instructions.html#ac05eebef124fe4921ca90220e339a56c',1,'GuiInstructions.OnGUI()'],['../class_unit_test_manager.html#ac9ce9ecee1108419693b002c9fdc76e7',1,'UnitTestManager.OnGUI()']]],
+  ['onionlogger',['OnionLogger',['../class_onion_logger.html#ab2bc22a299daada4fe53f3499ac523e0',1,'OnionLogger.OnionLogger()'],['../class_onion_logger.html#ad577837c306da87a7189dacac2e93e52',1,'OnionLogger.OnionLogger(string filepath)'],['../class_onion_logger.html#a86205d4aa4ba62658a7056dfd79c571d',1,'OnionLogger.OnionLogger(string filepath, char indentChar, uint indentSize, LoggingLevels loggingLevel)']]]
 ];

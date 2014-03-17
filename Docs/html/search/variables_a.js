@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['points',['points',['../class_ultrasound_scanline.html#a47fac2f7c76b8a033fdee14c86e42da6',1,'UltrasoundScanline']]],
-  ['pointsperscanline',['pointsPerScanline',['../class_ultrasound_probe_configuration.html#a75edb3589e437e5dd6226ad4f90a2d69',1,'UltrasoundProbeConfiguration.pointsPerScanline()'],['../class_horay_behavior.html#af5485e88f83648299d93a5d03b22985b',1,'HorayBehavior.PointsPerScanline()']]],
-  ['position',['position',['../struct_position_and_rotation.html#a40711d57aa472ed41ea3f80ba2123f02',1,'PositionAndRotation']]],
-  ['positionandrotation',['positionAndRotation',['../class_ultrasound_probe_configuration.html#a4565edf6ee5025a641f36a55ea668518',1,'UltrasoundProbeConfiguration']]],
-  ['probe',['probe',['../class_horay_probe_output.html#a602911ff8270021676a9532ec38085f9',1,'HorayProbeOutput']]],
-  ['probeconfig',['probeConfig',['../class_ultrasound_scan_data.html#a08c2fa0226fb2384e5f9e88ca26dfd5b',1,'UltrasoundScanData']]],
-  ['probegameobject',['probeGameObject',['../class_horay_probe.html#aa1169b96548c2b3b9f8d02d1b9e0eb2e',1,'HorayProbe.probeGameObject()'],['../class_horay_probe_output.html#aa3157c719af267232d4bc1f7db1d103d',1,'HorayProbeOutput.probeGameObject()']]],
-  ['probeoutput',['probeOutput',['../class_b_mode_output_image_decoder.html#acd635fc3852753638057fbf8808b235b',1,'BModeOutputImageDecoder']]],
-  ['projectedlocation',['projectedLocation',['../class_ultrasound_point.html#a8b67d4afd461e23d5ec2c9547609e61e',1,'UltrasoundPoint']]]
+  ['max_5fx',['MAX_X',['../class_test_probe_output.html#a60673d028e9b15ba1942238c22b86de3',1,'TestProbeOutput']]],
+  ['max_5fy',['MAX_Y',['../class_test_probe_output.html#a511ae2b1645917630ce44f0f6c87005e',1,'TestProbeOutput']]],
+  ['maxdistance',['MaxDistance',['../class_horay_behavior.html#aeb2a374fa4c6e2e06c320a79881aed6c',1,'HorayBehavior.MaxDistance()'],['../class_ultrasound_probe_configuration.html#a89d77ccb18e2510072deb05dc0502164',1,'UltrasoundProbeConfiguration.maxDistance()']]],
+  ['millisecondspertick',['millisecondsPerTick',['../class_onion_logger_1_1_log_layer.html#acc79371d0f63109a08375f39b72c3ed8',1,'OnionLogger::LogLayer']]],
+  ['min_5fx',['MIN_X',['../class_test_probe_output.html#af7058e1373637232eac62e5404a2d907',1,'TestProbeOutput']]],
+  ['min_5fy',['MIN_Y',['../class_test_probe_output.html#a9d93bc92d84569bdb997e5a9877bf96e',1,'TestProbeOutput']]],
+  ['mindistance',['minDistance',['../class_ultrasound_probe_configuration.html#a541f4000e6e0aea7c86683926490a9e0',1,'UltrasoundProbeConfiguration.minDistance()'],['../class_horay_behavior.html#a4f5caa99e71e71bb8316960948f29385',1,'HorayBehavior.MinDistance()']]]
 ];

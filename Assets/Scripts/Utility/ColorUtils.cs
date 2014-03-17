@@ -6,32 +6,43 @@ using System.Collections;
  * This file contains some structs and methods that allow for better parallel 2D image processing.
  */
 
-
 /// Struct to hold UnityEngine.Color array of image, with a width and height in pixels.
 public struct ColorBitmap {
+	/// An array of RGB-tuples representing the pixels of an image.
 	public Color[] colors;
+	/// Width of the bitmap, in pixels.
 	public int width;
+	/// Height of the bitmap, in pixels.
 	public int height;
 }
 
 /// Struct to hold a single color channel as a float array, with a width and height in pixels.
 public struct MonochromeBitmap {
+	/// An array of float values, representing the brightness of each pixel in this channel.
 	public float[] channel;
+	/// Width of the bitmap, in pixels.
 	public int width;
+	/// Height of the bitmap, in pixels
 	public int height;
 }
 
 /// Struct to hold parallel arrays of RGB components. (Rather than individual tuples, as in UnityEngine.Color)
 public struct RGBChannels {
+	/// A float array containing the intensity of the red channel of the image.
 	public float[] r;
+	/// A float array containing the intensity of the green channel of the image.
 	public float[] g;
+	/// A float array containing the intensity of the blue channel of the image.
 	public float[] b;
 }
 
 /// Struct to hold RGB channels of image, with a width and height in pixels.
 public struct RGBBitmap {
+	/// An RGBChannels struct containing the separate RGB channels of the image as float arrays.
 	public RGBChannels rgb;
+	/// Width of the bitmap, in pixels.
 	public int width;
+	/// Height of the bitmap, in pixels.
 	public int height;
 }
 

@@ -12,5 +12,9 @@ public interface IImageSource {
      */
     void RenderColorImageInBitmap (ref ColorBitmap bitmap);
 
+	/**
+	 * 	Appends an IImagePostProcessor to this image source. All post-processors should be applied to
+	 *  the image after every frame.
+	 */
 	void AddPostProcessingEffect(IImagePostProcessor effect);
 }

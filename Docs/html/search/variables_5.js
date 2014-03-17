@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gain',['gain',['../class_ultrasound_probe_configuration.html#a4b10f5c41ec8d6a6f57075047dfe3d47',1,'UltrasoundProbeConfiguration']]]
+  ['flushfrequencyinmilliseconds',['FlushFrequencyInMilliseconds',['../class_onion_logger.html#adc2ce2d6ab734cfe8d675cff546bc5f9',1,'OnionLogger']]]
 ];

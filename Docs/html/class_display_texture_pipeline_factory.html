@@ -110,6 +110,10 @@ static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#
 <tr class="memitem:a9fdaf29a1c7a1caa3c80c776007a459e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_texture_pipeline_factory.html#a9fdaf29a1c7a1caa3c80c776007a459e">BuildWithFakeBModeProbeOutput</a> ()</td></tr>
 <tr class="memdesc:a9fdaf29a1c7a1caa3c80c776007a459e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate the output of a BMode probe.  <a href="#a9fdaf29a1c7a1caa3c80c776007a459e">More...</a><br/></td></tr>
 <tr class="separator:a9fdaf29a1c7a1caa3c80c776007a459e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a565701dba827259d739f21b054acef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a565701dba827259d739f21b054acef"></a>
+static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_texture_pipeline_factory.html#a4a565701dba827259d739f21b054acef">BuildWithGaussianBlurImageSource</a> ()</td></tr>
+<tr class="memdesc:a4a565701dba827259d739f21b054acef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test image for gaussian blur. <br/></td></tr>
+<tr class="separator:a4a565701dba827259d739f21b054acef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Factory class for setting up the Display rendering pipeline. </p>
@@ -137,7 +141,7 @@ static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#
 </div><div class="memdoc">
 
 <p>Sets up a HORAY configuration with inverted colors: </p>
-<p>probe -&gt; <a class="el" href="class_horay_probe_output.html" title="HOmogeneous RAYcasting ultrasound model. ">HorayProbeOutput</a> -&gt; <a class="el" href="class_black_on_white_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ...">BlackOnWhiteBModeOutputImageDecoder</a> -&gt; <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> </p>
+<p>probe -&gt; <a class="el" href="class_horay_probe_output.html" title="HOmogeneous RAYcasting ultrasound model. ">HorayProbeOutput</a> -&gt; <a class="el" href="class_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ...">BModeOutputImageDecoder</a>(+invert) -&gt; Gaussian Blur -&gt; <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> </p>
 
 </div>
 </div>
@@ -163,7 +167,7 @@ static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#
 </div><div class="memdoc">
 
 <p>Sets up a standard HORAY configuration: </p>
-<p>probe -&gt; <a class="el" href="class_horay_probe_output.html" title="HOmogeneous RAYcasting ultrasound model. ">HorayProbeOutput</a> -&gt; <a class="el" href="class_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ...">BModeOutputImageDecoder</a> -&gt; <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> </p>
+<p>probe -&gt; <a class="el" href="class_horay_probe_output.html" title="HOmogeneous RAYcasting ultrasound model. ">HorayProbeOutput</a> -&gt; <a class="el" href="class_b_mode_output_image_decoder.html" title="An IImageSource that generates image data from an UltrasoundProbe&#39;s IProbeOutput. ...">BModeOutputImageDecoder</a> (+blur) -&gt; <a class="el" href="class_texture_source.html" title="A basic ITextureSource implementation that renders a texture from a bitmap (UnityEngine.Color array) with no post-processing effects. ">TextureSource</a> </p>
 
 </div>
 </div>
@@ -225,7 +229,7 @@ static <a class="el" href="interface_i_texture_source.html">ITextureSource</a>&#
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 23 2014 03:36:44 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 17 2014 12:55:28 for Affordable Medical Ultrasound Training Simulator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

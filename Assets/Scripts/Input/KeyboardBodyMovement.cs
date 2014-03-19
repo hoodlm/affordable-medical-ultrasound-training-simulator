@@ -19,9 +19,18 @@ public class KeyboardBodyMovement : MonoBehaviour {
 
 	/// The skin GameObject.
 	private GameObject skin;
+
+	/// The position to reset the probe to if it is lost.
+	private Vector3 initialPosition;
+
+	/// The orientation to reset the probe to if it is lost.
+	private Quaternion initialRotation;
 	
 	/// Use this for initialization
 	void Start () {
+		initialPosition = this.transform.position;
+		initialRotation = this.transform.rotation;
+
 		skin = GameObject.FindGameObjectWithTag("Skin");
 
 		UltrasoundDebug.Assert(null != bodyPivotPoint, "Body object not set!", this);
@@ -39,6 +48,11 @@ public class KeyboardBodyMovement : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			skin.renderer.enabled = !skin.renderer.enabled;
 		}
+
+		if (Input.GetKeyDown(KeyCode.LeftShift)) {
+			this.transform.position = initialPosition;
+			this.transform.rotation = initialRotation;
+		}
 	}
 
 	/// Rotate the body with the arrow keys
@@ -46,9 +60,9 @@ public class KeyboardBodyMovement : MonoBehaviour {
 		Vector3 rotationAxis = Vector3.zero;
 		
 		if (Input.GetKey(KeyCode.LeftArrow)) {
-			rotationAxis += Vector3.up;
+			rotationAxis += bodyPivotPoint.transform.up;
 		} else if (Input.GetKey(KeyCode.RightArrow)) {
-			rotationAxis += Vector3.down;
+			rotationAxis += -bodyPivotPoint.transform.up;
 		}
 		
 		bodyPivotPoint.transform.RotateAround(bodyPivotPoint.transform.position, 

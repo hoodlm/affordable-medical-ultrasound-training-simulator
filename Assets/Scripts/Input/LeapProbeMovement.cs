@@ -28,7 +28,6 @@ public class LeapProbeMovement : MonoBehaviour {
 	/// Update is called once per frame
 	void Update () {
 		UpdateLeapLocation();
-		KeepOnSkin();
 	}
 
 	/// Retrieves location data from the Leap controller, if available, and moves the object to the appropriate
@@ -37,24 +36,15 @@ public class LeapProbeMovement : MonoBehaviour {
 		if(_leapManager != null) { 
 			if(_leapManager.pointerAvailible)
 			{
-				this.transform.position = _leapManager.pointerPositionWorld;
+				Vector3 targetPosition = _leapManager.pointerPositionWorld;
+				Vector3 direction = targetPosition - transform.position;
+				Debug.Log(direction);
+				this.rigidbody.AddForce(80 * (direction));
 				if(!renderer.enabled) { renderer.enabled = true; }
 			}
 			else
 			{
 				renderer.enabled = false;
-			}
-		}
-	}
-
-	/// Prevents the probe from passing through the surface of the patient's skin.
-	private void KeepOnSkin() {
-		if (UltrasoundCollisionUtils.IsContained(this.transform.position, skin.collider)) {
-			Vector3 rayStart = transform.position - transform.forward * 30f;
-			Ray ray = new Ray(rayStart, transform.forward);
-			RaycastHit hit;
-			if (skin.collider.Raycast(ray, out hit, float.PositiveInfinity)) {
-				this.transform.position = hit.point;
 			}
 		}
 	}

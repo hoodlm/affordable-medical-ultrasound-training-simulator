@@ -1,6 +1,20 @@
 var searchData=
 [
-  ['ondestroy',['OnDestroy',['../class_unity_onion_logger_wrapper.html#a0eb1953d4cd72f24067c34ff078d9a7f',1,'UnityOnionLoggerWrapper']]],
-  ['ongui',['OnGUI',['../class_gui_instructions.html#ac05eebef124fe4921ca90220e339a56c',1,'GuiInstructions.OnGUI()'],['../class_unit_test_manager.html#ac9ce9ecee1108419693b002c9fdc76e7',1,'UnitTestManager.OnGUI()']]],
-  ['onionlogger',['OnionLogger',['../class_onion_logger.html#ab2bc22a299daada4fe53f3499ac523e0',1,'OnionLogger.OnionLogger()'],['../class_onion_logger.html#ad577837c306da87a7189dacac2e93e52',1,'OnionLogger.OnionLogger(string filepath)'],['../class_onion_logger.html#a86205d4aa4ba62658a7056dfd79c571d',1,'OnionLogger.OnionLogger(string filepath, char indentChar, uint indentSize, LoggingLevels loggingLevel)']]]
+  ['popdebuglayer',['PopDebugLayer',['../class_onion_logger.html#af06ef3bef4414221d2d30466fc72dc87',1,'OnionLogger']]],
+  ['poperrorlayer',['PopErrorLayer',['../class_onion_logger.html#abe40313764fab7864b1579fb276064ce',1,'OnionLogger']]],
+  ['popfatallayer',['PopFatalLayer',['../class_onion_logger.html#a7a0f5cdad541dbf38f96f605d7834469',1,'OnionLogger']]],
+  ['popinfolayer',['PopInfoLayer',['../class_onion_logger.html#ae7fb2a0479b067c3b6dd25a4deee3ac1',1,'OnionLogger']]],
+  ['poplayerwithloglevel',['PopLayerWithLogLevel',['../class_onion_logger.html#a410f0eea4e8eef3dfdd6f82e6be254ca',1,'OnionLogger']]],
+  ['poptracelayer',['PopTraceLayer',['../class_onion_logger.html#a33b87973a21bc534fee4b0a9c93fa568',1,'OnionLogger']]],
+  ['populatedata',['PopulateData',['../class_horay_probe.html#a90b968ebb0a4732d0df3418c0cebe5a9',1,'HorayProbe']]],
+  ['popwarnlayer',['PopWarnLayer',['../class_onion_logger.html#a8a930fb120fb839cb23f844aa788a6af',1,'OnionLogger']]],
+  ['processbitmap',['ProcessBitmap',['../class_color_invert.html#a43d6f71d6bf3c86ab830113a69c86c6f',1,'ColorInvert.ProcessBitmap()'],['../class_grayscale_gaussian_blur.html#ab84311c62b6d597b64a2ddb4ef67360c',1,'GrayscaleGaussianBlur.ProcessBitmap()'],['../interface_i_image_post_processor.html#abaecf77701c98345c6ff68fc65c079a2',1,'IImagePostProcessor.ProcessBitmap()']]],
+  ['pulseintensityafterpoint',['PulseIntensityAfterPoint',['../class_horay_probe.html#ad7565d90c1379d10ffedbfa3ad1ec14d',1,'HorayProbe']]],
+  ['pushdebuglayer',['PushDebugLayer',['../class_onion_logger.html#aca34086e8fcc83f643c2ef4c0c1f1528',1,'OnionLogger']]],
+  ['pusherrorlayer',['PushErrorLayer',['../class_onion_logger.html#a6ab21adba1b495db0fb54cc8edba62d4',1,'OnionLogger']]],
+  ['pushfatallayer',['PushFatalLayer',['../class_onion_logger.html#ad73a8ce607a76affeea28a35439938f3',1,'OnionLogger']]],
+  ['pushinfolayer',['PushInfoLayer',['../class_onion_logger.html#a50a8e2610c58c218728db3eb69d93738',1,'OnionLogger']]],
+  ['pushlayerwithloglevel',['PushLayerWithLogLevel',['../class_onion_logger.html#a13f93d093d758deac4c4b0b25a339628',1,'OnionLogger']]],
+  ['pushtracelayer',['PushTraceLayer',['../class_onion_logger.html#a8230e2d5016bd5da6476fbd9b35dda92',1,'OnionLogger']]],
+  ['pushwarnlayer',['PushWarnLayer',['../class_onion_logger.html#a8ce0dc9320219155e0d773c80c837863',1,'OnionLogger']]]
 ];

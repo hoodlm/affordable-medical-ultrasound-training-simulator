@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['leapprobemovement',['LeapProbeMovement',['../class_leap_probe_movement.html',1,'']]],
   ['logdebug',['LogDebug',['../class_onion_logger.html#a3d664b5a801196b232d3564e0f227b0b',1,'OnionLogger']]],
   ['logerror',['LogError',['../class_onion_logger.html#a528f96b58de0d534df93c390c66f60e1',1,'OnionLogger']]],
   ['logfatal',['LogFatal',['../class_onion_logger.html#aa415c953cce4dbd17e5aa73b88616391',1,'OnionLogger']]],

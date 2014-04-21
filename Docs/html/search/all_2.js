@@ -7,12 +7,11 @@ var searchData=
   ['colorbitmap',['ColorBitmap',['../struct_color_bitmap.html',1,'']]],
   ['colorbitmaptorgbbitmap',['colorBitmapToRGBBitmap',['../class_color_utils.html#aa35ac38d5674ca6e3cf2f633af76ec42',1,'ColorUtils']]],
   ['colorinvert',['ColorInvert',['../class_color_invert.html',1,'']]],
-  ['colorinvertthread',['ColorInvertThread',['../class_color_invert_thread.html',1,'']]],
+  ['colorinvertthread',['ColorInvertThread',['../class_color_invert_thread.html',1,'ColorInvertThread'],['../class_color_invert_thread.html#a24e10b27152ceafba274a7e3fa16eb8a',1,'ColorInvertThread.ColorInvertThread()']]],
   ['colors',['colors',['../struct_color_bitmap.html#afcf2a771571384d3cdafa1de5063d689',1,'ColorBitmap']]],
   ['colorutils',['ColorUtils',['../class_color_utils.html',1,'']]],
   ['compareto',['CompareTo',['../class_ultrasound_point.html#a9c7e87ca4ddfcd56d9f412ffc639be1f',1,'UltrasoundPoint']]],
   ['copy',['Copy',['../class_color_utils.html#a25cf660e99ddc5b18c01a1533e2870ea',1,'ColorUtils']]],
   ['culler',['culler',['../class_horay_probe.html#ad94fcdce53d1dddb5056b316a5969835',1,'HorayProbe']]],
-  ['currenttestindex',['currentTestIndex',['../class_unit_test_manager.html#a6bac20775569ecded1359d44fa973b70',1,'UnitTestManager']]],
   ['currentvisibleorgans',['currentVisibleOrgans',['../class_horay_organ_culler.html#a9996f14f3a34ef9c07f55236ebe8d293',1,'HorayOrganCuller']]]
 ];

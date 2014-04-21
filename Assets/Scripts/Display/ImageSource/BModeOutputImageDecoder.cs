@@ -62,8 +62,7 @@ public class BModeOutputImageDecoder : IImageSource {
      *  Draw a single UltrasoundPoint into a color buffer.
      *  @param point The UltrasoundPoint data to draw.
      *  @param index The index in the buffer at which to place the pixel.
-     *  @param buffer An array of UnityEngine.Color representing the result image. 
-     *  @param bufferSize The number of pixels in the buffer.
+     *  @param bitmap The bitmap into which to draw the pixel.
      */
     protected virtual void DrawPoint(UltrasoundPoint point, int index, ref ColorBitmap bitmap) {
 

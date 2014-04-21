@@ -17,7 +17,6 @@ var searchData=
   ['probegameobject',['probeGameObject',['../class_horay_probe.html#aa1169b96548c2b3b9f8d02d1b9e0eb2e',1,'HorayProbe.probeGameObject()'],['../class_horay_probe_output.html#aa3157c719af267232d4bc1f7db1d103d',1,'HorayProbeOutput.probeGameObject()']]],
   ['probeoutput',['probeOutput',['../class_b_mode_output_image_decoder.html#acd635fc3852753638057fbf8808b235b',1,'BModeOutputImageDecoder']]],
   ['processbitmap',['ProcessBitmap',['../class_color_invert.html#a43d6f71d6bf3c86ab830113a69c86c6f',1,'ColorInvert.ProcessBitmap()'],['../class_grayscale_gaussian_blur.html#ab84311c62b6d597b64a2ddb4ef67360c',1,'GrayscaleGaussianBlur.ProcessBitmap()'],['../interface_i_image_post_processor.html#abaecf77701c98345c6ff68fc65c079a2',1,'IImagePostProcessor.ProcessBitmap()']]],
-  ['processchannel',['ProcessChannel',['../class_color_invert.html#adb620eeae467bf8e1180d2a2b796127b',1,'ColorInvert']]],
   ['projectedlocation',['projectedLocation',['../class_ultrasound_point.html#a8b67d4afd461e23d5ec2c9547609e61e',1,'UltrasoundPoint']]],
   ['pulseintensityafterpoint',['PulseIntensityAfterPoint',['../class_horay_probe.html#ad7565d90c1379d10ffedbfa3ad1ec14d',1,'HorayProbe']]],
   ['pushdebuglayer',['PushDebugLayer',['../class_onion_logger.html#aca34086e8fcc83f643c2ef4c0c1f1528',1,'OnionLogger']]],

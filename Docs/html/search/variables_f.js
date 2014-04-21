@@ -6,6 +6,5 @@ var searchData=
   ['skin',['skin',['../class_keyboard_body_movement.html#a57fb23149886649e8a549128acc1b9bb',1,'KeyboardBodyMovement.skin()'],['../class_mouse_probe_movement.html#a9266b35ce3b452cea1c2893602ab594a',1,'MouseProbeMovement.skin()']]],
   ['stack',['stack',['../class_onion_logger.html#ac52051bbb3880295e6d78f569e16e408',1,'OnionLogger']]],
   ['stepsize',['STEPSIZE',['../class_test_probe_output.html#a371a343ac8cb0c7e89bf4fd46fdfcbe6',1,'TestProbeOutput']]],
-  ['stopwatch',['stopwatch',['../class_onion_logger_1_1_log_layer.html#a864bfb3ef468150e00ab517e72585332',1,'OnionLogger::LogLayer']]],
-  ['style',['style',['../class_unit_test_manager.html#ab1adaf64cfdde084bce207dca8a73de3',1,'UnitTestManager']]]
+  ['stopwatch',['stopwatch',['../class_onion_logger_1_1_log_layer.html#a864bfb3ef468150e00ab517e72585332',1,'OnionLogger::LogLayer']]]
 ];

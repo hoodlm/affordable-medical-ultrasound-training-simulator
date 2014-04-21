@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Threading;
 
+/// A post-processor for applying a Grayscale gaussian blur effect to a bitmap.
 public class GrayscaleGaussianBlur : IImagePostProcessor {
 
 	/// The gaussian coefficients corresponding to the blending weight of each pixel in a pixel's neighborhood.
@@ -30,7 +31,7 @@ public class GrayscaleGaussianBlur : IImagePostProcessor {
 		MonochromeBitmap blurR = ColorUtils.redBitmapFromRGBBitmap(ref rgbBitmap);
 		
 		// temporarily hard-coded
-		int numberOfCoefficients = 9;
+		int numberOfCoefficients = 5;
 		this.coefficients = ApproximateGaussianCoefficients(numberOfCoefficients);
 
 		OnionLogger.globalLog.PushInfoLayer("Blurring rows");

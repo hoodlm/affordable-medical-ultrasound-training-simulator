@@ -2,9 +2,6 @@ var searchData=
 [
   ['testimagesource',['TestImageSource',['../class_test_image_source.html',1,'']]],
   ['testprobeoutput',['TestProbeOutput',['../class_test_probe_output.html',1,'']]],
-  ['testresultstring',['testResultString',['../class_unit_test_manager.html#a05beb7a576554741a0184ed4e64140a5',1,'UnitTestManager']]],
-  ['tests',['tests',['../class_unit_test_manager.html#a30232e89e6ed7b713d04c42a51927069',1,'UnitTestManager']]],
-  ['testsrunning',['testsRunning',['../class_unit_test_manager.html#a26e320a5770ed435d6ec8b7b11555b4b',1,'UnitTestManager']]],
   ['testtexturesource',['TestTextureSource',['../class_test_texture_source.html',1,'']]],
   ['texture',['texture',['../class_display_behavior.html#a18eb39a6fa2233914d9a6763773c6e4d',1,'DisplayBehavior']]],
   ['textureheight',['textureHeight',['../class_display_behavior.html#a04bf737b5aae9978d2d9b87a9982f8cf',1,'DisplayBehavior']]],

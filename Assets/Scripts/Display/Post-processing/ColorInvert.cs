@@ -3,17 +3,13 @@ using System.Threading;
 
 /**
  *	An example IImagePostProcessor that inverts the colors of a bitmap.
- *	This is utilized by the BlackOnWhiteBModeOutputImageDecoder class.
  */
 public class ColorInvert : IImagePostProcessor {
 
 	/**
 	 *	Invert the colors of a bitmap.
-	 *	The channels are run in parallel using the ColorInvertThread class.
-	 * 	@param bitmap 	An array of UnityEngine Color structs,
-	 * 					to which the effect will be applied.
-	 * 	@param width 	The width of the bitmap in pixels.
-	 * 	@param height 	The height of the bitmap in pixels.
+	 *
+	 * 	@param colorBitmap The ColorBitmap to invert.
 	 */
 	public void ProcessBitmap(ref ColorBitmap colorBitmap)
 	{
@@ -21,12 +17,11 @@ public class ColorInvert : IImagePostProcessor {
 		RGBBitmap rgbBitmap = new RGBBitmap();
 		ColorUtils.colorBitmapToRGBBitmap(ref colorBitmap, ref rgbBitmap);
 
-
 		MonochromeBitmap invertedr = ColorUtils.redBitmapFromRGBBitmap(ref rgbBitmap);
 		MonochromeBitmap invertedg = ColorUtils.greenBitmapFromRGBBitmap(ref rgbBitmap);
 		MonochromeBitmap invertedb = ColorUtils.blueBitmapFromRGBBitmap(ref rgbBitmap);
 
-		// We can run each channel in parallel.
+		// We'll run a thread for each color channel.
 		int numberOfThreads = 3;
 		ManualResetEvent[] threadsDone = new ManualResetEvent[numberOfThreads];
 		ColorInvertThread[] threads = new ColorInvertThread[numberOfThreads];
@@ -49,21 +44,6 @@ public class ColorInvert : IImagePostProcessor {
 		ColorUtils.RGBBitmapToColorBitmap(ref rgbBitmap, ref colorBitmap);
 		OnionLogger.globalLog.PopInfoLayer();
 	}
-
-	/**
-	 * 	Inverts the values in a single channel, represented as an array of floats.
-	 * 	This is a serial implementation and isn't really used right now.
-	 * 	@param channel 	An array of floats representing the value of each pixel,
-	 * 					to which the effect will be applied.
-	 * 	@param width 	The width of the bitmap in pixels.
-	 * 	@param height 	The height of the bitmap in pixels.
-	 */
-	public void ProcessChannel(ref MonochromeBitmap monochromeBitmap)
-	{
-		for (int i = 0; i < monochromeBitmap.channel.Length; ++i) {
-			monochromeBitmap.channel[i] = 1f - monochromeBitmap.channel[i];
-		}
-	}
 }
 
 /**
@@ -71,19 +51,24 @@ public class ColorInvert : IImagePostProcessor {
  */
 public class ColorInvertThread : IImagePostProcessorThread {
 
+	/// A flag for whether this thread has finished working.
 	private ManualResetEvent done;
 
+	/// Initializes a new instance of the ColorInvertThread class.
+	/// @param handle A flag for the thread to set when the thread is finished working.
 	public ColorInvertThread(ManualResetEvent handle) {
 		this.done = handle;
 	}
 
 	/**
-	 *	No parallel implementation yet for ProcessBitmap of ColorInvert.
+	 *	No parallel implementation for ProcessBitmap of ColorInvert - use the
+	 *  ThreadedProcessChannel method.
 	 * 	@param state
 	 */
 	public void ThreadedProcessBitmap(object state)
 	{
 		// not implemented
+		done.Set();
 	}
 
 	/**

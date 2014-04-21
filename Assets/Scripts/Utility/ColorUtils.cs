@@ -111,7 +111,7 @@ public class ColorUtils {
 
 	/**
 	 * 	Extract a MonochromeBitmap from the red channel of an RGBBitmap.
-	 * 	@param RGBBitmap The RGBBitmap to extract R from.
+	 * 	@param rgbBitmap The RGBBitmap to extract R from.
 	 * 	@return A MonochromeBitmap containing the red channel.
 	 */
 	public static MonochromeBitmap redBitmapFromRGBBitmap(ref RGBBitmap rgbBitmap) {
@@ -124,7 +124,7 @@ public class ColorUtils {
 
 	/**
 	 * 	Extract a MonochromeBitmap from the green channel of an RGBBitmap.
-	 * 	@param RGBBitmap The RGBBitmap to extract G from.
+	 * 	@param rgbBitmap The RGBBitmap to extract G from.
 	 * 	@return A MonochromeBitmap containing the green channel.
 	 */
 	public static MonochromeBitmap greenBitmapFromRGBBitmap(ref RGBBitmap rgbBitmap) {
@@ -137,7 +137,7 @@ public class ColorUtils {
 
 	/**
 	 * 	Extract a MonochromeBitmap from the blue channel of an RGBBitmap.
-	 * 	@param RGBBitmap The RGBBitmap to extract B from.
+	 * 	@param rgbBitmap The RGBBitmap to extract B from.
 	 * 	@return A MonochromeBitmap containing the blue channel.
 	 */
 	public static MonochromeBitmap blueBitmapFromRGBBitmap(ref RGBBitmap rgbBitmap) {

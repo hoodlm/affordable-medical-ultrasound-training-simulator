@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<h1>About this document</h1>
+<p>
+    This document is intended to serve as a resource for other developers to get a familiarity for how the different parts of the simulator function together. It's just an informal walk-through to guide you through the flow of the program. It should be accompanied by class documentation at <a href="./Docs/html/index.html">./Docs/html/index.html</a>.
+</p>
+<p>
+    I am assuming that you already have some experience with Unity3D - at least enough to understand terms like "Inspector", "MonoBehaviour", "Component", and "Raycast". I am also assuming that you have a bit of background knowledge about medical ultrasonography - at least enough to understand terms like "B-mode" and "acoustic attenuation".
+</p>
+<p>
+    <em>Logan M Hood</em><br/>
+    May 2014
+</p>
+
+<h1>The Basic Geometry Scene</h1>
+<p>
+    A good entry point to understanding the Simulator is the "Basic Geometry" scene. This is its path in the project folder:<br/>
+    <code>Assets/Scenes/TestScenes/horayValidationTests/basicGeometry.unity</code><br/>
+    Open this scene in the Unity editor.
+</p>
+<p>
+    There are five objects in the scene:
+    <ul>
+        <li>The probe (a blue cube)</li>
+        <li>The display (a large, flat, rectangular object)</li>
+        <li>Three white "organs" - a sphere, a capsule, and a cube.</li>
+    </ul>
+</p>
+<p>
+    When you run the scene, you'll see a black and white image rendered to the display. This image is actually a simulated ultrasound image - it's just a cross-section of the organs in the scene, from the perspective of the blue cube. Initially, you're seeing a slice going through the "ground" plane (y = 0). Try moving the cube around in the Scene view while the scene is running, and you'll see the image change accordingly.
+</p>
+
+<h2>The Display GameObject</h2>
+<p>
+    The first object we'll look at is the Display. The Display has two responsibilities: to continuously display a 2D texture containing the ultrasound image (without worrying about how it's rendered), and to initially set up all the classes necessary to generate the image. Find the Display object in the scene (it's a child object of the <em>Main Camera</em>). Look at the <code>DisplayBehavior</code> component in the inspector: there are 3 inspector variables. <code>Texture Width</code> and <code>Texture Height</code> just change the dimensions of the texture on the display. You shouldn't need to change these very much, except to adjust for performance reasons.
+ </p>
+ <p>
+    The <code>Display Mode</code> variable is very important - it actually determines the configuration of the entire rendering pipeline of the ultrasound image. It's set to <code>HORAY</code> by default. <strong>HORAY</strong> is a name for the ultrasound simulation model we are using - it's short for "<u>HO</u>mogeneous Tissue Model <u>RAY</u>casting". (We'll elaborate more on what that means later.) Try changing the Display Mode to <code>InvHORAY</code> and running the scene. You should see exactly the same image on the Display, but the colors have been inverted.
+</p>
+<p>
+    Now try changing the <code>Display Mode</code> to <code>FakeTexture</code>. This sets up the Display to use a test class that provides a constant texture to display. You'll see that the display now shows horizontal color bars, nothing resembling an ultrasound image. This is the simplest configuration possible - let's look at how it works.
+</p>
+
+<h2>DisplayBehavior with a TestTextureSource</h2>
+<p>
+    Open up the DisplayBehavior script. There are two private variables that are important to take note of:
+</p>
+<p>
+    <code>
+        private Texture2D texture;<br/>
+        private ITextureSource textureSource;<br/>
+    </code>
+</p>
+<p>
+    <a href=http://docs.unity3d.com/Documentation/ScriptReference/Texture2D.html>Texture2D</a> is a built-in class in the Unity Engine, and allows us to programmatically change the texture of an object (rather than the more common use of static textures in games). ITextureSource is an interface describing a class that renders <em>something</em> to a Texture2D - maybe an ultrasound image, or maybe horizontal color bars. We'll look more closely at it later, but for now, it's enough to just know that the <code>textureSource</code> variable is the class that's actually providing the texture for the display.
+</p>
+<p>
+    Look at the <code>Start()</code> method in DisplayBehavior. It starts with a log statement, then a long switch statement, switching on the <code>DisplayMode</code> value that we just changed in the Inspector. Recall that we set the mode to <code>FakeTexture</code> earlier. In the case for <code>FakeTexture</code>, we see the <code>textureSource</code> is set by the method <code>DisplayTexturePipelineFactory.BuildFakeTextureSource()</code>.
+</p>
+<p>
+    <code>DisplayTexturePipelineFactory</code> sounds a bit like <a href="https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition/blob/master/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/factories/EnterpriseGradeFizzBuzzSolutionStrategyFactory.java" target="_blank">something out of FizzBuzzEnterpriseEdition</a>, but it's not anything too terrible. It just a static factory class, in the same file as <code>DisplayBehavior</code> if you scroll down a bit further. Several of the factory methods are a bit more complicated, but our <code>BuildFakeTextureSource()</code> just returns a new instance of <code>TestTextureSource</code>.
+</p>
+</body>
+</html>

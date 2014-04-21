@@ -8,6 +8,9 @@ using System.Collections;
  */
 public class DisplayBehavior : MonoBehaviour {
 
+	/// The actual texture applied to the display's model. This texture is dynamically generated, not static.
+	private Texture2D texture;
+
 	/// The class responsible for dynamically generating the texture that is drawn to this display object.
     private ITextureSource textureSource;
 
@@ -29,9 +32,6 @@ public class DisplayBehavior : MonoBehaviour {
 
     /// The height of the display's texture.
     public int textureHeight = 480;
-    
-	/// The actual texture applied to the display's model. This texture is dynamically generated, not static.
-    private Texture2D texture;
 
 	/// Initialization when the scene is started. This sets up the source of dynamic texture generation for the display.
 	/// Based on the current choice of DisplayModes, the DisplayTexturePipelineFactory will provide the appropriate

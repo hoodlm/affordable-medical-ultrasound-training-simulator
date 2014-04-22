@@ -38,6 +38,10 @@ public class DisplayBehavior : MonoBehaviour {
 	/// ITextureSource.
     void Start () {
 		OnionLogger.globalLog.PushInfoLayer("Initializing Display");
+
+		texture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGB24, false);
+		this.renderer.material.mainTexture = texture;
+
 		switch (displayMode) {
 
 		case (DisplayModes.HORAY):
@@ -68,8 +72,6 @@ public class DisplayBehavior : MonoBehaviour {
 			UltrasoundDebug.Assert(false, "Unknown display mode!", this);
 			break;
 		}
-        texture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGB24, false);
-        this.renderer.material.mainTexture = texture;
 		OnionLogger.globalLog.PopInfoLayer();
     }
 

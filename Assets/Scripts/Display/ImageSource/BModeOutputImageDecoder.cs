@@ -35,11 +35,11 @@ public class BModeOutputImageDecoder : IImageSource {
 	public virtual void RenderColorImageInBitmap (ref ColorBitmap bitmap) {
 		OnionLogger.globalLog.PushInfoLayer("BModeOutputImageDecoder");
 
+		// Acquire data from the probe output.
         UltrasoundScanData data = probeOutput.SendScanData ();
 
+		// Render the data to a bitmap
 		OnionLogger.globalLog.PushInfoLayer("Rendering UltrasoundData to bitmap");
-		int scanlineIndex = 0;
-		int totalScanlines = data.GetScanlines().Count;
         foreach (UltrasoundScanline scanline in data) {
             foreach (UltrasoundPoint point in scanline) {
                 int index = MapScanningPlaneToPixelCoordinate (bitmap.height, 
@@ -50,6 +50,7 @@ public class BModeOutputImageDecoder : IImageSource {
             }
         }
 		OnionLogger.globalLog.PopInfoLayer();
+		// Apply post-processing effects
 		OnionLogger.globalLog.PushInfoLayer("Post-processing");
 		foreach(IImagePostProcessor effect in imageEffects) {
 			effect.ProcessBitmap(ref bitmap);

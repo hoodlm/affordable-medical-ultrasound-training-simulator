@@ -30,10 +30,12 @@ public class TextureSource : ITextureSource {
 		OnionLogger.globalLog.PopInfoLayer();
 
         imageSource.RenderColorImageInBitmap(ref colorBitmap);
+
 		OnionLogger.globalLog.PushInfoLayer("Applying Bitmap to texture");
         texture.SetPixels(colorBitmap.colors);
         texture.Apply();
 		OnionLogger.globalLog.PopInfoLayer();
+
 		OnionLogger.globalLog.PopInfoLayer();
     }
 

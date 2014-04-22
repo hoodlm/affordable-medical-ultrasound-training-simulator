@@ -11,13 +11,19 @@ public class TestTextureSource : ITextureSource {
 							Color.magenta, Color.red, Color.blue};
 
     public void RenderNextFrameToTexture(ref Texture2D texture){
+		// Set up a Color array
 		int width = texture.width;
 		int height = texture.height;
 		Color[] pixels = new Color[width * height];
+
+		// Populate the color array with the colors defined in bars above.
 		for (int index = 0; index < pixels.Length; ++index) {
-			Color c = bars[(index / (width * height / bars.Length)) % bars.Length];
+			int pixelRow = index % width;
+			Color c = bars[pixelRow % bars.Length];
 			pixels[index] = c;
 		}
+
+		// Render the color array to the texture.
 		texture.SetPixels(pixels);
 		texture.Apply();
 	}

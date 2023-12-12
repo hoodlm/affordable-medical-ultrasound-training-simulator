@@ -1,8 +1,6 @@
 This software was written as part of a research project at University of South Carolina CEC from 2013-2014, "to create an inexpensive computer-based augmented reality training simulator to supplement existing hands-on training, in order to allow institutions to more efficiently utilize fewer ultrasound machines for training purposes".
 
-The project is documented in this paper:
-
-* https://cse.sc.edu/files/lhood.pdf
+The research project was also documented by an unpublished paper (approx. August 2013), included in this repository at [Docs/pdf/lhood\_AffordableUltrasoundTrainingSimulator.pdf](./Docs/pdf/lhood_AffordableUltrasoundTrainingSimulator.pdf).
 
 We're releasing it under an MIT license in the spirit of the NSF grant that funded the research:
 
